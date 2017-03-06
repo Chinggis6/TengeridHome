@@ -21,13 +21,14 @@
 
 " ---
 
-"No one constitutes as great a favor to me in the Environment of Linux as Vim ... when the editors of text are mentioned, Vim is the guiding star."
+" “No one constitutes as great a favor to me in the Environment of Linux as Vim ...
+	"when the editors of text are mentioned, Vim is the guiding star.”
 
-	"The Four Editors and Their Configuration,
+		"The Four Editors and Their Configuration,
 
-	"Ibn Idrīs al-Shāfiʿī.
+			"Ibn Idrīs al-Shāfiʿī.
 
-		"(aka Sha256)
+				"(aka Sha256)
 
 " ---
 
