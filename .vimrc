@@ -21,6 +21,16 @@
 
 " ---
 
+"No one constitutes as great a favor to me in the Environment of Linux as Vim ... when the editors of text are mentioned, Vim is the guiding star."
+
+	"The Four Editors and Their Configuration,
+
+	"Ibn Idrīs al-Shāfiʿī.
+
+		"(aka Sha256)
+
+" ---
+
 " Basic usage
 
 " Deprive option
@@ -141,13 +151,69 @@ Plug 'tpope/vim-fugitive'
 " Inspired by Quantum theme
 Plug 'KeitaNakamura/neodark.vim'
 
+" Show buffer names in status line
+Plug 'bling/vim-bufferline'
+
+" Org mode support
+Plug 'jceb/vim-orgmode'
+
+" Highlight Nginx config files
+Plug 'evanmiller/nginx-vim-syntax'
+
+" Highlight log syntax
+Plug 'dzeban/vim-log-syntax'
+" Highlight Logrotate log files
+Plug 'moon-musick/vim-logrotate'
+
+" Highlight TomL config markup file type syntax
+Plug 'cespare/vim-toml'
+
+" Note taking and note management in Vim
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
+
+" Extended session management
+" :OpenSession
+Plug 'xolox/vim-session'
+
+" Enhanced bookmarking
+Plug 'vim-scripts/TurboMark'
+
+Plug 'jlanzarotta/bufexplorer'
+
+" Scratch buffer
+" :Scratch
+Plug 'kana/vim-scratch'
+
+" Tab completion
+Plug 'ervandew/supertab'
+
+" Rich text highlight in Vim
+Plug 'bpstahlman/txtfmt'
+
+" Coffee script support
+Plug 'kchmck/vim-coffee-script'
+
+" Highlight Vimperator config file syntax
+Plug 'vimperator/vimperator.vim'
+
 call plug#end()
+
+" --- SNIGULP ---
+
+" Space as global leader
+" Analogous to Major mode
+let mapleader=" "
+" Comma as local leader
+" Analogous to Minor mode
+let maplocalleader=","
 
 " Integrate Limelight with Goyo
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-" --- SNIGULP ---
+" Don't try to be compatible with Vi enabling new features
+set nocompatible
 
 " --- SOLARIZED ---
 
@@ -213,7 +279,8 @@ set notitle
 
 " Tab autocompletion shows menu in Ex mode above the command
 set wildmenu
-set wildmode=list:longest
+set wildmode=longest:full,full
+set wildignore=*.swp,.git
 
 " set clipboard=unnamedplus
 " Copy to primary selection
@@ -264,12 +331,86 @@ set shortmess=a
 " Set bottom bar's height
 " set cmdheight=2
 
-" Space as global leader
-" Analogous to Major mode
-let mapleader=" "
-" Comma as local leader
-" Analogous to Minor mode
-let maplocalleader=","
+" Highlight current line
+set cursorline
+
+" zf to fold
+set foldenable
+" Manually select text in Visual mode or else to fold
+set foldmethod=manual
+
+" Briefly jump to the matching bracket
+set showmatch
+
+" Read modeline when found inside files opened
+set modeline
+
+" Show line and column position in status line
+set ruler
+
+" Can be - or +, is set according to textwidth
+" cc
+" set colorcolumn=80
+" set colorcolumn=+10
+
+" Wrap text when crossing line width
+set wrap
+
+" TTY improvements
+set ttyfast
+
+" Always substitute globally in file
+" Can be toggled with g (eg /g to reverse to local substitution)
+" :s, :substitute command
+" :s/apple/pear/g
+set gdefault
+
+" Search inside wraps too
+set wrapscan
+
+" Autocompletion
+set complete=.,w,b,t
+set completeopt-=preview
+
+" Enables the reading of .vimrc, .exrc and .gvimrc indent the current
+" directory.  If you switch this option on you should also  consider
+" setting the 'secure' option.  Using a  local .exrc, .vimrc or .gvimrc
+" is a potential security leak, use with   care!
+set exrc
+set secure
+
+" Shows Normal/Insert mode state
+set showmode
+
+" set shiftwidth=4
+" Round down indentation to shiftwidth
+set shiftround
+
+" Define tab width
+" set softtabstop=4
+" set tabstop=4
+
+" Pretty line breaks
+set showbreak=↪
+
+" Grep program for :grep command
+" Ripgrep
+set grepprg=rg
+
+" No redraw on macro execution
+set lazyredraw 
+
+" No delays on escaping
+set noesckeys
+
+" xterm / tmux compatible mousE
+set ttymouse=xterm2
+
+" Delete comment character when joining commented lines
+set formatoptions+=j 
+
+" Change directory to the opened file's or switched buffer's
+set autochdir
 
 " --- SNOITPO ---
 
@@ -353,6 +494,8 @@ map g# <Plug>(asterisk-gz#)
 
 let g:asterisk#keeppos = 1
 
+" --- PLUGIN OPTIONS ---
+
 " Powerline / Airline
 
 " As required by Powerline
@@ -367,11 +510,37 @@ let g:airline_theme='distinguished'
 " ---
 
 " Vim commentary
-
 " Correct commenting .Xdefaults and .Xresources
 autocmd FileType xdefaults setlocal commentstring=!\ %s
 
 " ---
+
+" TurboMark
+
+nmap <silent> m :TurboMark<CR>
+nmap <silent> ' :TurboFind<CR>
+
+" ---
+
+" BuffExplorer
+
+let g:bufExplorerShowRelativePath=1
+let g:bufExplorerSortBy='fullpath'
+
+" ---
+
+" Nerd Tree
+
+" Quit after opening file
+let NERDTreeQuitOnOpen=1
+
+" Ignore multimedia files and so
+let NERDTreeIgnore = ['\.png$','\.jpg$','\.gif$','\.mp3$','\.flac$', '\.ogg$', '\.mp4$','\.avi$','.webm$','.mkv$','\.pdf$', '\.zip$', '\.tar.gz$', '\.rar$']
+
+" Show hidden files too
+let NERDTreeShowHidden=1
+
+" --- SNOITPO NIGULP ---
 
 " My key bindings
 
@@ -396,3 +565,55 @@ nnoremap <C-k> 5k
 nnoremap <C-j> 5j
 nnoremap <C-l> 5l
 nnoremap <C-h> 5h
+
+" Buffer navigation
+nmap <localleader>bn :bnext<CR>
+nmap <localleader>bN :bprev<CR>
+nmap <localleader>b0 :bfirst<CR>
+nmap <localleader>b$ :blast<CR>
+nmap <localleader>bd :bdelete<CR>
+nmap <localleader>bb :buffers<CR>
+nmap <localleader>B :BufExplorer<CR>
+
+nmap <localleader>fW :SudoWrite<CR>
+nmap <localleader>W <localleader>fW
+
+" Ex mode
+" type visual to switch back to Normal mode
+nnoremap Q <nop>
+ 
+" Macros
+nnoremap q <nop>
+
+" Command mode
+nnoremap ; :
+vnoremap ; :
+nnoremap : Q
+vnoremap : Q
+
+" Sudo write the file
+cmap w!! w !sudo tee % >/dev/null
+
+" Copy always from Primary selection
+map <MouseMiddle> "*p
+
+" ---
+
+" Tengerid Commands
+
+" Mapping Man to :help
+
+" <q-args> for quoted arguments
+command! -nargs=* Man help <args>
+
+" Save file as root user
+" Requires Eunuch plugin
+command! W SudoWrite
+
+" Reload vimrc on save instantly
+" http://www.bestofvim.com/tip/auto-reload-your-vimrc/
+augroup reload_vimrc " {
+" Clears out any previous autocommands Vim has registered for that group
+    autocmd!
+    autocmd BufWritePost $HOME/.vimrc source $HOME/.vimrc
+augroup END " }

@@ -12,7 +12,8 @@ inoremap <F2> :write<CR>
 nnoremap <C-s> :write<CR>
 
 " Save file as
-nnoremap <F3> :saveas 
+" nnoremap <F3> :saveas 
+nnoremap <F3> :OpenSession
 
 " Rename file
 " Requires tpope/vim-eunuch
