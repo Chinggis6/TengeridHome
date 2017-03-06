@@ -8,7 +8,7 @@
 " Vimmer, Archer
 " The Son of Web
 " Filius VVeborum
-
+"
 " ------ --- ------
 " +       +       +
 " ------ --- ------
@@ -415,6 +415,21 @@ set formatoptions+=j
 
 " Change directory to the opened file's or switched buffer's
 set autochdir
+
+" Bigger command history
+" Default value is 50
+set history=1000
+
+" Key to invoke command-line window in Ex Mode (:)
+" set cedit=^F
+
+" Command line window height
+" set cmdwinheight=7
+" set cmdwinheight=20
+
+" Command mode height in statusline
+" set cmdheight=1
+" set cmdheight=2
 
 " --- SNOITPO ---
 
