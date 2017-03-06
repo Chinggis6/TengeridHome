@@ -8,6 +8,7 @@
 " Vimmer, Archer
 " The Son of Web
 " Filius VVeborum
+
 " ------ --- ------
 " +       +       +
 " ------ --- ------
@@ -28,7 +29,7 @@
 
 			"Ibn Idrīs al-Shāfiʿī.
 
-				"(aka Sha256)
+				"(aka sha256)
 
 " ---
 
@@ -163,6 +164,7 @@ Plug 'evanmiller/nginx-vim-syntax'
 
 " Highlight log syntax
 Plug 'dzeban/vim-log-syntax'
+
 " Highlight Logrotate log files
 Plug 'moon-musick/vim-logrotate'
 
@@ -180,6 +182,8 @@ Plug 'xolox/vim-session'
 " Enhanced bookmarking
 Plug 'vim-scripts/TurboMark'
 
+" Enhanced buffer listing
+" :BufExplorer (with single f)
 Plug 'jlanzarotta/bufexplorer'
 
 " Scratch buffer
@@ -276,7 +280,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Show file name and its modification state in window title
 set title
-set notitle
 
 " Tab autocompletion shows menu in Ex mode above the command
 set wildmenu
@@ -284,7 +287,7 @@ set wildmode=longest:full,full
 set wildignore=*.swp,.git
 
 " set clipboard=unnamedplus
-" Copy to primary selection
+" Copy to Primary selection
 set clipboard=unnamed
 
 " Show keys in Normal mode at the bottom
@@ -511,7 +514,7 @@ let g:airline_theme='distinguished'
 " ---
 
 " Vim commentary
-" Correct commenting .Xdefaults and .Xresources
+" Correct commenting in .Xdefaults and .Xresources
 autocmd FileType xdefaults setlocal commentstring=!\ %s
 
 " ---
