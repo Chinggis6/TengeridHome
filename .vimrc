@@ -371,7 +371,6 @@ let g:airline_theme='distinguished'
 " Correct commenting .Xdefaults and .Xresources
 autocmd FileType xdefaults setlocal commentstring=!\ %s
 
-
 " ---
 
 " My key bindings
