@@ -1,0 +1,9 @@
+[options]
+fullscreen=1
+hide-info-box=1
+lazy-load=1
+scale-images-up=1
+
+[keybindings]
+h { goto_file_relative(-1); }
+l { goto_file_relative(1); }

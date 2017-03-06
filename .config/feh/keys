@@ -1,0 +1,16 @@
+next_img l
+prev_img h
+
+scroll_right L
+scroll_left H
+scroll_up K
+scroll_down J
+
+remove d
+
+toggle_filenames f
+
+zoom_in equal
+zoom_out minus
+zoom_default plus
+zoom_fit underscore
