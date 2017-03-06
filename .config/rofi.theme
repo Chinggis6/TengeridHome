@@ -1,5 +1,5 @@
-! TENGERID LAUNCHER
-! ROFI
+! Tengerid Launcher
+! Rofi
 
 rofi.color-enabled: true
 
@@ -10,25 +10,25 @@ rofi.color-enabled: true
 ! rofi.color-window: argb:f22d303b, #7c8389, #1d1f21
 
 ! Solarized theme
-rofi.color-window: #002b37, #002b37, #003642
-rofi.color-normal: #002b37, #819396, #002b37, #003642, #819396
-rofi.color-active: #002b37, #008ed4, #002b37, #003642, #008ed4
-rofi.color-urgent: #002b37, #da4281, #002b37, #003642, #da4281
+rofi.color-window : #002b37, #002b37, #003642
+rofi.color-normal : #002b37, #819396, #002b37, #003642, #819396
+rofi.color-active : #002b37, #008ed4, #002b37, #003642, #008ed4
+rofi.color-urgent : #002b37, #da4281, #002b37, #003642, #da4281
 
 ! none, dash, solid
-rofi.separator-style: dash
-rofi.hide-scrollbar: true
-! rofi.font: Source Code Pro 10
-rofi.font: Cantarell 10
-rofi.terminal: urxvtc
-rofi.levenshtein-sort: true
-rofi.columns: 1
-rofi.lines: 15
-rofi.width: 300
-rofi.opacity: 100
-rofi.location: 0
-rofi.padding: 0
-rofi.bw: 0
+rofi.separator-style  : dash
+rofi.hide-scrollbar   : true
+! rofi.font           : Source Code Pro 10
+rofi.font             : Cantarell 10
+rofi.terminal         : urxvtc
+rofi.levenshtein-sort : true
+rofi.columns          : 1
+rofi.lines            : 15
+rofi.width            : 300
+rofi.opacity          : 100
+rofi.location         : 0
+rofi.padding          : 0
+rofi.bw               : 0
 ! rofi.modi: window
 
 ! vim: ft=xdefaults
