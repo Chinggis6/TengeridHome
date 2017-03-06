@@ -10,13 +10,24 @@
 ! * Tabs
 ! * Powerline fonts
 ! * Plugins (Perl extensions)
+! * Xresources-compatible
+! * keyboard-select mode, M-Esc
+! * Daemonizable, terminal server (urxvtd), connected by client urxvtc
 
-! Minimalistic, distraction-less, and highly configurable.
+! “Nobody gonna love me better ...
+!  Nobody gonna take me higher ...
+!  You know how to appreciate me
+!  I must stick with you, my rxvt-unicode-256colors-baby.”
+
+! No other seemingly attractive terminals like Sakura, Termite, and Hyper can deviate me.
+
+! Minimalistic, distraction-free, and highly configurable.
 
 ! URxvt extensions:
 ! matcher  - click on URLS
 ! url      - select URLS with keyboard (provided by urxvt-perls package)
 ! tabbedex - tabs support
+! keyboard-select - Vim Visual mode for standard output on the terminal
 
 ! Disable blinking cursor
 ! A good article on universal hatred towards eye-annoying blinking cursor

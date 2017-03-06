@@ -100,6 +100,7 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'kana/vim-operator-user'
 
 " Flash yank area
+" Visually flash the area yanked to the register/clipboard
 Plug 'haya14busa/vim-operator-flashy'
 
 " Star motions
@@ -338,6 +339,9 @@ set shortmess=a
 " Highlight current line
 set cursorline
 
+" Highlight current column, file-wise
+set cursorcolumn
+
 " zf to fold
 set foldenable
 " Manually select text in Visual mode or else to fold
@@ -407,7 +411,7 @@ set lazyredraw
 " No delays on escaping
 set noesckeys
 
-" xterm / tmux compatible mousE
+" xterm / tmux compatible mouse
 set ttymouse=xterm2
 
 " Delete comment character when joining commented lines
