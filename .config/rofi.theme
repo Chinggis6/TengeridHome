@@ -1,0 +1,34 @@
+! TENGERID LAUNCHER
+! ROFI
+
+rofi.color-enabled: true
+
+! Arc dark theme
+! rofi.color-normal: argb:0383c4a, #c4cbd4, argb:96404552, #4084d6, #f9f9f9
+! rofi.color-urgent: argb:02d303b, #cc6666, argb:e52d303b, #a54242, #f9f9f9
+! rofi.color-active: argb:02d303b, #b5bd68, argb:e42d303b, #8c9440, #f9f9f9
+! rofi.color-window: argb:f22d303b, #7c8389, #1d1f21
+
+! Solarized theme
+rofi.color-window: #002b37, #002b37, #003642
+rofi.color-normal: #002b37, #819396, #002b37, #003642, #819396
+rofi.color-active: #002b37, #008ed4, #002b37, #003642, #008ed4
+rofi.color-urgent: #002b37, #da4281, #002b37, #003642, #da4281
+
+! none, dash, solid
+rofi.separator-style: dash
+rofi.hide-scrollbar: true
+! rofi.font: Source Code Pro 10
+rofi.font: Cantarell 10
+rofi.terminal: urxvtc
+rofi.levenshtein-sort: true
+rofi.columns: 1
+rofi.lines: 15
+rofi.width: 300
+rofi.opacity: 100
+rofi.location: 0
+rofi.padding: 0
+rofi.bw: 0
+! rofi.modi: window
+
+! vim: ft=xdefaults

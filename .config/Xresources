@@ -1,0 +1,235 @@
+! Tengerid Launcher
+! Solarized dark theme
+#include "rofi.theme"
+
+! Tengerid Terminal
+! Sexy URxvt :)
+
+! Supports:
+! * Transparency
+! * Tabs
+! * Powerline fonts
+! * Plugins (Perl extensions)
+
+! Minimalistic, distraction-less, and highly configurable.
+
+! URxvt extensions:
+! matcher  - click on URLS
+! url      - select URLS with keyboard (provided by urxvt-perls package)
+! tabbedex - tabs support
+
+! Disable blinking cursor
+! A good article on universal hatred towards eye-annoying blinking cursor
+! http://www.jurta.org/en/prog/noblink
+
+! Tabs
+! tabbedex
+
+! URxvt.tabbed.new-button: true
+! URxvt.tabbed.no-tabbedex-keys: true
+! URxvt.keysym.Control-t: perl:tabbedex:new_tab
+! URxvt.keysym.Control-Tab: perl:tabbedex:next_tab
+! URxvt.keysym.Control-Shift-Tab: perl:tabbedex:prev_tab
+! URxvt.keysym.Control-Shift-Left: perl:tabbedex:move_tab_left
+! URxvt.keysym.Control-Shift-Right: perl:tabbedex:move_tab_right
+! URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
+
+! URxvt.font: xft:DejaVu Sans Mono:pixelsize=13,
+! URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=13:weight=bold
+! URxvt.font: xft:Inconsolata:size=9:antialias=true:hinting=true
+! URxvt.font: xft:DejaVu Sans Mono For Powerline Nerd Font Book:size=9:antialias=true:hinting=true
+! URxvt.font: xft:InconsolataForPowerline Nerd Font:pixelsize=16:antialias=false:hinting=true
+
+! --- Fonts ---
+
+Xft.dpi:       96
+Xft.autohint:  true
+Xft.antialias: true
+Xft.hinting:   true
+Xft.hintsytle: hintfull
+Xft.lcdfilter: lcddefault
+! Xft.rgba:      rgb
+
+! Nerd fonts with dev icons
+
+URxvt.font: xft:DejaVuSansMonoForPowerline Nerd Font:pixelsize=13:antialias=true:hinting=true,\
+	    xft:TerminessTTF Nerd Font:antialias=true:hinting=true,\
+	    xft:Terminess Powerline:antilias=true:hinting=true,\
+	    xft:Symbola,\
+	    xft:Source Code Pro:pixelsize=13:antialias=true:hinting=true,\
+	    xft:Font Awesome:pixelsize=13:antialias=true:hinting=true,\
+	    xft:Noto Emoji:pixelsize=13:antialias=true:hinting=true,\
+	    xft:Inconsolata:pixelsize=13:antialias=true:hinting=true
+
+URxvt.boldFont: xft:DejaVuSansMonoForPowerline Nerd Font:pixelsize=13:antialias=true:hinting=true,\
+	    xft:TerminessTTF Nerd Font:antialias=true:hinting=true,\
+	    xft:Terminess Powerline:antilias=true:hinting=true,\
+	    xft:Symbola,\
+	    xft:Source Code Pro:pixelsize=13:antialias=true:hinting=true,\
+	    xft:Font Awesome:pixelsize=13:antialias=true:hinting=true,\
+	    xft:Noto Emoji:pixelsize=13:antialias=true:hinting=true,\
+	    xft:Inconsolata:pixelsize=13:antialias=true:hinting=true
+
+URxvt.italicFont: xft:DejaVuSansMonoForPowerline Nerd Font:pixelsize=13:antialias=true:hinting=true,\
+	    xft:TerminessTTF Nerd Font:antialias=true:hinting=true,\
+	    xft:Terminess Powerline:antilias=true:hinting=true,\
+	    xft:Symbola,\
+	    xft:Source Code Pro:pixelsize=13:antialias=true:hinting=true,\
+	    xft:Font Awesome:pixelsize=13:antialias=true:hinting=true,\
+	    xft:Noto Emoji:pixelsize=13:antialias=true:hinting=true,\
+	    xft:Inconsolata:pixelsize=13:antialias=true:hinting=true
+
+! Download and put inside /usr/lib/urxvt/perl/ where plugins reside
+! Or inside $HOME/.urxvt/ext/ for user-wide configuration
+! https://github.com/majutsushi/urxvt-font-size
+
+URxvt.perl-ext-common: default,matcher,clipboard,url-select,keyboard-select,font-size
+
+! Change font size on Ctrl +/-
+! URxvt.keysym.Control-0x2b: font-size:increase
+! URxvt.keysym.Control-0x2d: font-size:decrease
+
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
+
+! Download from:
+! https://github.com/muennich/urxvt-perls
+
+URxvt.keysym.M-Escape: keyboard-select:activate
+URxvt.keysym.M-s: keyboard-select:search
+URxvt.keysym.M-u: url-select:select_next
+URxvt.url-select.launcher:  /usr/bin/qutebrowser
+URxvt.url-select.underline: true
+URxvt.url-launcher: /usr/bin/qutebrowser
+! C1 for ctrl click
+URxvt.matcher.button: 1
+
+! Appearance
+! Minimalism
+
+URxvt.termName        : rxvt-unicode
+! URxvt.termName          : xterm-256color
+! URxvt.background        : black
+! URxvt.foreground        : gray
+! Larger history limit
+urxvt.saveLines         : 1000000
+URxvt.letterSpace       : -1
+URxvt.scrollBar         : false
+URxvt.scrollBar_right   : false
+URxvt.secondaryScroll   : false
+URxvt.cursorBlink       : false
+URxvt.depth             : 32
+URxvt*urgentOnBell      : true
+URxvt.buffered          : true
+URxvt.transparent       : true
+URxvt.shading           : 15
+URxvt.scrollTtyOutput   : false
+URxvt.scrollTtyKeypress : true
+URxvt.scrollWithBuffer  : false
+
+! Old colors (Tango colorscheme)
+! URxvt.color0: rgb:00/00/00
+! URxvt.color1: rgb:CC/00/00
+! URxvt.color2: rgb:4E/9A/06
+! URxvt.color3: rgb:C4/A0/00
+! URxvt.color4: rgb:34/65/A4
+! URxvt.color5: rgb:75/50/7B
+! URxvt.color6: rgb:06/98/9A
+! URxvt.color7: rgb:D3/D7/CF
+! URxvt.color8: rgb:55/57/53
+! URxvt.color9: rgb:EF/29/29
+! URxvt.color10: rgb:8A/E2/34
+! URxvt.color11: rgb:FC/E9/4F
+! URxvt.color12: rgb:72/9F/CF
+! URxvt.color13: rgb:AD/7F/A8
+! URxvt.color14: rgb:34/E2/E2
+! URxvt.color15: rgb:EE/EE/EC
+! URxvt.colorBD: rgb:ff/ff/ff
+
+! --- Solarized ---
+
+! Dark Solarized colorscheme
+
+! Common Solarized colors
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+! Dark theme specific colors
+
+! base03 is responsible for foreground color of typed text and its autocompletion
+! #define S_base03        #002b36
+#define S_base03        Skyblue
+! Skyblue color #87CEEB
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+! To only apply colors to your terminal, for example, prefix
+! the color assignment statement with its name. Example:
+!
+! URxvt*background:            S_base03
+
+*background:              S_base03
+*foreground:              S_base0
+*fading:                  40
+*fadeColor:               S_base03
+*cursorColor:             S_base1
+*pointerColorBackground:  S_base01
+*pointerColorForeground:  S_base1
+
+*color0:                  S_base02
+*color1:                  S_red
+*color2:                  S_green
+*color3:                  S_yellow
+*color4:                  S_blue
+*color5:                  S_magenta
+*color6:                  S_cyan
+*color7:                  S_base2
+*color9:                  S_orange
+*color8:                  S_base03
+*color10:                 S_base01
+*color11:                 S_base00
+*color12:                 S_base0
+*color13:                 S_violet
+*color14:                 S_base1
+*color15:                 S_base3
+
+! ---
+
+! Tengerid Cursor
+! Sun Yellow
+! URxvt.cursorColor: #FFE87C
+! Lemon Chiffon
+! URxvt.cursorColor: #FFF8C6
+! Coffee
+URxvt.cursorColor: #6F4E37
+
+! ---
+
+! xterm*geometry:           80x25
+! xterm*faceName:           DejaVu Sans Mono:pixelsize=14
+! xterm*faceNameDoublesize: WenQuanYi Micro Hei:pixelsize=14
+! xterm*termName:           xterm-256color
+! xterm*background:         #000000
+! xterm*foreground:         #babdb6
+! xterm*xftAntialias:       true
+! xterm*cjkWidth:           false
+! xterm*dynamicColors:      true
+! xterm*utf8:               true
+! xterm*utf8Title:          true
+! xterm*eightBitInput:      false

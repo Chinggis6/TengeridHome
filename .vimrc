@@ -138,6 +138,9 @@ Plug 'justinmk/vim-dirvish'
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 
+" Inspired by Quantum theme
+Plug 'KeitaNakamura/neodark.vim'
+
 call plug#end()
 
 " Integrate Limelight with Goyo
@@ -221,7 +224,7 @@ set showcmd
 
 " Enable mouse
 " Works with Nerd Tree to open a file or directory, resize panes
-set mouse=ia
+set mouse=a
 " set selectmode+=mouse
 
 " Copy to Primary selection in Visual mode
