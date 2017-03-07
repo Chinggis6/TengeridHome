@@ -142,6 +142,11 @@ URxvt.scrollTtyOutput   : false
 URxvt.scrollTtyKeypress : true
 URxvt.scrollWithBuffer  : false
 
+! Remove Ctrl+Shift ISO mode
+! ISO 14755 and KEYCAP PICTURE INSERT MODE text pop ups on the screen on C-S key press
+URxvt*iso14755: false
+URxvt*iso14755_52: false
+
 ! Old colors (Tango colorscheme)
 ! URxvt.color0: rgb:00/00/00
 ! URxvt.color1: rgb:CC/00/00

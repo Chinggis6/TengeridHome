@@ -74,6 +74,9 @@ call plug#begin('~/.vim/plugged')
 "
 Plug 'altercation/vim-colors-solarized'
 
+" Language pack, 70+ packages
+Plug 'sheerun/vim-polyglot'
+
 " gcc for commenting lines
 Plug 'tpope/vim-commentary'
 
