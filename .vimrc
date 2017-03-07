@@ -70,8 +70,7 @@
 
 call plug#begin('~/.vim/plugged')
 
-"Solarized colorscheme
-"
+" Solarized colorscheme
 Plug 'altercation/vim-colors-solarized'
 
 " Language pack, 70+ packages
@@ -643,3 +642,25 @@ augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $HOME/.vimrc source $HOME/.vimrc
 augroup END " }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+" Ave! :P
