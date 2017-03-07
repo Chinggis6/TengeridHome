@@ -1,0 +1,53 @@
+# see `man cmus` for more options
+# and /usr/share/cmus/rc for examples
+
+# ENABLE ALSA
+
+set output_plugin=alsa
+set dsp.alsa.device=default
+set mixer.alsa.device=default
+set mixer.alsa.channel=Master
+
+# enable mouse support
+set mouse=true
+
+# move the cursor to the currently playing track as it changes
+set follow=true
+
+colorscheme solarized-dark
+
+# disable viewing individual albums by an artist
+# (you can see them all at once in the overview)
+set auto_expand_albums_follow=false
+set auto_expand_albums_search=false
+set auto_expand_albums_selcur=false
+
+# quit with 'q' (no confirmation)
+# bind -f common ^C echo Press 'q' to quit
+# bind -f common q quit
+
+# left/right for previous/next track
+# bind -f common left player-prev
+# bind -f browser left player-prev
+# bind -f common right player-next
+# bind -f browser right player-next
+
+# space to play/pause
+# bind -f common space player-pause
+# bind -f browser space player-pause
+
+# Add Rock filter
+
+fset electronic=genre="Electronic"|genre="House"|genre="Electro"|genre="Trance"|genre="Dance"|genre="Pop"|artist="Avicii"
+fset symphonic=genre="Symphonic"|genre="Classical"
+fset country=genre="Country"
+fset bluegrass=genre="Bluegrass"
+fset rock=genre="rock"
+
+set softvol=true
+
+# Jump to current playing file
+# Ncmpcpp legacy
+bind -f common  o win-sel-cur
+
+# vim: ft=sh
