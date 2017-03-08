@@ -33,7 +33,8 @@ inoremap <F8> :PlugInstall<CR>
 nnoremap <F8> :PlugInstall<CR>
 
 " Bring up Nerd Tree
-map <F9> :NERDTreeToggle<CR>
+" map <F9> :NERDTreeToggle<CR>
+" map <F9> :NERDTreeFind<CR>
 
 " Exit without saving any open file
 map <F10> :quitall!<CR>

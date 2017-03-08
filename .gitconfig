@@ -17,3 +17,8 @@
 [user]
 	email = Chinggis6@iCloud.com
 	name = Chinggis6
+[commit]
+	template = ~/.gitmessage
+[core]
+	# GIT_EDITOR overrides it
+	editor = vim -p

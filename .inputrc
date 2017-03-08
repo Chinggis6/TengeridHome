@@ -1,2 +1,2 @@
-# Vim mode for other shells such as bash and sh
+# Vim mode for other shells such as bash, sh, and mysql shell
 set editing-mode vi

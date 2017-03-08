@@ -36,10 +36,10 @@ nnoremap <localleader>tc :Tab/,/r0l1<CR>
 vnoremap <localleader>tc :Tab/,/r0l1<CR>
 
 " Equals
-nnoremap <localleader>t=  :Tab/=<CR>
-vnoremap <localleader>t=  :Tab/=<CR>
-nnoremap <localleader>te :Tab/=<CR>
-vnoremap <localleader>te :Tab/=<CR>
+nnoremap <localleader>t= :Tabularize assignment<CR>
+vnoremap <localleader>t= :Tabularize assignment<CR>
+nnoremap <localleader>te :Tabularize assignment<CR>
+vnoremap <localleader>te :Tabularize assignment<CR>
 
 " Ampersands
 nnoremap <localleader>t&  :Tab/&<CR>

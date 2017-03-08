@@ -41,6 +41,9 @@
 " Show option value
 " :set number?
 
+" Invert option's value
+" : set invnumber
+
 " Show all options
 " :set
 
@@ -69,6 +72,8 @@
 " Vim-Plug minimalistic plugin manager
 
 call plug#begin('~/.vim/plugged')
+
+Plug 'zirrostig/vim-schlepp'
 
 " Solarized colorscheme
 Plug 'altercation/vim-colors-solarized'
@@ -134,6 +139,10 @@ Plug 'mbbill/undotree'
 
 " Align tables well
 Plug 'godlygeek/tabular'
+
+" Markdown support
+" ]] next header, [[ previous,  ][ next sibling, [] previous sibling, ]c current, ]u parent, :Tocv Contents
+Plug 'plasticboy/vim-markdown'
 
 " Fancy start screen
 Plug 'mhinz/vim-startify'
@@ -205,7 +214,42 @@ Plug 'kchmck/vim-coffee-script'
 " Highlight Vimperator config file syntax
 Plug 'vimperator/vimperator.vim'
 
+" Highlight trailing whitespace
+Plug 'ntpeters/vim-better-whitespace'
+
+" Show git status on Nerd Tree
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" HTML tags and Latex support for %
+Plug 'tmhedberg/matchit'
+
+"Better URLs
+" Universal text linking
+Plug 'vim-scripts/utl.vim'
+
+" Narrow region plugin for Vim
+" <leader>nr or :NR
+" :WidenRegion to save back
+Plug 'chrisbra/NrrwRgn'
+
+" Color HEX codes or color names
+" :ColorToggle
+Plug 'chrisbra/Colorizer'
+
+" PKGBUILD syntax
+Plug 'Firef0x/PKGBUILD.vim'
+
+" Fish support (as separate file type)
+Plug 'dag/vim-fish'
+
+" Auto mkdir when saving
+Plug 'pbrisbin/vim-mkdir'
+
 call plug#end()
+
+" Load or not plugins on start
+" set noloadplugins
+set loadplugins
 
 " --- SNIGULP ---
 
@@ -320,7 +364,15 @@ set spelllang=en_us
 set mousemodel=popup
 
 " Show glyphs
+scriptencoding utf-8
 set encoding=utf8
+set termencoding=utf-8
+set fileencoding=utf-8
+
+" Keep lines off when scrolling
+" Default is 0
+set scrolloff=5
+set sidescrolloff=5
 
 " Nerdfont for Gvim
 " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
@@ -334,11 +386,15 @@ set guicursor=a:blinkon0
 set errorbells
 set visualbell
 
+" No intro on start
+" set shortmess+=I
 set shortmess=a
+
 " Set bottom bar's height
 " set cmdheight=2
 
 " Highlight current line
+" cul
 set cursorline
 
 " Highlight current column, file-wise
@@ -386,8 +442,8 @@ set completeopt-=preview
 " directory.  If you switch this option on you should also  consider
 " setting the 'secure' option.  Using a  local .exrc, .vimrc or .gvimrc
 " is a potential security leak, use with   care!
-set exrc
-set secure
+" set exrc
+" set secure
 
 " Shows Normal/Insert mode state
 set showmode
@@ -422,7 +478,7 @@ set formatoptions+=j
 " Change directory to the opened file's or switched buffer's
 set autochdir
 
-" Bigger command history
+" Larger command history
 " Default value is 50
 set history=1000
 
@@ -436,6 +492,53 @@ set history=1000
 " Command mode height in statusline
 " set cmdheight=1
 " set cmdheight=2
+
+" Show whitespace as characters (tab, space)
+" Useful to see end of line or trail spaces
+set list
+" Dagger †, Double dagger ‡, Ellipsis …, Cross ✘, White Pointer ▷, White Arrow ⇨
+" ‧, •, ·
+set listchars=tab:▸\ ,eol:•,trail:·
+
+" ?
+" set splitbelow
+" set splitright
+
+" Move cursor to start of line (FNB) rather than keeping the cursor in the current position
+" FNB - First Non Blank
+" Is set as default
+" set startofline
+set nostartofline
+
+" Match Inequality characters too on % key press
+set matchpairs+=<:>
+
+" autoread when file is changed from outside
+set autoread
+
+" Transparency
+" highlight clear
+
+" Backspace
+set backspace=eol,start,indent
+
+" Searching without escaping
+set magic
+
+" Cross lines when going left/right
+" set whichwrap+=<,>,h,l
+
+" How long to blink when matching brackets
+" Tenth of second
+set mat=2
+
+" lbr
+set nolinebreak
+" Linebreak on 120 characters
+" tw
+" set textwidth=120
+
+compiler fish
 
 " --- SNOITPO ---
 
@@ -560,14 +663,40 @@ let g:bufExplorerSortBy='fullpath'
 let NERDTreeQuitOnOpen=1
 
 " Ignore multimedia files and so
-let NERDTreeIgnore = ['\.png$','\.jpg$','\.gif$','\.mp3$','\.flac$', '\.ogg$', '\.mp4$','\.avi$','.webm$','.mkv$','\.pdf$', '\.zip$', '\.tar.gz$', '\.rar$']
+" Ave, :P
+let NERDTreeIgnore = ['\.png$','\.jpg$','\.gif$','\.mp3$','\.flac$', '\.ogg$', '\.mp4$','\.avi$','.webm$','.mkv$','\.pdf$', '\.zip$', '\.tar.gz$', '\.rar$', '\.swp$']
 
 " Show hidden files too
 let NERDTreeShowHidden=1
 
+" Hides "Press ? for help"
+let NERDTreeMinimalUI=1
+
+" let g:NERDTreeWinPos = 'right'
+
+let NERDTreeHighlightCursorline=1
+
+" Single click to expand directories, double click to open files
+let NERDTreeMouseMode=2
+
+" Focus on current file in Nerd Tree
+noremap <silent> <LocalLeader>n :NERDTreeFind<CR>
+
+" Focus on Nerd Tree, open if closed
+noremap <silent> <LocalLeader>N :NERDTreeFocus<CR>
+
+" Colorizer
+
+" Color all files
+" let g:colorizer_auto_color = 1
+
+" Color specific file types
+let g:colorizer_auto_filetype='css,html,scss,xml,js,yaml,svg,haml,styl,less,json,jsx'
+
 " --- SNOITPO NIGULP ---
 
 " My key bindings
+" Custom mappings
 
 " Tab manipulation
 source ~/.vim/chinggis/tabs.vim
@@ -594,9 +723,10 @@ nnoremap <C-h> 5h
 " Buffer navigation
 nmap <localleader>bn :bnext<CR>
 nmap <localleader>bN :bprev<CR>
+nmap <localleader>bo :enew<CR>
 nmap <localleader>b0 :bfirst<CR>
 nmap <localleader>b$ :blast<CR>
-nmap <localleader>bd :bdelete<CR>
+nmap <localleader>bd :bclose<CR>
 nmap <localleader>bb :buffers<CR>
 nmap <localleader>B :BufExplorer<CR>
 
@@ -610,7 +740,40 @@ nnoremap Q <nop>
 " Macros
 nnoremap q <nop>
 
+" Select all
+map <C-a> ggVG
+
+" ---
+
+" HJKL enforcement
+
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
+
+nnoremap <PageUp> <nop>
+noremap <PageDown> <nop>
+nnoremap <End> <nop>
+noremap <Home> <nop>
+
+" Use S-Ins
+nnoremap <MiddleMouse> <Nop>
+
+" ---
+
+" Pane (window, split) navigation
+nnoremap <localleader>h <C-w>h
+nnoremap <localleader>l <C-w>l
+nnoremap <localleader>j <C-w>j
+nnoremap <localleader>k <C-w>k
+nnoremap <localleader>s <C-w>v
+nnoremap <localleader>d <C-w>c
+
+" ---
+
 " Command mode
+" Colon, Semi-colon
 nnoremap ; :
 vnoremap ; :
 nnoremap : Q
@@ -621,6 +784,41 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Copy always from Primary selection
 map <MouseMiddle> "*p
+
+" Keep the cursor in place while joining lines
+" S-j
+nnoremap J mzJ`z
+
+nnoremap <LocalLeader>gs :Gstatus<CR>
+nnoremap <LocalLeader>gr :Gremove<CR>
+nnoremap <LocalLeader>gl :Glog<CR>
+nnoremap <LocalLeader>gb :Gblame<CR>
+nnoremap <LocalLeader>gm :Gmove 
+nnoremap <LocalLeader>gp :Ggrep 
+nnoremap <LocalLeader>gR :Gread<CR>
+nnoremap <LocalLeader>gg :Git 
+nnoremap <LocalLeader>gd :Gdiff<CR>
+
+nnoremap Zs :SaveSession<CR>
+nnoremap Zo :OpenSession<CR>
+
+nnoremap <LocalLeader>p :PlugInstall<CR>
+nnoremap <LocalLeader>P :set paste!<CR>
+
+" Schlepp
+" Move text in Visual mode around file
+vmap <up>    <Plug>SchleppUp
+vmap <down>  <Plug>SchleppDown
+vmap <left>  <Plug>SchleppLeft
+vmap <right> <Plug>SchleppRight
+
+vmap Dk <Plug>SchleppDupUp
+vmap Dj <Plug>SchleppDupDown
+vmap Dh <Plug>SchleppDupLeft
+vmap Dl <Plug>SchleppDupRight
+
+" Replace current word under cusor globally
+nnoremap <LocalLeader>S :%s/\<<C-r><C-w>\>/
 
 " ---
 
@@ -643,24 +841,25 @@ augroup reload_vimrc " {
     autocmd BufWritePost $HOME/.vimrc source $HOME/.vimrc
 augroup END " }
 
+" Vim abbreviations
+" Evaluates after Esc
+" Like Visual block mode replacements
+abbrev _me Chinggis6@iCloud.com
 
+" Start Nerd Tree if no files specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+""" Prevent lag when hitting escape
+set ttimeoutlen=0
+set timeoutlen=1000
+au InsertEnter * set timeout
+au InsertLeave * set notimeout
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-" Ave! :P
+" -- Fish plugin ---
+" Set up :make to use fish for syntax checking.
+autocmd FileType fish compiler fish
+" Set this to have long lines wrap inside comments.
+autocmd FileType fish setlocal textwidth=79
+" Enable folding of block structures in fish.
+autocmd FileType fish setlocal foldmethod=expr
