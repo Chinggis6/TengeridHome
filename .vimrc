@@ -850,7 +850,7 @@ abbrev _me Chinggis6@iCloud.com
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-""" Prevent lag when hitting escape
+" Prevent lag on Esc hit
 set ttimeoutlen=0
 set timeoutlen=1000
 au InsertEnter * set timeout
