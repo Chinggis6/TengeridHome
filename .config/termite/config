@@ -1,0 +1,33 @@
+# ---
+
+# Termite
+
+# ---
+
+[colors]
+foreground = gray
+background = black
+
+[options]
+font             = DejaVuSansMonoForPowerline Nerd Font 10
+allow_bold       = true
+cursor_blink     = off
+cursor_shape     = block
+scrollback_lines = 10000
+audible_bell     = true
+mouse_autohide   = true
+dynamic_title    = true
+urgent_on_bell   = true
+clickable_url    = true
+browser          = qutebrowser
+
+
+
+
+
+
+
+
+
+
+#vim: ft=dosini

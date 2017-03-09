@@ -19,9 +19,9 @@
 !  You know how to appreciate me
 !  I must stick with you, my rxvt-unicode-256colors-baby.”
 
-! No other seemingly attractive terminals like Sakura, Termite, and Hyper can deviate me.
+! Competes with Sakura, Termite, and Hyper.
 
-! Minimalistic, distraction-free, and highly configurable.
+! Minimalistic, distraction-free, clutter-less, and highly configurable.
 
 ! URxvt extensions:
 ! matcher  - click on URLS
@@ -90,7 +90,7 @@ URxvt.boldFont: xft:DejaVuSansMonoForPowerline Nerd Font:pixelsize=13:antialias=
 	    xft:Source Code Pro:pixelsize=13:antialias=true:hinting=true,\
 	    xft:Font Awesome:pixelsize=13:antialias=true:hinting=true,\
 	    xft:Noto Emoji:pixelsize=13:antialias=true:hinting=true,\
-	    xft:Inconsolata:pixelsize=13:antialias=true:hinting=true
+	    xft:Inconsolata:bold:pixelsize=13:antialias=true:hinting=true
 
 URxvt.italicFont: xft:DejaVuSansMonoForPowerline Nerd Font:pixelsize=13:antialias=true:hinting=true,\
 	    xft:TerminessTTF Nerd Font:antialias=true:hinting=true,\
@@ -99,7 +99,10 @@ URxvt.italicFont: xft:DejaVuSansMonoForPowerline Nerd Font:pixelsize=13:antialia
 	    xft:Source Code Pro:pixelsize=13:antialias=true:hinting=true,\
 	    xft:Font Awesome:pixelsize=13:antialias=true:hinting=true,\
 	    xft:Noto Emoji:pixelsize=13:antialias=true:hinting=true,\
-	    xft:Inconsolata:pixelsize=13:antialias=true:hinting=true
+	    xft:Inconsolata:italic:pixelsize=13:antialias=true:hinting=true
+
+URxvt*boldItalicFont:  
+
 
 ! Download and put inside /usr/lib/urxvt/perl/ where plugins reside
 ! Or inside $HOME/.urxvt/ext/ for user-wide configuration
@@ -147,7 +150,7 @@ URxvt.cursorBlink       : false
 URxvt.depth             : 32
 URxvt*urgentOnBell      : true
 URxvt.buffered          : true
-URxvt.transparent       : true
+URxvt.transparent       : false
 URxvt.shading           : 15
 URxvt.scrollTtyOutput   : false
 URxvt.scrollTtyKeypress : true
@@ -195,9 +198,7 @@ URxvt*iso14755_52: false
 ! Dark theme specific colors
 
 ! base03 is responsible for foreground color of typed text and its autocompletion
-! #define S_base03        #002b36
-#define S_base03        Skyblue
-! Skyblue color #87CEEB
+#define S_base03        #002b36
 #define S_base02        #073642
 #define S_base01        #586e75
 #define S_base00        #657b83
@@ -206,13 +207,17 @@ URxvt*iso14755_52: false
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
 
+! Skyblue color #87CEEB
+
 ! To only apply colors to your terminal, for example, prefix
 ! the color assignment statement with its name. Example:
 !
 ! URxvt*background:            S_base03
 
-URxvt*background:              S_base03
-URxvt*foreground:              S_base0
+! URxvt*background:              S_base03
+URxvt*background:              black
+! URxvt*foreground:              S_base0
+URxvt*foreground:              gray
 URxvt*fading:                  40
 URxvt*fadeColor:               S_base03
 URxvt*cursorColor:             S_base1
@@ -260,29 +265,3 @@ URxvt.cursorColor: #6F4E37
 ! xterm*utf8:               true
 ! xterm*utf8Title:          true
 ! xterm*eightBitInput:      false
-
-
-Termite*background:              S_base03
-Termite*foreground:              S_base0
-Termite*fading:                  40
-Termite*fadeColor:               S_base03
-Termite*cursorColor:             S_base1
-Termite*pointerColorBackground:  S_base01
-Termite*pointerColorForeground:  S_base1
-
-Termite*color0:                  S_base02
-Termite*color1:                  S_red
-Termite*color2:                  S_green
-Termite*color3:                  S_yellow
-Termite*color4:                  S_blue
-Termite*color5:                  S_magenta
-Termite*color6:                  S_cyan
-Termite*color7:                  S_base2
-Termite*color9:                  S_orange
-Termite*color8:                  S_base03
-Termite*color10:                 S_base01
-Termite*color11:                 S_base00
-Termite*color12:                 S_base0
-Termite*color13:                 S_violet
-Termite*color14:                 S_base1
-Termite*color15:                 S_base3

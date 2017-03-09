@@ -114,6 +114,7 @@ Plug 'haya14busa/vim-operator-flashy'
 Plug 'haya14busa/vim-asterisk'
 
 " Powerline / Airline
+" Mode | Git | File | Type | Charset | % | line/lines | column | trailing / mixed indentation
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -244,6 +245,13 @@ Plug 'dag/vim-fish'
 
 " Auto mkdir when saving
 Plug 'pbrisbin/vim-mkdir'
+
+" Dep
+" 10<C-a> increments, 5<C-a> decrements
+Plug 'tpope/vim-speeddating'
+
+" Gist support
+Plug 'keith/gist.vim'
 
 call plug#end()
 
@@ -453,8 +461,8 @@ set showmode
 set shiftround
 
 " Define tab width
-" set softtabstop=4
-" set tabstop=4
+set softtabstop=4
+set tabstop=4
 
 " Pretty line breaks
 set showbreak=↪
@@ -464,7 +472,7 @@ set showbreak=↪
 set grepprg=rg
 
 " No redraw on macro execution
-set lazyredraw 
+set lazyredraw
 
 " No delays on escaping
 set noesckeys
@@ -473,7 +481,7 @@ set noesckeys
 set ttymouse=xterm2
 
 " Delete comment character when joining commented lines
-set formatoptions+=j 
+set formatoptions+=j
 
 " Change directory to the opened file's or switched buffer's
 set autochdir
@@ -533,10 +541,10 @@ set magic
 set mat=2
 
 " lbr
-set nolinebreak
+set linebreak
 " Linebreak on 120 characters
 " tw
-" set textwidth=120
+set textwidth=200
 
 compiler fish
 
@@ -580,12 +588,12 @@ map g# <Plug>(incsearch-nohl-g#)
 " Fuzzy search and fuzzyspell together
 
 function! s:config_fuzzyall(...) abort
-  return extend(copy({
-  \   'converters': [
-  \     incsearch#config#fuzzy#converter(),
-  \     incsearch#config#fuzzyspell#converter()
-  \   ],
-  \ }), get(a:, 1, {}))
+	return extend(copy({
+	\   'converters': [
+	\     incsearch#config#fuzzy#converter(),
+	\     incsearch#config#fuzzyspell#converter()
+	\   ],
+	\ }), get(a:, 1, {}))
 endfunction
 
 noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
@@ -721,27 +729,29 @@ nnoremap <C-l> 5l
 nnoremap <C-h> 5h
 
 " Buffer navigation
-nmap <localleader>bn :bnext<CR>
-nmap <localleader>bN :bprev<CR>
-nmap <localleader>bo :enew<CR>
-nmap <localleader>b0 :bfirst<CR>
-nmap <localleader>b$ :blast<CR>
-nmap <localleader>bd :bclose<CR>
-nmap <localleader>bb :buffers<CR>
-nmap <localleader>B :BufExplorer<CR>
+nnoremap <localleader>bn :bnext<CR>
+nnoremap <localleader>bN :bprev<CR>
+nnoremap <localleader>bo :enew<CR>
+nnoremap <localleader>b0 :bfirst<CR>
+nnoremap <localleader>b$ :blast<CR>
+nnoremap <localleader>bd :bclose<CR>
+nnoremap <localleader>bb :buffers<CR>
+nnoremap <localleader>B :BufExplorer<CR>
 
-nmap <localleader>fW :SudoWrite<CR>
-nmap <localleader>W <localleader>fW
+nnoremap <localleader>fW :SudoWrite<CR>
+nnoremap <localleader>W <localleader>fW
+
+nnoremap ZW :SudoWrite<CR>
 
 " Ex mode
 " type visual to switch back to Normal mode
 nnoremap Q <nop>
- 
+
 " Macros
 nnoremap q <nop>
 
 " Select all
-map <C-a> ggVG
+vnoremap <C-a> ggVG
 
 " ---
 
@@ -793,10 +803,10 @@ nnoremap <LocalLeader>gs :Gstatus<CR>
 nnoremap <LocalLeader>gr :Gremove<CR>
 nnoremap <LocalLeader>gl :Glog<CR>
 nnoremap <LocalLeader>gb :Gblame<CR>
-nnoremap <LocalLeader>gm :Gmove 
-nnoremap <LocalLeader>gp :Ggrep 
+nnoremap <LocalLeader>gm :Gmove
+nnoremap <LocalLeader>gp :Ggrep
 nnoremap <LocalLeader>gR :Gread<CR>
-nnoremap <LocalLeader>gg :Git 
+nnoremap <LocalLeader>gg :Git
 nnoremap <LocalLeader>gd :Gdiff<CR>
 
 nnoremap Zs :SaveSession<CR>
@@ -837,8 +847,8 @@ command! W SudoWrite
 " http://www.bestofvim.com/tip/auto-reload-your-vimrc/
 augroup reload_vimrc " {
 " Clears out any previous autocommands Vim has registered for that group
-    autocmd!
-    autocmd BufWritePost $HOME/.vimrc source $HOME/.vimrc
+	autocmd!
+	autocmd BufWritePost $HOME/.vimrc source $HOME/.vimrc
 augroup END " }
 
 " Vim abbreviations
@@ -863,3 +873,15 @@ autocmd FileType fish compiler fish
 autocmd FileType fish setlocal textwidth=79
 " Enable folding of block structures in fish.
 autocmd FileType fish setlocal foldmethod=expr
+
+" Display current line number in bold text
+highlight CursorLineNr cterm=bold
+
+" Display comments as Italic
+" highlight Comment cterm=italic
+
+" ---
+" Vim is Beautiful
+" Vim is Simple
+" ---
+" The End, 2017
