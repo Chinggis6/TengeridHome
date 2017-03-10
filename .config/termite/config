@@ -9,9 +9,12 @@ foreground = gray
 background = black
 
 [options]
-font             = DejaVuSansMonoForPowerline Nerd Font 10
+# font             = DejaVuSansMonoForPowerline Nerd Font 10
+font = 10
 allow_bold       = true
+allow_italic       = true
 cursor_blink     = off
+# ibeam, underline, block
 cursor_shape     = block
 scrollback_lines = 10000
 audible_bell     = true
@@ -20,6 +23,11 @@ dynamic_title    = true
 urgent_on_bell   = true
 clickable_url    = true
 browser          = qutebrowser
+fullscreen = true
+scroll_on_keystroke=true
+search_wrap=true
+size_hints=true
+
 
 
 

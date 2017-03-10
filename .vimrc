@@ -65,6 +65,12 @@
 " Append to the end to pass options
 " #vim: ft=Markdown
 
+" .vimrc is loaded before plugins
+" Put code into
+" ~/.vim/after/plugin/*.vim
+" To run after plugins get loaded
+" 1. Vimrc, 2. Plugins, 3. After directory
+
 " --- ORTNI ---
 
 " --- PLUGINS ---
@@ -140,6 +146,13 @@ Plug 'mbbill/undotree'
 
 " Align tables well
 Plug 'godlygeek/tabular'
+
+" Three plugins in one
+" Abbreviations, Substitution, and Case conversion (called Coercion)
+" crs snake case, crc camel case, crm mixed case, cru snake upper case
+" supports Repeat.vim
+" OneTwoThree
+Plug 'tpope/vim-abolish'
 
 " Markdown support
 " ]] next header, [[ previous,  ][ next sibling, [] previous sibling, ]c current, ]u parent, :Tocv Contents
@@ -241,14 +254,19 @@ Plug 'chrisbra/Colorizer'
 Plug 'Firef0x/PKGBUILD.vim'
 
 " Fish support (as separate file type)
-Plug 'dag/vim-fish'
+" Already provided by Polyglot language pack
+" Plug 'dag/vim-fish'
 
 " Auto mkdir when saving
 Plug 'pbrisbin/vim-mkdir'
 
 " Dep
+" Better increment, of dates etc
 " 10<C-a> increments, 5<C-a> decrements
 Plug 'tpope/vim-speeddating'
+
+" Better repeating (.)
+Plug 'tpope/vim-repeat'
 
 " Gist support
 Plug 'keith/gist.vim'
@@ -351,6 +369,7 @@ set showcmd
 " Enable mouse
 " Works with Nerd Tree to open a file or directory, resize panes
 set mouse=a
+
 " set selectmode+=mouse
 
 " Copy to Primary selection in Visual mode
@@ -410,8 +429,15 @@ set cursorcolumn
 
 " zf to fold
 set foldenable
+
 " Manually select text in Visual mode or else to fold
 set foldmethod=manual
+
+" Show children headings on opening file
+set foldlevel=1
+
+" Column showing fold state (open or close) and level
+set foldcolumn=1
 
 " Briefly jump to the matching bracket
 set showmatch
@@ -443,8 +469,19 @@ set gdefault
 set wrapscan
 
 " Autocompletion
-set complete=.,w,b,t
-set completeopt-=preview
+" set complete=.,w,b,t
+" Default: menu,preview
+" set completeopt+=preview
+" C-x C-k to complete keyword
+" C-x C-l to complete line
+" C-x C-s spelling suggestion
+" C-x C-v Vim commands
+set dictionary=/usr/share/dict/words
+
+" C-x C-t
+" http://www.gutenberg.org/ebooks/3202
+" https://raw.githubusercontent.com/zeke/moby/master/words.txt
+set thesaurus=$HOME/.vim/mthesaur.txt
 
 " Enables the reading of .vimrc, .exrc and .gvimrc indent the current
 " directory.  If you switch this option on you should also  consider
@@ -547,6 +584,13 @@ set linebreak
 set textwidth=200
 
 compiler fish
+
+" Report messages like "1 line less" even if just one line is changed
+" Default is 2
+set report=0
+
+" Don't equalize splits
+:set equalalways
 
 " --- SNOITPO ---
 
@@ -699,7 +743,7 @@ noremap <silent> <LocalLeader>N :NERDTreeFocus<CR>
 " let g:colorizer_auto_color = 1
 
 " Color specific file types
-let g:colorizer_auto_filetype='css,html,scss,xml,js,yaml,svg,haml,styl,less,json,jsx'
+let g:colorizer_auto_filetype='css,html,scss,xml,js,yaml,svg,haml,styl,less,json,jsx,coffee,ls,json'
 
 " --- SNOITPO NIGULP ---
 
@@ -855,6 +899,7 @@ augroup END " }
 " Evaluates after Esc
 " Like Visual block mode replacements
 abbrev _me Chinggis6@iCloud.com
+abbrev _CTA Chinggis Tenger Atsiz
 
 " Start Nerd Tree if no files specified
 autocmd StdinReadPre * let s:std_in=1
@@ -879,6 +924,7 @@ highlight CursorLineNr cterm=bold
 
 " Display comments as Italic
 " highlight Comment cterm=italic
+highlight Comment cterm=standout
 
 " ---
 " Vim is Beautiful
