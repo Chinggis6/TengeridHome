@@ -899,7 +899,7 @@ augroup END " }
 " Evaluates after Esc
 " Like Visual block mode replacements
 abbrev _me Chinggis6@iCloud.com
-abbrev _CTA Chinggis Tenger Atsiz
+abbrev _CTA Chinggis Tenger Atsyz
 
 " Start Nerd Tree if no files specified
 autocmd StdinReadPre * let s:std_in=1
