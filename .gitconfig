@@ -11,8 +11,8 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	cob = checkout -b
 	a = add -v
-	cm = commit -m 'Bulk commit'
-	ca = commit -m 'Bulk commit' -a
+	cm = commit -m 'Bulk commit :fish:'
+	ca = commit -m 'Bulk commit :fish:' -a
 	pu = push
 	p = push
 	r = remote
