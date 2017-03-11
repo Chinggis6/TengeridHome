@@ -274,6 +274,8 @@ Plug 'keith/gist.vim'
 " Better ~/.muttrc
 Plug 'vim-scripts/muttrc.vim'
 
+Plug 'junegunn/rainbow_parentheses.vim'
+
 call plug#end()
 
 " Load or not plugins on start
@@ -594,7 +596,11 @@ compiler fish
 set report=0
 
 " Don't equalize splits
-:set equalalways
+" set equalalways
+set noequalalways
+
+" Open Vim command under cursor instead of Linux command
+set keywordprg=:help
 
 " --- SNOITPO ---
 
@@ -751,7 +757,7 @@ noremap <silent> <LocalLeader>N :NERDTreeFocus<CR>
 " let g:colorizer_auto_color = 1
 
 " Color specific file types
-let g:colorizer_auto_filetype='css,html,scss,xml,js,yaml,svg,haml,styl,less,json,jsx,coffee,ls,json'
+let g:colorizer_auto_filetype='css,html,scss,xml,js,yaml,svg,haml,styl,less,json,jsx,coffee,ls,json,yaml'
 
 " --- SNOITPO NIGULP ---
 
@@ -882,6 +888,26 @@ vmap Dl <Plug>SchleppDupRight
 " Replace current word under cusor globally
 nnoremap <LocalLeader>S :%s/\<<C-r><C-w>\>/
 
+" Shortcut to help pages for Vim commands
+nnoremap <LocalLeader>H :Man 
+
+" Reize splits quickly
+
+" Resize height
+map = <C-w>+
+map - <C-w>-
+
+" Resize width
+map + <C-w>>
+map _ <C-w><
+
+" Split right by default
+
+" Split below (pane)
+noremap <C-w>p <C-w>s
+
+noremap <C-w>s <C-w>v
+
 " ---
 
 " Tengerid Commands
@@ -890,6 +916,10 @@ nnoremap <LocalLeader>S :%s/\<<C-r><C-w>\>/
 
 " <q-args> for quoted arguments
 command! -nargs=* Man help <args>
+
+" Open new file in new tab
+command! -nargs=* O tabe <args>
+noremap <localleader>O :O 
 
 " Save file as root user
 " Requires Eunuch plugin
@@ -933,6 +963,42 @@ highlight CursorLineNr cterm=bold
 " Display comments as Italic
 " highlight Comment cterm=italic
 highlight Comment cterm=standout
+
+" Different cursor shapes based on modes
+" Set IBeam shape in Insert mode, underline shape in Replace mode and block shape in Normal mode.
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+" Activate Rainbow Parentheses on LISP language family
+" :RainbowParentheses
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 " ---
 " Vim is Beautiful
