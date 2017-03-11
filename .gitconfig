@@ -14,6 +14,7 @@
 	cm = commit -m 'Bulk commit'
 	ca = commit -m 'Bulk commit' -a
 	pu = push
+	p = push
 [user]
 	email = Chinggis6@iCloud.com
 	name = Chinggis6
