@@ -127,7 +127,7 @@ URxvt.keysym.C-slash:  font-size:show
 URxvt.keysym.M-Escape      : keyboard-select:activate
 URxvt.keysym.M-s           : keyboard-select:search
 URxvt.keysym.M-u           : url-select:select_next
-URxvt.url-select.launcher  : /usr/bin/qutebrowser
+! URxvt.url-select.launcher  : /usr/bin/qutebrowser
 URxvt.url-select.underline : true
 URxvt.url-launcher         : /usr/bin/qutebrowser
 ! C1 for ctrl click
@@ -247,7 +247,7 @@ URxvt*iso14755_52: false
 ! Lemon Chiffon
 ! URxvt.cursorColor: #FFF8C6
 ! Coffee
-URxvt.cursorColor: #6F4E37
+! URxvt.cursorColor: #6F4E37
 
 ! ---
 

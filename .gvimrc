@@ -25,3 +25,6 @@ set guicursor+=i:blinkwait0
 " Smooth fonts
 " GVim only
 set antialias
+
+" Make S-Ins work like in xterm
+map! <S-Insert> <MiddleMouse>

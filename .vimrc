@@ -271,6 +271,9 @@ Plug 'tpope/vim-repeat'
 " Gist support
 Plug 'keith/gist.vim'
 
+" Better ~/.muttrc
+Plug 'vim-scripts/muttrc.vim'
+
 call plug#end()
 
 " Load or not plugins on start
@@ -555,8 +558,8 @@ set listchars=tab:▸\ ,eol:•,trail:·
 " set startofline
 set nostartofline
 
-" Match Inequality characters too on % key press
-set matchpairs+=<:>
+" Match other marks too on % key press
+set matchpairs+=<:>,“:”
 
 " autoread when file is changed from outside
 set autoread
@@ -575,7 +578,8 @@ set magic
 
 " How long to blink when matching brackets
 " Tenth of second
-set mat=2
+" mat
+set matchtime=2
 
 " lbr
 set linebreak
@@ -690,8 +694,12 @@ let g:airline_theme='distinguished'
 " ---
 
 " Vim commentary
+
 " Correct commenting in .Xdefaults and .Xresources
 autocmd FileType xdefaults setlocal commentstring=!\ %s
+
+" Correct commenting for Most pager config file, mostrc
+autocmd FileType mostrc setlocal commentstring=%\ %s
 
 " ---
 
@@ -795,7 +803,7 @@ nnoremap Q <nop>
 nnoremap q <nop>
 
 " Select all
-vnoremap <C-a> ggVG
+noremap <localleader>a ggVG
 
 " ---
 
