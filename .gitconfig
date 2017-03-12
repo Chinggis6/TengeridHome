@@ -13,8 +13,8 @@
 	a = add -v
 	cm = commit -m 'Bulk commit :fish:'
 	ca = commit -m 'Bulk commit :fish:' -a
-	pu = push
-	p = push
+	pu = push -v
+	p = push -v
 	r = remote
 	R = remote -v
 	# Sync
