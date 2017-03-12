@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# View Wikipedia user page
+
+username=${QUTE_URL:40}
+namespace="http://en.wikipedia.org/wiki/user"
+
+#echo $substring >> $QUTE_FIFO
+echo "open $namespace:$username" >> "$QUTE_FIFO"

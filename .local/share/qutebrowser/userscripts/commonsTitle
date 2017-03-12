@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Extract file title from URL to paste between <gallery> tags
+# Ex: https://commons.wikimedia.org/wiki/File:Mediterranee_02_EN.jpg
+# Mediterranee_02_EN.jpg
+
+(echo "$QUTE_URL" | sed 's/.*://g' | xsel) && (echo "message-info 'Title yanked!'" >> "$QUTE_FIFO")

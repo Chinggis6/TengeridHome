@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+# View tools and so in English
+
+# chmod +x
+# bind --force <ctrl-f1> spawn --userscript uselang
+
+key="uselang=en"
+
+echo "open $QUTE_URL?$key" >> $QUTE_FIFO

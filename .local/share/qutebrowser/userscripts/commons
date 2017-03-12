@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Switch to Commons user page
+
+username=${QUTE_URL:35}
+namespace="http://commons.wikimedia.org/wiki/user"
+
+#echo $substring >> $QUTE_FIFO
+echo "open $namespace:$username" >> "$QUTE_FIFO"

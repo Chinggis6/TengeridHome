@@ -1,0 +1,10 @@
+!/usr/bin/bash
+
+# View article in raw wiki markup
+
+# chmod +x
+# bind --force <alt-f1> spawn --userscript raw
+
+key="action=raw"
+
+echo "open $QUTE_URL?$key" >> $QUTE_FIFO

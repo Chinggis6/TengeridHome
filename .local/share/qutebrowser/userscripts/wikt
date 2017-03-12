@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Look up the selected text in Wiktionary
+
+namespace="http://en.wiktionary.org/wiki"
+word=$QUTE_SELECTED_TEXT
+
+#echo $substring >> $QUTE_FIFO
+echo "open -t $namespace/$word" >> "$QUTE_FIFO"
