@@ -1,0 +1,51 @@
+% unsetkey
+
+setkey bob "g"
+setkey eob "G"
+
+setkey page_down "^d"
+setkey page_up "^u"
+setkey page_down "^f"
+setkey page_up "^b"
+
+setkey up "k"
+setkey down "j"
+setkey "column_left" "h"
+setkey "column_right" "l"
+
+setkey "page_left" "^h"
+setkey "page_right" "^l"
+
+% setkey set_mark
+setkey goto_mark "'"
+
+setkey edit "v"
+setkey search_backward "?"
+setkey toggle_case "C"
+setkey toggle_options "o"
+setkey exit "^q"
+% Shows options such as Next file, Toggle options etc
+setkey extended_key ";"
+
+setkey goto_line "`"
+
+% Two windows
+setkey two_windows "^ws"
+% Close window
+setkey delete_window "^wc"
+setkey delete_window "^wq"
+% Jump between windows
+setkey other_window "^ww"
+
+setkey find_file "f"
+setkey next_file "F"
+setkey delete_file "d"
+% Indicated by asterisk (*) in status line
+setkey toggle_lock "l"
+
+
+% Status line color
+% Foreground, background
+color status white black
+
+% vim: ft=mostrc

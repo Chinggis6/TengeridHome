@@ -1,0 +1,40 @@
+bind-key k up
+bind-key j down
+
+#bind-key ^B pageup
+bind-key ^U pageup
+#bind-key ^F pagedown
+bind-key ^D pagedown
+
+bind-key g home
+bind-key G end
+
+bind-key l next
+bind-key h prev
+
+bind-key m bookmark
+
+bind-key s sort
+bind-key S rev-sort
+
+bind-key w save
+save-path "~/Downloads/"
+
+
+auto-reload     yes
+browser         "web-browser %u"
+confirm-exit    yes
+feed-sort-order title
+max-items       250
+notify-beep     yes
+reload-time     30
+text-width      80
+
+
+color background        default default
+color listnormal        default default
+color listnormal_unread yellow  default
+color listfocus         black   green
+color listfocus_unread  default green
+color info              black   blue
+color article           default default
