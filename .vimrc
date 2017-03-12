@@ -206,7 +206,7 @@ Plug 'xolox/vim-notes'
 Plug 'xolox/vim-session'
 
 " Enhanced bookmarking
-Plug 'vim-scripts/TurboMark'
+" Plug 'vim-scripts/TurboMark'
 
 " Enhanced buffer listing
 " :BufExplorer (with single f)
@@ -276,13 +276,24 @@ Plug 'vim-scripts/muttrc.vim'
 
 Plug 'junegunn/rainbow_parentheses.vim'
 
+" colo gruvbox (bg=dark)
+Plug 'morhetz/gruvbox'
+
+Plug 'kshenoy/vim-signature'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'junegunn/fzf.vim'
+
+" Plug 'junegunn/vim-emoji'
+
+" --- SNIGULP ---
+
 call plug#end()
 
 " Load or not plugins on start
 " set noloadplugins
 set loadplugins
-
-" --- SNIGULP ---
 
 " Space as global leader
 " Analogous to Major mode
@@ -550,9 +561,11 @@ set list
 " ‧, •, ·
 set listchars=tab:▸\ ,eol:•,trail:·
 
-" ?
+" Put new window to the right instead of left of the current one on vertical split
+set splitright
+
+" Same but below instead of above for horizontal splits
 " set splitbelow
-" set splitright
 
 " Move cursor to start of line (FNB) rather than keeping the cursor in the current position
 " FNB - First Non Blank
@@ -601,6 +614,26 @@ set noequalalways
 
 " Open Vim command under cursor instead of Linux command
 set keywordprg=:help
+
+" Hide pointer when typing
+set mousehide
+
+" Pop up menu height on keyword completion
+" Default is 0, as much space is available
+set pumheight=4
+
+" Default is 20 or half the screen if equalalways (ea) is set
+set helpheight=30
+
+" True colors (24 bit) 
+" URxvt does not support the colors unlike xterm
+" let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+" let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+" set termguicolors
+
+" Default a:blinkon0
+" gcr
+set guicursor=a:blinkoff150
 
 " --- SNOITPO ---
 
@@ -711,8 +744,8 @@ autocmd FileType mostrc setlocal commentstring=%\ %s
 
 " TurboMark
 
-nmap <silent> m :TurboMark<CR>
-nmap <silent> ' :TurboFind<CR>
+" nmap <silent> m :TurboMark<CR>
+" nmap <silent> ' :TurboFind<CR>
 
 " ---
 
@@ -758,6 +791,25 @@ noremap <silent> <LocalLeader>N :NERDTreeFocus<CR>
 
 " Color specific file types
 let g:colorizer_auto_filetype='css,html,scss,xml,js,yaml,svg,haml,styl,less,json,jsx,coffee,ls,json,yaml'
+
+" Vim Emoji
+
+" let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+" let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+" let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
+" let g:gitgutter_sign_modified_removed = emoji#for('collision')
+
+" ^x-^u
+" set completefunc=emoji#complete
+
+
+
+
+
+
+
+
+
 
 " --- SNOITPO NIGULP ---
 
@@ -908,7 +960,47 @@ noremap <C-w>p <C-w>s
 
 noremap <C-w>s <C-w>v
 
+nnoremap <LocalLeader>S :set 
+
+" Swap (exchange) for FBL
+nnoremap 0 ^
+nnoremap ^ 0
+
+" Quick surround
+
+map <LocalLeader>' ysiW'
+map <LocalLeader>" ysiW"
+map <LocalLeader>) ysiW)
+map <LocalLeader>] ysiW]
+map <LocalLeader>d> ysiW>
+
+map <LocalLeader>d' ds'
+map <LocalLeader>d" ds"
+map <LocalLeader>d) ds)
+map <LocalLeader>d] ds]
+map <LocalLeader>d> ds>
+
+map <LocalLeader>c' cs"'
+map <LocalLeader>c" cs'"
+map <LocalLeader>c) cs])
+map <LocalLeader>c] cs)]
+map <LocalLeader>c> cs)>
+
 " ---
+
+" Cursor moves through wrapped line
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+" Change text under cursor (and repeat with .)
+map <LocalLeader>c *cgn
+
+" ^t to open in new tab, ^v in split
+map <LocalLeader>f ;FZF<CR>
+
+" --- sgnippam motsuC ---
 
 " Tengerid Commands
 
@@ -977,25 +1069,8 @@ augroup rainbow_lisp
   autocmd FileType lisp,clojure,scheme RainbowParentheses
 augroup END
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+" Transparent background
+" hi Normal guibg=NONE ctermbg=NONE
 
 
 

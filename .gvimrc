@@ -9,13 +9,18 @@ colorscheme neodark
 
 " Remove Menubar and Toolbar
 
-set guioptions -=m 
-set guioptions -=T
+" set guioptions -=m 
+" set guioptions -=T
 
 " Remove scroll bars
 
 set guioptions -=r
 set guioptions -=L
+
+" Display emoji
+" Untested
+" Possibly only for macOS
+" set guioptions +=E
 
 " Disable cursor blinking
 
