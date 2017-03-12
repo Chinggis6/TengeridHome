@@ -1,8 +1,8 @@
 # Tengerid Repository
 
-|OS|Term|Shell|FM|Server|
-|---|----|-----|---|------|
-|Arch Linux|URxvt|Fish|Ranger|FreeBSD|
+|OS|Term|Shell|FM|TE|MX|WM|Server|
+|---|---|---|---|---|---|---|
+|Arch Linux|URxvt|Fish|Ranger|Vim|Tmux|i3|FreeBSD|
 
 [GFM](https://en.wikipedia.org/wiki/Markdown "GitHub Flavored Markdown") supports tables, like in [Org](https://en.wikipedia.org/wiki/Org-mode) mode.
 
