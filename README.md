@@ -1,7 +1,7 @@
 # Tengerid Repository
 
 |OS|Term|Shell|FM|Server|
-|--|----|-----|--|------|
+|---|----|-----|---|------|
 |Arch Linux|URxvt|Fish|Ranger|FreeBSD|
 
 ![Arch Linux Logo](logo.png "As an Archer")
