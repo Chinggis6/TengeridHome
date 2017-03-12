@@ -1,4 +1,4 @@
-# Tengerid Repository
+# Tengerid Home
 
 |OS|Term|Shell|FM|TE|MX|WM|Server|
 |---|---|---|---|---|---|---|---|
