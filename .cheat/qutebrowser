@@ -1,0 +1,8 @@
+# Commands
+run-with-count 5
+message-info ''
+spawn --userscript
+
+# Bindings
+<ctrl-j>
+<alt-d>

@@ -1,0 +1,378 @@
+#!/bin/bash
+
+# TENGERID ALIASES
+
+# Declaration of command aliases
+# Created with Arch in Mind
+
+# ---
+
+
+# --- DEFAULT OPTIONS ---
+
+# --human-readable, --almost-all, --classify
+# Omitting -l for long list
+# Append indicator for entries
+# * executable, / directory, @ link, = socket
+alias ls='ls -h -A --group-directories-first --color=always -F'
+
+# --ignore-case
+alias grep="grep --color=auto -H -i"
+# --with-file-name, --smart-case
+# Default is case insensitive
+alias rg="rg -H -S"
+
+# --list-full --ignore-case
+alias pgrep='pgrep -ai'
+
+# colorize according to $LS_COLORS
+# format (append / for dirs)
+alias tree='tree -CF'
+
+# --pretty
+alias uptime='uptime -p'
+
+# tabs
+alias vim='vim -p'
+alias gvim='gvim -p'
+
+# typo
+alias im='vim'
+
+# Monday as the first week
+alias cal="cal -m"
+
+# For fun
+alias cowsay="cowsay -f sodomized"
+
+# Bash only
+alias dirs='dirs -v'
+
+# WordNet (2006)
+alias dict='dict -d wn'
+
+# Highlight the current process
+alias pstree='pstree -h'
+
+# Powerful Quick Image Viewer
+# --hide-info-box --fullscreen --lazy-load --scale-images-up
+# refer ~/.pqivrc
+#alias pqiv='pqiv -i -f -l -t'
+
+# Human readable size
+
+alias du='du -h'
+alias df='df -h'
+
+# --verbose
+
+alias mv='mv -v'
+alias cp='cp -v'
+alias rm='rm -i -v'
+alias rmdir='rmdir -v'
+alias rmdir='rm -rf'
+alias mkdir="mkdir -p -v"
+
+# --color
+alias pactree='pactree -c'
+# --reverse
+alias treepac='pactree -r'
+
+# https://github.com/rafaelrinaldi/whereami
+# npm install -g @rafaelrinaldi/whereami
+alias whereami='whereami -f human'
+
+# --- DEFAULTS END ---
+
+# ---
+
+# OTHERS
+
+# Page with Most
+# alias info='info --vi-keys --subnodes -o -'
+# Installed or in repository (/etc/pacman.conf)
+alias ripgrep='rg'
+# --list --binaries
+#alias bins='pkgfile -lb'
+alias yt='mpsyt search'
+alias youtube='yt'
+# alias sr='setroot'
+alias kb='setxkbmap'
+alias where='which'
+alias mux='tmuxinator'
+alias lspart="lsblk"
+alias mkext="mkfs.ext4"
+alias lstime="timedatectl status"
+alias res="xrandr --mode VGA-1 --output 1024x768"
+alias k="sudo pkill -9"
+alias tpoff="xinput --disable 'ETPS/2 Elantech Touchpad'"
+alias tpon="xinput --enable 'ETPS/2 Elantech Touchpad'"
+alias x='exit'
+alias xx='exit;exit'
+alias news='newsbeuter -r'
+# --symbolic --relative
+# ln --relative cannot be done, for hardlinks
+alias lns='ln -s -r'
+alias untar='tar -xf'
+# pastebin, pass with | p
+alias p="curl -F 'sprunge=<-' http://sprunge.us"
+# http://ix.io/
+# pass with | pb
+alias pb="curl -F 'f:1=<-' ix.io"
+# Simplified man pages
+alias sman='tldr'
+
+# DAEMONIZATION
+
+# Ave, 666 :)
+
+# Start Emacs in command-line mode
+# emacs --daemon
+#--no-window-system
+alias emacs='emacsclient -nw'
+
+# urxvtd
+alias urxvt='urxvtc'
+
+
+# RADICALISM
+# Command substitution
+
+# alias cat='pygmentize'
+
+# alias ed='vim'
+alias nano='vim'
+alias pico='vim'
+alias ex='vim'
+alias edit='vim'
+alias vi='vim'
+alias view='vim' # read only
+alias vedit='vim'
+alias evim='vim' # Easy vim, modeless, always in Insert mode, please do put the handkerchief
+alias eview='vim'
+alias xedit='vim' # right, not a replacement for Emacs
+
+
+
+alias xev="xbindkeys -k"
+
+alias Cd="pushd"
+alias cD="popd"
+alias dc="cD"
+
+# alias wget='curl'
+
+# alias xclip="xsel"
+alias top='htop'
+alias screenfetch='neofetch'
+
+alias screen='tmux'
+
+# Search
+alias grep='rg'
+
+# Colors
+# alias cat='lolcat'
+alias lc='lolcat'
+
+# Bye, dear cmus
+# Your legacy lives within the config file
+# ~/.ncmpcpp/bindings
+# zxcvcb
+# Harder to type, yet remember
+#mpc update
+#alias cmus='ncmpcpp'
+# actually cmus is the best, it just needs a tag editor and lyrics fetcher to be complete
+alias music='mpc update; ncmpcpp'
+
+# use -s for screenshot and -r for record
+# alias mplayer='mpv'
+# alias scrot='maim'
+# alias maim='slip'
+# alias import='slop'
+# alias slop='slip -s'
+alias imgur='slip -s'
+alias record='slip -r'
+
+# ---
+
+# Saying goodbye to Vim
+# Vim survives in Evil mode :)
+
+# Vim was like Linkin Park, my very first step at high school towards the Metal music
+# I don't listen them now, but when I hear them playing, the nostalgia it brings is pleasant
+
+# I always liked and respected things that require skill, and I believe in leveling, and value the effort made for it
+
+# But, I'm not sure, I love Vim..
+
+# alias vim='emacs'
+# alias gvim='emacs'
+
+# It opens Spacemacs anyways, what I love for it's mnemonics, lack of top menu and tool bars, relying on SPC pop up which is somewhat revolutionary, and that there's the E*vi*l mode within
+
+# Don't be conservative, try to update and be open to change, and improve thereby
+
+# Even though I might be somewhat of radical but I'm not conservative, I'm a reformist, I'm for reforms!
+
+# Truth lives in drafts and comments..
+
+# But isn't Emacs itself violates the Unix principle of keeping things simple and distinct
+# And Lisp is very unwelcoming when it comes to the configuration
+# Everything is and should be arguable
+
+# Currently I use Vim / Markdown and Spacemacs / Org mode
+
+# Thoughts.comment
+
+# ---
+
+alias transmission='rtorrent'
+alias feh='pqiv'
+
+# ---
+
+# SPECIFIC
+
+# Pacman package manager
+
+alias pacman="sudo -E pacman --noconfirm"
+alias in="pacman -S"
+alias aur="yaourt"
+alias inn="yaourt -S --noconfirm --force"
+alias outt="yaourt -R --noconfirm --force"
+alias i="pacman -Qi"
+alias inf="yaourt -Qi"
+alias on="pacsearch"
+alias out="pacman -R"
+alias owner="pacman -Qo"
+alias pkg='owner'
+alias update="pacman -Syu"
+# --groups
+alias packages='pacman -Sg'
+# --syncdeps --install
+alias build="makepkg -si --noconfirm"
+alias oppdep="pacdep -oppp"
+
+# Systemd service manager
+
+alias sctl='sudo -E systemctl'
+
+alias sls='sctl list-unit-files --type=service'
+
+alias sstt='sctl start'
+alias sstp='sctl stop'
+alias sres='sctl restart'
+
+alias sen='sctl enable'
+alias sdis='sctl disable'
+
+alias start='sstt'
+alias stop='sstp'
+alias restart='sres'
+
+alias enable='sen'
+alias disable='sdis'
+
+# Journald event manager
+
+alias j="journalctl"
+# --catalog --pager-end
+
+alias jls='j -xe'
+
+# Netctl network manager
+
+alias n="sudo -E netctl"
+alias nstart="n start"
+alias nstop="n stop"
+alias nres="n restart"
+alias nen="n enable"
+alias ndis="n disable"
+
+# Git
+
+alias g='git'
+alias cl='g clone'
+alias add='g add'
+alias a='add'
+alias remote='g remote'
+alias commit='g commit'
+alias push='g push'
+alias c='g commit'
+
+# Pip Python package manager
+alias p="sudo -E -H pip"
+alias pin="p install"
+alias pout="p uninstall"
+alias pon="p search"
+alias pinfo="p show"
+
+# Ruby gem package manager
+alias ge="sudo -E gem"
+alias gin="g install"
+
+# NodeJS
+
+alias n="sudo -E npm"
+# --global
+alias nin="n install -g"
+alias non="n search"
+
+# Volume
+
+alias volget='pamixer --get-volume'
+alias volset='pamixer --set-volume'
+# --toggle-mute
+alias mute='pamixer -t'
+alias volup='pamixer -i'
+alias voldown='pamixer -d'
+
+# --screenshot
+alias img='slip -s'
+
+# Clipboard manager
+
+alias s='xsel -p'
+alias c='xsel -b'
+
+alias move='mv'
+
+alias netstat="netstat -anp"
+alias tcpkill="tcpkill -9 port"
+# <port>/tcp
+alias fuserk='fuser -k'
+
+# --head
+alias headers='curl -I'
+
+
+alias highlight='highlight -O xterm256'
+alias source-highlight='source-highlight -f esc256 -i'
+alias less="less -R"
+
+alias highlight='pygmentize'
+
+# alias rougify
+# alias pygmentize
+
+alias pyg="pygmentize"
+
+# DOS legacy
+alias cls='clear'
+alias md='mkdir'
+alias rd='rmdir'
+alias ren='mv'
+alias edlin='ed'
+
+# X reload
+alias xrl="xrdb -load $XDG_CONFIG_HOME/Xresources"
+alias rlx='xrl'
+
+alias gp='grep'
+
+# Fish abbreviation
+alias abbrev='abbr'
+
+alias frl="source $f"
+alias rlf='frl'

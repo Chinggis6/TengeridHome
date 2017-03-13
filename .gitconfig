@@ -17,8 +17,7 @@
 	p = push -v
 	r = remote
 	R = remote -v
-	# Sync
-	s = commit -m 'Bulk commit' -a
+	c = commit -m 'Bulk commit' -a
 	v = status -v
 [user]
 	email = Chinggis6@iCloud.com

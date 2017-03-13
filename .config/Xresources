@@ -136,11 +136,10 @@ URxvt.matcher.button: 1
 ! Appearance
 ! Minimalism
 
-URxvt.termName          : rxvt-unicode
-! URxvt.termName        : xterm-256color
-! URxvt.background      : black
-! URxvt.foreground      : gray
-! Larger history limit
+! URxvt.termName          : rxvt-unicode
+URxvt.termName        : xterm-256color
+URxvt.background      : black
+URxvt.foreground      : gray
 URxvt.saveLines         : 1000000
 URxvt.letterSpace       : -1
 URxvt.scrollBar         : false
@@ -162,30 +161,25 @@ URxvt*iso14755: false
 URxvt*iso14755_52: false
 
 ! Old colors (Tango colorscheme)
-! URxvt.color0: rgb:00/00/00
-! URxvt.color1: rgb:CC/00/00
-! URxvt.color2: rgb:4E/9A/06
-! URxvt.color3: rgb:C4/A0/00
-! URxvt.color4: rgb:34/65/A4
-! URxvt.color5: rgb:75/50/7B
-! URxvt.color6: rgb:06/98/9A
-! URxvt.color7: rgb:D3/D7/CF
-! URxvt.color8: rgb:55/57/53
-! URxvt.color9: rgb:EF/29/29
-! URxvt.color10: rgb:8A/E2/34
-! URxvt.color11: rgb:FC/E9/4F
-! URxvt.color12: rgb:72/9F/CF
-! URxvt.color13: rgb:AD/7F/A8
-! URxvt.color14: rgb:34/E2/E2
-! URxvt.color15: rgb:EE/EE/EC
-! URxvt.colorBD: rgb:ff/ff/ff
+URxvt.color0: rgb:00/00/00
+URxvt.color1: rgb:CC/00/00
+URxvt.color2: rgb:4E/9A/06
+URxvt.color3: rgb:C4/A0/00
+URxvt.color4: rgb:34/65/A4
+URxvt.color5: rgb:75/50/7B
+URxvt.color6: rgb:06/98/9A
+URxvt.color7: rgb:D3/D7/CF
+URxvt.color8: rgb:55/57/53
+URxvt.color9: rgb:EF/29/29
+URxvt.color10: rgb:8A/E2/34
+URxvt.color11: rgb:FC/E9/4F
+URxvt.color12: rgb:72/9F/CF
+URxvt.color13: rgb:AD/7F/A8
+URxvt.color14: rgb:34/E2/E2
+URxvt.color15: rgb:EE/EE/EC
+URxvt.colorBD: rgb:ff/ff/ff
 
-! --- Solarized ---
-
-! Dark Solarized colorscheme
-
-! Common Solarized colors
-
+/*
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
 #define S_red           #dc322f
@@ -194,50 +188,39 @@ URxvt*iso14755_52: false
 #define S_blue          #268bd2
 #define S_cyan          #2aa198
 #define S_green         #859900
-
-! Dark theme specific colors
-
-! background
 #define S_base03        #002b36
 #define S_base02        #073642
 #define S_base01        #586e75
 #define S_base00        #657b83
-! foreground
 #define S_base0         #839496
 #define S_base1         #93a1a1
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
+URxvt*background:              S_base03
+URxvt*foreground:              S_base0
+URxvt*fading:                  40
+URxvt*fadeColor:               S_base03
+URxvt*cursorColor:             S_base1
+URxvt*pointerColorBackground:  S_base01
+URxvt*pointerColorForeground:  S_base1
+URxvt*color0:                  S_base02
+URxvt*color1:                  S_red
+URxvt*color2:                  S_green
+URxvt*color3:                  S_yellow
+URxvt*color4:                  S_blue
+URxvt*color5:                  S_magenta
+URxvt*color6:                  S_cyan
+URxvt*color7:                  S_base2
+URxvt*color9:                  S_orange
+URxvt*color8:                  S_base03
+URxvt*color10:                 S_base01
+URxvt*color11:                 S_base00
+URxvt*color12:                 S_base0
+URxvt*color13:                 S_violet
+URxvt*color14:                 S_base1
+URxvt*color15:                 S_base3
 
-! Skyblue color #87CEEB
-
-! To only apply colors to your terminal, for example, prefix
-! the color assignment statement with its name. Example:
-!
-*background:              S_base03
-*foreground:              S_base0
-*fading:                  40
-*fadeColor:               S_base03
-*cursorColor:             S_base1
-*pointerColorBackground:  S_base01
-*pointerColorForeground:  S_base1
-
-*color0:                  S_base02
-*color1:                  S_red
-*color2:                  S_green
-*color3:                  S_yellow
-*color4:                  S_blue
-*color5:                  S_magenta
-*color6:                  S_cyan
-*color7:                  S_base2
-*color9:                  S_orange
-! URxvt*color8:                  S_base03
-*color8:                  gray
-*color10:                 S_base01
-*color11:                 S_base00
-*color12:                 S_base0
-*color13:                 S_violet
-*color14:                 S_base1
-*color15:                 S_base3
+*/
 
 ! ---
 
@@ -278,3 +261,6 @@ xterm*font4: -*-screen-bold-r-normal-*-16-*-*-*-*-*-iso8859-*
 xterm*font5: -*-lucidatypewriter-medium-*-*-*-18-*-*-*-*-*-*-*
 xterm*font6: -*-lucidatypewriter-medium-*-*-*-20-*-*-*-*-*-*-*
 xterm*font7: -dec-terminal-bold-r-normal-*-14-*-*-*-*-*-iso8859-*
+
+XTerm*background      : black
+XTerm*foreground      : gray
