@@ -355,3 +355,6 @@ set -x bashrc "$bash"
 set -x profile "$HOME/.profile"
 
 set -x weechat "$HOME/.weechat/alias.conf"
+
+set -x ignore "$HOME/.gitignore"
+set -x gitconfig "$HOME/.gitconfig"

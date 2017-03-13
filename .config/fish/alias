@@ -293,20 +293,23 @@ alias ndis="n disable"
 # Git
 
 alias g='git'
+alias c='g commit -a -m "Bulk commit :fish:"'
+alias p='g push -v'
+
+
 alias cl='g clone'
 alias add='g add'
 alias a='add'
 alias remote='g remote'
 alias commit='g commit'
 alias push='g push'
-alias c='g commit'
 
 # Pip Python package manager
-alias p="sudo -E -H pip"
-alias pin="p install"
-alias pout="p uninstall"
-alias pon="p search"
-alias pinfo="p show"
+alias pi="sudo -E -H pip"
+alias pin="pi install"
+alias pout="pi uninstall"
+alias pon="pi search"
+alias pinfo="pi show"
 
 # Ruby gem package manager
 alias ge="sudo -E gem"
@@ -333,8 +336,8 @@ alias img='slip -s'
 
 # Clipboard manager
 
-alias s='xsel -p'
-alias c='xsel -b'
+alias primary='xsel -p'
+alias clipboard='xsel -b'
 
 alias move='mv'
 
