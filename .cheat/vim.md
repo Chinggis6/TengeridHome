@@ -25,6 +25,16 @@ sview - split view in read only mode
 
 # Normal mode (ESC)
 
+> i inner
+> a around (after)
+
+dis - delete sentence
+das - delete sentence and white space right to it
+
+dip - delete paragraph
+dap - delete paragraph and white space below it
+
+
 gj - go down even through wrapped line
 gk - same to go up
 

@@ -285,7 +285,15 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'junegunn/fzf.vim'
 
+Plug 'pelodelfuego/vim-swoop'
+
+" Plug 'w0rp/ale'
+
 " Plug 'junegunn/vim-emoji'
+
+" Smarter F and T with highlight
+" Forget about ; to repeat
+Plug 'rhysd/clever-f.vim'
 
 " --- SNIGULP ---
 
@@ -625,7 +633,7 @@ set pumheight=4
 " Default is 20 or half the screen if equalalways (ea) is set
 set helpheight=30
 
-" True colors (24 bit) 
+" True colors (24 bit)
 " URxvt does not support the colors unlike xterm
 " let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 " let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
@@ -858,7 +866,7 @@ nnoremap ZW :SudoWrite<CR>
 nnoremap Q <nop>
 
 " Macros
-nnoremap q <nop>
+" nnoremap q <nop>
 
 " Select all
 noremap <localleader>a ggVG
@@ -973,6 +981,11 @@ map <LocalLeader>" ysiW"
 map <LocalLeader>) ysiW)
 map <LocalLeader>] ysiW]
 map <LocalLeader>d> ysiW>
+
+" Quotes
+
+map <LocalLeader>q ysiW'
+map <LocalLeader>Q ysiW"
 
 map <LocalLeader>d' ds'
 map <LocalLeader>d" ds"

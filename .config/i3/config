@@ -176,7 +176,7 @@ bindsym $mod+r mode "resize"
 #}
 
 set $bumblebee $HOME/.config/i3/bumblebee-status/bumblebee-status
-set $commandline -m memory date time -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline
+set $commandline -m memory time date -p root.path=/ date.format="%a, %b %d %Y" time.format="%H:%M" -t solarized-powerline
 bar {
   font pango:Inconsolata 8
     position top
