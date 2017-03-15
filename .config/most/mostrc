@@ -1,5 +1,9 @@
 % unsetkey
 
+unsetkey "s"
+unsetkey "S"
+unsetkey "^s"
+
 setkey bob "g"
 setkey eob "G"
 

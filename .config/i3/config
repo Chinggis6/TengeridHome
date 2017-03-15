@@ -102,6 +102,10 @@ bindsym $mod+a focus parent
 # switch to workspace
 # bindsym $mod+2 workspace 2
 
+# Icons
+# Font Awesome
+# http://fontawesome.io/cheatsheet/
+
 set $ws1 "1. sh ☯"
 bindsym $mod+1 workspace $ws1
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -115,7 +119,10 @@ set $ws3 "3. wch ⚓"
 bindsym $mod+3 workspace $ws3
 bindsym $mod+Shift+3 move container to workspace $ws3
 
-bindsym $mod+4 workspace 4
+set $ws4 "4. mt"
+bindsym $mod+4 workspace $ws4
+bindsym $mod+Shift+4 move container to workspace $ws4
+
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -127,7 +134,6 @@ bindsym $mod+0 workspace 10
 # bindsym $mod+Shift+2 move container to workspace 2
 
 
-bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -243,6 +249,8 @@ exec --no-startup-id clipit
 
 # dunst -config $C/dunst/dunstrc
 exec --no-startup-id dunst
+
+exec --no-startup-id setxkbmap -layout "us,az,ru" -option "grp:alt_shift_toggle"
 
 # Set wallpaper
 exec --no-startup-id feh --bg-scale "$HOME/Tengerid Wallpaper.png"

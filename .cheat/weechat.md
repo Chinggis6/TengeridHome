@@ -93,7 +93,7 @@ Ask for in #freenode
 
 # Save layout
 
-/layout save
+/layout store
 
 # Window commands
 

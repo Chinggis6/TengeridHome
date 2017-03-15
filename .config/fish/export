@@ -168,6 +168,7 @@ set -x A "$alias"
 set -x rcd "$C/ranger"
 set -x rc "$rcd/rc.conf"
 set -x rcb "$rcd/bookmarks"
+set -x commands "$rcd/commands.py"
 
 # Cmus music player
 set -x cmusd "$C/cmus"

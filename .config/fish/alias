@@ -10,6 +10,14 @@
 
 # --- DEFAULT OPTIONS ---
 
+# --verbose
+# Tell what happened after exit from editor
+alias vidir='vidir -v'
+
+# Place input line on top
+# --multi, multi select files with Tab
+alias fzf='fzf --reverse -m'
+
 # --human-readable, --almost-all, --classify
 # Omitting -l for long list
 # Append indicator for entries
@@ -68,6 +76,9 @@ alias df='df -h'
 
 alias mv='mv -v'
 alias cp='cp -v'
+# --preserve-root is default
+# --no-preserve-root to enable / radical deletion
+# --one-file-system, skip directories mounted from other file systems
 alias rm='rm -i -v'
 alias rmdir='rmdir -v'
 alias rmdir='rm -rf'

@@ -295,6 +295,24 @@ Plug 'pelodelfuego/vim-swoop'
 " Forget about ; to repeat
 Plug 'rhysd/clever-f.vim'
 
+" <leader>c<space> toggle comment
+" <leader>cs sexy comment
+" <leader>cu uncomment
+Plug 'scrooloose/nerdcommenter'
+
+" Snippets
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
+" Interactive scratchpad
+" PHP support requires psysh
+Plug 'metakirby5/codi.vim'
+
+" Auto-completion
+" Plug 'Valloric/YouCompleteMe'
+
 " --- SNIGULP ---
 
 call plug#end()
@@ -787,10 +805,10 @@ let NERDTreeHighlightCursorline=1
 let NERDTreeMouseMode=2
 
 " Focus on current file in Nerd Tree
-noremap <silent> <LocalLeader>n :NERDTreeFind<CR>
+noremap <silent> <LocalLeader>t :NERDTreeFind<CR>
 
 " Focus on Nerd Tree, open if closed
-noremap <silent> <LocalLeader>N :NERDTreeFocus<CR>
+" noremap <silent> <LocalLeader>T :NERDTreeFocus<CR>
 
 " Colorizer
 
@@ -946,7 +964,7 @@ vmap Dh <Plug>SchleppDupLeft
 vmap Dl <Plug>SchleppDupRight
 
 " Replace current word under cusor globally
-nnoremap <LocalLeader>S :%s/\<<C-r><C-w>\>/
+nnoremap <LocalLeader>Rw :%s/\<<C-r><C-w>\>/
 
 " Shortcut to help pages for Vim commands
 nnoremap <LocalLeader>H :Man 
@@ -1007,11 +1025,22 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+" CHANGE
 " Change text under cursor (and repeat with .)
-map <LocalLeader>c *cgn
+" noremap <silent> <LocalLeader>c *cgn
+
+" NO HIGHLIGHT
+noremap <LocalLeader>n :nohl<CR>
 
 " ^t to open in new tab, ^v in split
-map <LocalLeader>f ;FZF<CR>
+noremap <LocalLeader>f :FZF<CR>
+
+noremap <LocalLeader>C :Codi<CR>
+
+" Swoop
+" Default is <leader>l
+" nnoremap <LocalLeader>s :call Swoop()<CR>
+" vnoremap <LocalLeader>s :call SwoopSelection()<CR>
 
 " --- sgnippam motsuC ---
 
@@ -1044,9 +1073,11 @@ augroup END " }
 abbrev _me Chinggis6@iCloud.com
 abbrev _CTA Chinggis Tenger Atsyz
 
+au FileType markdown abbr _l [](http://)<ESC>T[i
+
 " Start Nerd Tree if no files specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Prevent lag on Esc hit
 set ttimeoutlen=0
@@ -1084,7 +1115,6 @@ augroup END
 
 " Transparent background
 " hi Normal guibg=NONE ctermbg=NONE
-
 
 
 
