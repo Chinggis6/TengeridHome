@@ -101,7 +101,7 @@ URxvt.italicFont: xft:DejaVuSansMonoForPowerline Nerd Font:pixelsize=13:antialia
 	    xft:Noto Emoji:pixelsize=13:antialias=true:hinting=true,\
 	    xft:Inconsolata:italic:pixelsize=13:antialias=true:hinting=true
 
-URxvt*boldItalicFont:  
+URxvt*boldItalicFont:
 
 
 ! Download and put inside /usr/lib/urxvt/perl/ where plugins reside

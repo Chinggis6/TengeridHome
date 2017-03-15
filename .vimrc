@@ -313,6 +313,9 @@ Plug 'metakirby5/codi.vim'
 " Auto-completion
 " Plug 'Valloric/YouCompleteMe'
 
+" Spacemacs colorscheme for Vim
+Plug 'colepeters/spacemacs-theme.vim'
+
 " --- SNIGULP ---
 
 call plug#end()
@@ -355,6 +358,14 @@ colorscheme solarized
 " colorscheme kolor
 
 " --- ROLOK ---
+
+" Spacemacs colorscheme
+
+" if (has("termguicolors"))
+"   set termguicolors
+" endif
+" set background=dark
+" colorscheme spacemacs-theme
 
 " ---
 
@@ -653,8 +664,8 @@ set helpheight=30
 
 " True colors (24 bit)
 " URxvt does not support the colors unlike xterm
-" let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
-" let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 " set termguicolors
 
 " Default a:blinkon0
@@ -925,6 +936,20 @@ vnoremap ; :
 nnoremap : Q
 vnoremap : Q
 
+" first-born is a word
+
+noremap w W
+noremap b B
+noremap e E
+
+noremap W w
+noremap B b
+noremap E e
+
+" Jump back to the end of the previous word
+" Has to be run on the beginning of the previous word
+noremap H BE
+
 " Sudo write the file
 cmap w!! w !sudo tee % >/dev/null
 
@@ -1041,6 +1066,20 @@ noremap <LocalLeader>C :Codi<CR>
 " Default is <leader>l
 " nnoremap <LocalLeader>s :call Swoop()<CR>
 " vnoremap <LocalLeader>s :call SwoopSelection()<CR>
+
+" Unmap certain keys
+
+nmap <backspace> <nop>
+nmap <CR> <nop>
+nmap <space> <nop>
+
+" New line after current line without switching to Insert mode
+nmap <CR> o<Esc>
+" New line before current line
+nmap <Backspace> O<Esc>
+
+" Don't clear clipboard after pasting in Visual mode
+vnoremap p "_dP
 
 " --- sgnippam motsuC ---
 

@@ -156,7 +156,12 @@ tmux_conf_theme_right_separator_sub='|'
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=' ❐ #S | ↑#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} '
+
+# tmux_conf_theme_status_right='#{prefix}#{pairing}#{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %a %d %b | #{username}#{root} | #{hostname} '
+
+# My battery's broken
+
+tmux_conf_theme_status_right='#{prefix}#{pairing}, %R , %a %d %b | #{username}#{root} | #{hostname} '
 
 # status left style
 tmux_conf_theme_status_left_fg='#000000,#e4e4e4,#e4e4e4'  # black, white , white
@@ -244,19 +249,7 @@ set -g status-position top
 set -g prefix `
 bind ` send-prefix
 
-# Panes
-bind | split-window -h
-bind \ split-window -h
-bind - split-window -v
-bind _ split-window -v
 
-# hjkl to navigate
-# HJKL to resize
-
-# Navigate windows
-# Defaults are C-l and C-h
-bind n next-window
-bind p previous-window
 
 
 # Confirmation-less closing
@@ -269,29 +262,69 @@ bind-key x kill-pane
 
 # ---
 
-# Window
-bind-key w new-window
-bind-key W command-prompt -I "rename-window "
-bind-key C-w choose-window
-bind-key C-W command-prompt "find-window '%%'"
-bind-key M-w kill-window
+# Panes
+bind-key p   display-panes
+bind-key P   break-pane
+# Default is -U, rotate left
+bind-key C-p rotate-window -D
+bind-key M-p rotate-window -U
+bind-key d   kill-pane
 
-# Navigation
-bind ] next-window
-bind [ previous-window
+# Splitting panes
+bind | split-window -h
+bind \ split-window -h
+bind - split-window -v
+bind _ split-window -v
 
-# Shortcuts for Windows
-bind-key Tab choose-window
-bind-key d kill-window
+# hjkl to navigate
+#
+# HJKL to resize
+#
 
 # ---
 
-# Session
-bind-key s new-session
-bind-key S command-prompt -I "rename-session "
-bind-key C-s choose-session
-bind-key C-S command-prompt -p find-session "switch-client -t %%"
-bind-key M-s kill-session
+# Windows
+bind-key w   new-window
+bind-key W   choose-window
+bind-key Tab choose-window
+bind-key C-w command-prompt -I '#W' "rename-window '%%'"
+bind-key R   command-prompt -I '#W' "rename-window '%%'"
+bind-key c   command-prompt -I '#W' "rename-window '%%'"
+bind-key M-w command-prompt "find-window '%%'"
+bind-key D   kill-window
+bind-key R   command-prompt "swap-window -t '%%'"
+bind-key M   command-prompt "move-window -t '%%'"
+
+# Apparently it enforces the British spelling
+set -g status-justify centre
+
+# Window navigation
+
+# Switch to the next/previous window
+bind ] next-window
+bind [ previous-window
+
+# Rotate window right/left
+bind-key } swap-window -t +1
+bind-key { swap-window -t -1
+
+# Make window first
+bind-key F swap-window -t 1
+# Make window last
+bind-key L swap-window -t -1
+
+# Defaults are C-l and C-h
+bind n next-window
+bind N previous-window
+
+# ---
+
+# Sessions
+bind-key s   new-session
+bind-key S   choose-session
+bind-key C-s command-prompt -I command-prompt -I '#S' "rename-session '%%'"
+bind-key M-S command-prompt -p find-session "switch-client -t %%"
+bind-key C-d kill-session
 
 # ---
 

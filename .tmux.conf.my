@@ -20,7 +20,17 @@
 # $ - rename session
 # & - kill window
 # f - find window
-# ! - brake pane into window
+# ! - break pane into window
+# t - clock
+# ? - key maps
+# % - vertical split
+# '' - horizontal split
+# q - show pane numbers
+# o - swap panes
+# } - move pane right
+# { - move pane left
+# z - zoom pane
+# . - move window
 
 # tmux list-keys - list all bound keys
 

@@ -385,6 +385,7 @@ alias edlin='ed'
 
 # X reload
 alias xrl="xrdb -load $XDG_CONFIG_HOME/Xresources"
+alias xrel='xrl'
 alias rlx='xrl'
 
 alias gp='grep'
