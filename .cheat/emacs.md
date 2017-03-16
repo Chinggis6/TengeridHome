@@ -1,4 +1,9 @@
-# Local variables
+# Emacs
+
+## Local variables
+
 > Analogous to Vim modeline
-> Dash-star
+
+> Dash-star syntax
+
 ; -*- mode: sh -*-

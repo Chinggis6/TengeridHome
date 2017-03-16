@@ -365,3 +365,6 @@ set -x userscripts "$HOME/.local/share/qutebrowser/userscripts"
 
 set -x task "$C/task/taskrc"
 set -x taskrc "$task"
+
+set -x rtorrent "$HOME/.rtorrent.rc"
+set -x torrent "$rtorrent"

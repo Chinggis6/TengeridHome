@@ -1,3 +1,13 @@
-*bold*
-_italic_
-~strikethrough~
+# Whatsapp
+
+## Bold
+
+> *bold*
+
+## Italic
+
+> _italic_
+
+## Strikethrough
+
+> ~strikethrough~
