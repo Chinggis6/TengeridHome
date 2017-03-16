@@ -610,6 +610,9 @@ set showmode
 set shiftround
 
 " Define tab width
+" One tab is four spaces long
+" Markdown treats four spaces indented lines as code
+" One good reason to size accordingly. Tab to declare code line (within block).
 set softtabstop=4
 set tabstop=4
 
