@@ -6,4 +6,4 @@
 
 > Dash-star syntax
 
-; -*- mode: sh -*-
+	; -*- mode: sh -*-
