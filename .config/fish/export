@@ -54,7 +54,8 @@ set -x i3 "$i3d/config"
 
 # Tmux terminal multiplexer
 
-set -x tmux "$HOME/.tmux.conf"
+# set -x tmux "$HOME/.tmux.conf"
+set -x tmux "$HOME/.tmux.conf.local"
 set -x T "$tmux"
 
 set -x tmuxinator "$HOME/.tmuxinator/TS.yml"
@@ -189,7 +190,7 @@ set -x RXVT_SOCKET "$XDG_RUNTIME_DIR/urxvtd"
 # wget
 set -x WGETRC "$XDG_CONFIG_HOME/wgetrc"
 
-# task
+# Task Warrior
 set -x TASKDATA "$XDG_DATA_HOME/task"
 set -x TASKRC "$XDG_CONFIG_HOME/task/taskrc"
 
@@ -361,3 +362,6 @@ set -x ignore "$HOME/.gitignore"
 set -x gitconfig "$HOME/.gitconfig"
 
 set -x userscripts "$HOME/.local/share/qutebrowser/userscripts"
+
+set -x task "$C/task/taskrc"
+set -x taskrc "$task"

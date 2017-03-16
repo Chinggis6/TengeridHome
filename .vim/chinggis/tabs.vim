@@ -16,15 +16,15 @@ nnoremap gD :tabclose <bar> tabprevious<CR>
 " Force drop without saving switching to the next
 nnoremap gC :tabclose!<CR>
 
-" Move tab right
-nnoremap gm :+1tabmove<CR>
-" Move tab left
-nnoremap gM :-1tabmove<CR>
+" " Move tab right
+nnoremap <LocalLeader>gm :+1tabmove<CR>
+" " Move tab left
+nnoremap <LocalLeader>gM :-1tabmove<CR>
 
 " Move tab to beginning
-nnoremap gm0 :0tabmove<CR> 
+nnoremap <LocalLeader>gm0 :0tabmove<CR> 
 " Move tab to end
-nnoremap gm$ :tabmove<CR>
+nnoremap <LocalLeader>gm$ :tabmove<CR>
 
 " Switch to the first tab
 nnoremap g0 :tabfirst<CR>

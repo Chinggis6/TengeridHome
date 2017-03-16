@@ -27,3 +27,5 @@
 [core]
 	# GIT_EDITOR overrides it
 	editor = vim -p
+[github]
+	user = Chinggis6

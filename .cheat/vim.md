@@ -11,6 +11,8 @@ Vim has three major modes: Normal, Insert, and Visual unlike Vi which had only t
 
 # Ex mode (:)
 
+m - move lines (eg 14m20 move 14th line to 20th (shifting other lines up))
+
 .= - Show *current* line **number**
 
 = - Show *total* line **number**
@@ -24,6 +26,23 @@ center - center the selected text
 sview - split view in read only mode
 
 # Normal mode (ESC)
+
+## Spelling
+zg - good word, add to spelling dictionary
+zw - wrong word, remove from dictionary
+zg - suggest right words
+]s - move to next misspelled word
+[s - move to previous misspelled word
+
+> https://vimgifs.com/gJ/
+gJ join line below without adding space
+
+gm - move to the exact middle of the line (if line is fully filled with letters)
+
+> - scrolloff
+H - home line
+M - middle line
+L - last line
 
 > i inner
 > a around (after)
@@ -179,6 +198,8 @@ g~~ - change line case
 g~w - change word case
 
 # Insert mode (i)
+
+^c - exit from Insert mode and switch to Normal mode (same as Esc)
 
 ^n - complete word already existing in the file, by next first match
 ^p - un-complete word, by previous first match

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Check Etymonline.com definition right in your shell
+
+# Search Online Etymology Dictionary entries
+
+# 1. --silent, don't show progress meter or error messages (add -S to show errors but not the meter)
+# 2. Find dictionary definition (dd tags)
+# 3. Remove tags (strip)
+
+curl -s "http://etymonline.com/index.php?term=$1" | grep 'dd class="highlight"' | sed -e 's/<[^>]*>//g'

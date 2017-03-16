@@ -395,3 +395,11 @@ alias abbrev='abbr'
 
 alias frl="source $f"
 alias rlf='frl'
+
+alias moc='mocp'
+
+alias tls='task ls'
+alias trm='task rm'
+
+# alias zathura
+# alias fpp

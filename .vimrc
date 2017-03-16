@@ -57,6 +57,12 @@
 " Marks are file bookmarks to save cursor position in buffers
 " :marks
 
+" Substitute by adding
+" :%s/background/&-color
+
+" Run command on all matching lines
+" :%g/background/d
+
 " Define commands
 " User defined commands start with capital
 " command MyCommand echo "Hello, World!"
@@ -70,6 +76,23 @@
 " ~/.vim/after/plugin/*.vim
 " To run after plugins get loaded
 " 1. Vimrc, 2. Plugins, 3. After directory
+
+" Shortcuts
+
+" - scrolloff
+" H - home line
+" M - middle line
+" L - last line
+
+" ] ^i - jump to the next word under cursor
+" [ ^i - jump back (searching from BOF)
+
+" " Normal mode paste
+" ^r Insert mode paste
+" Registers
+" % - filename (pseudo-register)
+" + - Clipboard
+" * - Primary selection
 
 " --- ORTNI ---
 
@@ -249,6 +272,7 @@ Plug 'chrisbra/NrrwRgn'
 " Color HEX codes or color names
 " :ColorToggle
 Plug 'chrisbra/Colorizer'
+" Plug 'lilydjwg/colorizer'
 
 " PKGBUILD syntax
 Plug 'Firef0x/PKGBUILD.vim'
@@ -267,9 +291,6 @@ Plug 'tpope/vim-speeddating'
 
 " Better repeating (.)
 Plug 'tpope/vim-repeat'
-
-" Gist support
-Plug 'keith/gist.vim'
 
 " Better ~/.muttrc
 Plug 'vim-scripts/muttrc.vim'
@@ -315,6 +336,44 @@ Plug 'metakirby5/codi.vim'
 
 " Spacemacs colorscheme for Vim
 Plug 'colepeters/spacemacs-theme.vim'
+
+" Gist
+" git config --global github.user <user>
+" :Gist -a
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+" Plug 'keith/gist.vim'
+
+" Emmet
+" HTML & CSS expansion
+" Visual selection, ^y , and abbreviation
+" Eg: ul>li*>span>a
+Plug 'mattn/emmet-vim'
+
+" Few more commands working with jump points
+Plug 'kana/vim-exjumplist'
+" Better view for :jumps
+Plug 'thinca/vim-poslist'
+
+" Highlight Task warrior config files syntax
+" Change ftdetect/task.vim to "taskrc" if in .config/
+Plug 'framallo/taskwarrior.vim'
+
+" SearchUnicode - search for character
+" UnicodeName - identify character under cursor
+" UnicodeTabl - print table in new file
+" ^x ^z - complete unicode character
+" ^x ^g - complete digraph character
+Plug 'chrisbra/unicode.vim'
+
+" ctags
+" Supported languages
+" http://ctags.sourceforge.net/languages.html
+" :TaggbarToggle
+Plug 'majutsushi/tagbar'
+
+
+" last plugin
 
 " --- SNIGULP ---
 
@@ -672,6 +731,19 @@ let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 " gcr
 set guicursor=a:blinkoff150
 
+" Disable backup
+" They are being more harming than helpful
+" No backup files
+set nobackup
+" No backup files while editing
+set nowritebackup
+" No swap files (.swp)
+set noswapfile 
+" Alternative solution
+" If first dir doesn't exist, jump to the second
+" set backupdir=~/vimtmp,.
+" set directory=~/vimtmp,.
+
 " --- SNOITPO ---
 
 " Search options
@@ -754,6 +826,13 @@ map g# <Plug>(asterisk-gz#)
 
 let g:asterisk#keeppos = 1
 
+" Emmet
+
+" let g:user_emmet_leader_key='<CR>'
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 " --- PLUGIN OPTIONS ---
 
 " Powerline / Airline
@@ -776,6 +855,9 @@ autocmd FileType xdefaults setlocal commentstring=!\ %s
 
 " Correct commenting for Most pager config file, mostrc
 autocmd FileType mostrc setlocal commentstring=%\ %s
+
+" Task Warrior
+autocmd FileType mostrc setlocal commentstring=#\ %s
 
 " ---
 
@@ -840,13 +922,17 @@ let g:colorizer_auto_filetype='css,html,scss,xml,js,yaml,svg,haml,styl,less,json
 " set completefunc=emoji#complete
 
 
+" Exjumplist
+nmap <C-M-i>  <Plug>(exjumplist-go-last)
+nmap <C-M-o>  <Plug>(exjumplist-go-first)
+nmap <M-)>  <Plug>(exjumplist-next-buffer)
+nmap <M-(>  <Plug>(exjumplist-previous-buffer)
+
+nnoremap <localleader>T :TagbarToggle<CR>
 
 
 
-
-
-
-
+" Plugin options
 
 " --- SNOITPO NIGULP ---
 
@@ -946,9 +1032,12 @@ noremap W w
 noremap B b
 noremap E e
 
+" Select until whitespace instead of beginning of next word
+vnoremap w aW
+
 " Jump back to the end of the previous word
 " Has to be run on the beginning of the previous word
-noremap H BE
+noremap <LocalLeader>w BE
 
 " Sudo write the file
 cmap w!! w !sudo tee % >/dev/null
@@ -1022,7 +1111,9 @@ nnoremap ^ 0
 map <LocalLeader>' ysiW'
 map <LocalLeader>" ysiW"
 map <LocalLeader>) ysiW)
+map <LocalLeader>( ys$)
 map <LocalLeader>] ysiW]
+map <LocalLeader>[ ys$]
 map <LocalLeader>d> ysiW>
 
 " Quotes
@@ -1057,8 +1148,40 @@ vnoremap k gk
 " NO HIGHLIGHT
 noremap <LocalLeader>n :nohl<CR>
 
+" fzf
+" Fuzzy Finder
+
+" command! -bang -nargs=* Rg
+"    \ call fzf#vim#grep(
+"    \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+"    \   <bang>0 ? fzf#vim#with_preview('up:60%')
+"    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+"    \   <bang>0)
+
+
+    " let g:fzf_files_options =
+    "   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+" imap <c-x><c-k> <plug>(fzf-complete-word)
+" imap <c-x><c-f> <plug>(fzf-complete-path)
+" imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+
+
+" imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" Advanced customization using autoload functions
+" inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+
 " ^t to open in new tab, ^v in split
 noremap <LocalLeader>f :FZF<CR>
+
 
 noremap <LocalLeader>C :Codi<CR>
 
@@ -1080,6 +1203,13 @@ nmap <Backspace> O<Esc>
 
 " Don't clear clipboard after pasting in Visual mode
 vnoremap p "_dP
+
+noremap <LocalLeader>j :jumps<CR>
+noremap <LocalLeader>J :clear<CR>
+
+" Emmet
+map <LocalLeader>e <C-y>,
+map <LocalLeader>E V<C-y>,
 
 " --- sgnippam motsuC ---
 
@@ -1166,4 +1296,15 @@ augroup END
 " Vim is Beautiful
 " Vim is Simple
 " ---
+
+" If you really want to learn Vim, then I say, start from 'ed',
+" it's a very simple and easy line editor build-in in most Linux distributions.
+
+" It is the prototype of Vim.
+
+" Feel the tradition first, it's necessary to see and understand Vim.
+
+" Try It And See™
+
+
 " The End, 2017

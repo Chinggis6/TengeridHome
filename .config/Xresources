@@ -140,6 +140,8 @@ URxvt.matcher.button: 1
 URxvt.termName        : xterm-256color
 URxvt.background      : black
 URxvt.foreground      : gray
+! History
+! Shift + Page Up/Down to Scroll
 URxvt.saveLines         : 1000000
 URxvt.letterSpace       : -1
 URxvt.scrollBar         : false
@@ -151,9 +153,9 @@ URxvt*urgentOnBell      : true
 URxvt.buffered          : true
 URxvt.transparent       : false
 URxvt.shading           : 15
-URxvt.scrollTtyOutput   : false
-URxvt.scrollTtyKeypress : true
-URxvt.scrollWithBuffer  : false
+! URxvt.scrollTtyOutput   : false
+! URxvt.scrollTtyKeypress : true
+! URxvt.scrollWithBuffer  : false
 
 ! Remove Ctrl+Shift ISO mode
 ! ISO 14755 and KEYCAP PICTURE INSERT MODE text pop ups on the screen on C-S key press
