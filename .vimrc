@@ -94,6 +94,8 @@
 " + - Clipboard
 " * - Primary selection
 
+" ^] jump in Help pages
+
 " --- ORTNI ---
 
 " --- PLUGINS ---
@@ -372,6 +374,11 @@ Plug 'chrisbra/unicode.vim'
 " :TaggbarToggle
 Plug 'majutsushi/tagbar'
 
+" Command T
+" <leader> t, b, j (jump to recently used files opening them in new buffers); ^c cancel, Tab to switch between prompt and list
+" Plug 'wincent/command-t'
+
+Plug 'calincru/qml.vim'
 
 " last plugin
 
@@ -747,6 +754,10 @@ set noswapfile
 " set backupdir=~/vimtmp,.
 " set directory=~/vimtmp,.
 
+" Sign column background color (for marks)
+highlight clear SignColumn
+" sign unplace * to remove the column
+
 " --- SNOITPO ---
 
 " Search options
@@ -860,7 +871,7 @@ autocmd FileType xdefaults setlocal commentstring=!\ %s
 autocmd FileType mostrc setlocal commentstring=%\ %s
 
 " Task Warrior
-autocmd FileType mostrc setlocal commentstring=#\ %s
+autocmd FileType taskrc setlocal commentstring=#\ %s
 
 " ---
 
@@ -1113,6 +1124,7 @@ nnoremap ^ 0
 
 map <LocalLeader>' ysiW'
 map <LocalLeader>" ysiW"
+map <LocalLeader>* ysiW*
 map <LocalLeader>) ysiW)
 map <LocalLeader>( ys$)
 map <LocalLeader>] ysiW]
@@ -1126,12 +1138,15 @@ map <LocalLeader>Q ysiW"
 
 map <LocalLeader>d' ds'
 map <LocalLeader>d" ds"
+map <LocalLeader>* ds*
 map <LocalLeader>d) ds)
 map <LocalLeader>d] ds]
 map <LocalLeader>d> ds>
 
 map <LocalLeader>c' cs"'
 map <LocalLeader>c" cs'"
+map <LocalLeader>c* cs_*
+map <LocalLeader>c_ cs*_
 map <LocalLeader>c) cs])
 map <LocalLeader>c] cs)]
 map <LocalLeader>c> cs)>

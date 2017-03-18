@@ -368,3 +368,9 @@ set -x taskrc "$task"
 
 set -x rtorrent "$HOME/.rtorrent.rc"
 set -x torrent "$rtorrent"
+
+set -x icloud "$HOME/.mutt/accounts/icloud"
+
+set -x w3m "$HOME/.w3m/config"
+
+set -x pqiv "$HOME/.pqivrc"

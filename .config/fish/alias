@@ -10,6 +10,10 @@
 
 # --- DEFAULT OPTIONS ---
 
+# Also display directory history, --list
+alias nextd='nextd -l'
+alias prevd='prevd -l'
+
 # --verbose
 # Tell what happened after exit from editor
 alias vidir='vidir -v'
@@ -256,8 +260,9 @@ alias in="pacman -S"
 alias aur="yaourt"
 alias inn="yaourt -S --noconfirm --force"
 alias outt="yaourt -R --noconfirm --force"
-alias i="pacman -Qi"
-alias inf="yaourt -Qi"
+# alias i="pacman -Qi"
+# alias inf="yaourt -Qi"
+alias i="yaourt -Qi"
 alias on="pacsearch"
 alias out="pacman -R"
 alias owner="pacman -Qo"
@@ -327,8 +332,8 @@ alias pon="pi search"
 alias pinfo="pi show"
 
 # Ruby gem package manager
-alias ge="sudo -E gem"
-alias gin="g install"
+alias gem="sudo -E gem"
+alias gin="gem install"
 
 # NodeJS
 
@@ -398,8 +403,14 @@ alias rlf='frl'
 
 alias moc='mocp'
 
+# Task Warrior
 alias tls='task ls'
 alias trm='task rm'
+alias tadd='task add'
+alias taskls='tls'
+alias taskadd='tadd'
+alias taskrm='trm'
 
 # alias zathura
 # alias fpp
+# alias abook

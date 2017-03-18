@@ -7,3 +7,10 @@ scale-images-up=1
 [keybindings]
 h { goto_file_relative(-1); }
 l { goto_file_relative(1); }
+H { rotate_left(); }
+L { rotate_right(); }
+K { flip_vertically(); }
+J { flip_horizontally(); }
+
+# = to zoom policy, without having to hold Shift to zoom image, which is done frequently and repeatedly
+= { set_scale_level_relative(1.1); }

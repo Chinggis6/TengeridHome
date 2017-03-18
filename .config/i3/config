@@ -106,7 +106,7 @@ bindsym $mod+a focus parent
 # Font Awesome
 # http://fontawesome.io/cheatsheet/
 
-set $ws1 "1. sh ☯"
+set $ws1 "1. tmux ☯"
 bindsym $mod+1 workspace $ws1
 bindsym $mod+Shift+1 move container to workspace $ws1
 
@@ -249,8 +249,6 @@ exec --no-startup-id clipit
 
 # dunst -config $C/dunst/dunstrc
 exec --no-startup-id dunst
-
-exec --no-startup-id setxkbmap -layout "us,az,ru" -option "grp:alt_shift_toggle"
 
 # Set wallpaper
 exec --no-startup-id feh --bg-scale "$HOME/Tengerid Wallpaper.png"

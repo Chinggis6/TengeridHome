@@ -1,0 +1,130 @@
+# Notice
+# Neomutt unlike Mutt is case-sensitive
+# So case confusion in imap_user and smtp_url will not log you in
+
+# Receive options
+# set imap_user
+# set imap_pass
+# set imap_pipeline_depth
+# set folder
+
+# Send options
+# set smtp_url
+# set smtp_pass
+# set realname
+# set from
+
+# Accounts
+source ~/.mutt/accounts/icloud
+
+# Solarized colorscheme
+source $HOME/.mutt/mutt-colors-solarized-dark-256.muttrc
+
+# ---
+
+# Vim key bindings
+
+bind pager j next-line
+bind pager k previous-line
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
+bind attach,index,pager \CF next-page
+bind attach,index,pager \CB previous-page
+bind pager g top
+bind pager G bottom
+bind attach,index g first-entry
+bind attach,index G last-entry
+
+bind index,pager J sidebar-next
+bind index,pager K sidebar-prev
+bind index,pager L sidebar-open
+
+bind editor <Tab> complete-query
+
+# ---
+
+# Setting files
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache"
+set certificate_file = "~/.mutt/certificates"
+# ~/.signature
+set signature="~/.mutt/signature"
+
+# Setting mailboxes
+set spoolfile = +Inbox
+set postponed = +Drafts
+set record = +Sent
+mailboxes =Inbox =Sent =Trash
+
+# Setting security
+set ssl_force_tls = yes
+set ssl_starttls = yes
+
+# Other settings
+set send_charset = utf-8
+# Show sidebar on the left
+set sidebar_visible
+set mail_check_stats
+set editor = "vim -p"
+# Terminal bell on new mails
+set beep_new
+# Check open mailboxes for new mails
+set check_new
+# In seconds
+set mail_check=0
+set imap_keepalive = 300
+# set arrow_cursor
+set menu_scroll=yes
+set sidebar_width=30
+set envelope_from
+# Overrides system name
+set hostname="Hostname"
+# Cloak system name
+set hidden_host
+set fast_reply
+set include=yes
+set allow_8bit
+set edit_headers
+set sort=threads
+# Show recents on top, and also sort by score
+set sort_aux=reverse-score
+set sort_re
+# Pad empty lines like in Vim
+set tilde
+# store aliases created by create-alias command
+set alias_file="$HOME/.mutt/alias"
+
+
+# Don't collapse unread threads
+unset collapse_unread
+
+set fcc_attach
+
+## Connect mutt to 'abook' address book,
+## so when you are in the To: field you can 
+## type something then press Tab to get results.
+
+set query_command = "abook --mutt-query '%s'"
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+
+
+# Don't ask to delete
+set delete
+# Ask to quit
+# set quit = ask-yes
+# Don't ask to quit
+set quit
+unset confirmappend
+# Plus signs
+unset markers
+# Dashes before signature
+set sig_dashes
+# Save sent messages
+set copy = yes
+
+# Reply back to sender
+set reverse_name
+
+# Format of quoting header
+set attribution = "On %d, %n wrote:"

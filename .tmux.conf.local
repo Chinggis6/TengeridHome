@@ -249,6 +249,9 @@ set -g status-position top
 set -g prefix `
 bind ` send-prefix
 
+# Enable mouse buttons and scroll
+# Window and pane activation, pane resizing, automatic copy mode
+set -g mouse on
 
 
 
@@ -292,8 +295,8 @@ bind-key R   command-prompt -I '#W' "rename-window '%%'"
 bind-key c   command-prompt -I '#W' "rename-window '%%'"
 bind-key M-w command-prompt "find-window '%%'"
 bind-key D   kill-window
-bind-key R   command-prompt "swap-window -t '%%'"
-bind-key M   command-prompt "move-window -t '%%'"
+# bind-key R   command-prompt "swap-window -t '%%'"
+# bind-key M   command-prompt "move-window -t '%%'"
 
 # Apparently it enforces the British spelling
 set -g status-justify centre
