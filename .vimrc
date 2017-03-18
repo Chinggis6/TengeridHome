@@ -1316,7 +1316,7 @@ augroup END
 " ---
 
 " If you really want to learn Vim, then I say, start from 'ed',
-" it's a very simple and easy line editor build-in in most Linux distributions.
+" it's a very simple and easy line editor build-in on most Linux distributions.
 
 " It is the prototype of Vim.
 
