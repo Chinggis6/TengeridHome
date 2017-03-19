@@ -378,6 +378,13 @@ Plug 'majutsushi/tagbar'
 " <leader> t, b, j (jump to recently used files opening them in new buffers); ^c cancel, Tab to switch between prompt and list
 " Plug 'wincent/command-t'
 
+" ^p or :CtrlP
+" Plug 'ctrlpvim/ctrlp.vim'
+
+" Syntax checker and indicator
+" Plug 'vim-syntastic/syntastic'
+
+" Qt QML syntax highlight
 Plug 'calincru/qml.vim'
 
 " last plugin
@@ -748,7 +755,7 @@ set nobackup
 " No backup files while editing
 set nowritebackup
 " No swap files (.swp)
-set noswapfile 
+set noswapfile
 " Alternative solution
 " If first dir doesn't exist, jump to the second
 " set backupdir=~/vimtmp,.
@@ -757,6 +764,10 @@ set noswapfile
 " Sign column background color (for marks)
 highlight clear SignColumn
 " sign unplace * to remove the column
+
+" Whitespace
+" Trailing spaces bacground color
+highlight ExtraWhitespace ctermbg=black ctermfg=red guibg=black guifg=red
 
 " --- SNOITPO ---
 
@@ -945,7 +956,6 @@ nmap <M-(>  <Plug>(exjumplist-previous-buffer)
 nnoremap <localleader>T :TagbarToggle<CR>
 
 
-
 " Plugin options
 
 " --- SNOITPO NIGULP ---
@@ -1095,7 +1105,7 @@ vmap Dl <Plug>SchleppDupRight
 nnoremap <LocalLeader>Rw :%s/\<<C-r><C-w>\>/
 
 " Shortcut to help pages for Vim commands
-nnoremap <LocalLeader>H :Man 
+nnoremap <LocalLeader>H :Man
 
 " Reize splits quickly
 
@@ -1114,7 +1124,7 @@ noremap <C-w>p <C-w>s
 
 noremap <C-w>s <C-w>v
 
-nnoremap <LocalLeader>S :set 
+nnoremap <LocalLeader>S :set
 
 " Swap (exchange) for FBL
 nnoremap 0 ^
@@ -1240,7 +1250,7 @@ command! -nargs=* Man help <args>
 
 " Open new file in new tab
 command! -nargs=* O tabe <args>
-noremap <localleader>O :O 
+noremap <localleader>O :O
 
 " Save file as root user
 " Requires Eunuch plugin

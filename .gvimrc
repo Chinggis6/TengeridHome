@@ -19,6 +19,7 @@ set guioptions -=L
 
 " Display emoji
 " Untested
+" Possibly only in macOS
 " set guioptions +=E
 
 " Disable cursor blinking
