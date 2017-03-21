@@ -264,11 +264,20 @@ bind-key x kill-pane
 # ---
 
 # Panes
+
+# hjkl to navigate
+# HJKL to resize
+# Provided by Oh My Tmux
+
 bind-key p   display-panes
 bind-key P   break-pane
+
+# Switch between panes
 # Default is -U, rotate left
 bind-key C-p rotate-window -D
 bind-key M-p rotate-window -U
+
+# Kill pane
 bind-key d   kill-pane
 
 # Splitting panes
@@ -276,11 +285,6 @@ bind | split-window -h
 bind \ split-window -h
 bind - split-window -v
 bind _ split-window -v
-
-# hjkl to navigate
-#
-# HJKL to resize
-#
 
 # ---
 
@@ -310,9 +314,9 @@ bind-key } swap-window -t +1
 bind-key { swap-window -t -1
 
 # Make window first
-bind-key F swap-window -t 1
+bind C-f swap-window -t 1
 # Make window last
-bind-key L swap-window -t -1
+bind C-l swap-window -t -1
 
 # Defaults are C-l and C-h
 bind n next-window
@@ -329,12 +333,13 @@ bind-key C-d kill-session
 
 # ---
 
-# choose-tree
+# choose-tree (command)
 
 # Semi-colon to Command
 bind \; command-prompt
 
-bind-key k list-keys
+# List all bound keys
+bind k list-keys
 
 # Toggle status bar.
 bind-key 'b' set-option status

@@ -1,0 +1,26 @@
+# Default is lynx
+set www_command                  = w3m
+# Default is EU
+set address_style                = us
+set add_email_prevent_duplicates = true
+set use_colors                   = true
+
+# Colors
+set color_header_fg              = blue
+set color_header_bg              = default
+set color_footer_fg              = blue
+set color_footer_bg              = default
+set color_list_header_fg         = cyan
+set color_list_header_bg         = default
+
+
+
+
+
+
+
+
+
+
+
+# vim ft=abook

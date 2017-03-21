@@ -26,6 +26,7 @@
     id = rev-parse --short HEAD
     lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	unstage = reset --
+	add = add -v
 
 [user]
 	email = Chinggis6@iCloud.com

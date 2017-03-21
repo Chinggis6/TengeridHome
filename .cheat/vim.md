@@ -42,6 +42,10 @@ sview - split view in read only mode
 
 # Normal mode (ESC)
 
+g0 - wrapped line beginning
+g^ - wrapped line beginning FNB
+g$ - wrapped line end
+
 cit - change inside tag
 yit - yank inside tag
 ci" - change inside ""

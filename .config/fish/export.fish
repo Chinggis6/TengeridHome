@@ -387,3 +387,9 @@ set -x res "$resume"
 # /etc/localtime
 # tzselect of glibc
 # set -x TZ
+
+
+set -x abookd "$HOME/.abook"
+set -x abook "$abookd/abookrc"
+set -x abookrc "$abook"
+set -x addressbook "$abookd/addressbook"

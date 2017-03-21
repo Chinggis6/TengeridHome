@@ -411,6 +411,7 @@ alias abbrev='abbr'
 
 alias frl="source $f"
 alias rlf='frl'
+alias resource='frl'
 
 alias moc='mocp'
 

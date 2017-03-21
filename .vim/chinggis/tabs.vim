@@ -27,12 +27,12 @@ nnoremap <LocalLeader>gm0 :0tabmove<CR>
 nnoremap <LocalLeader>gm$ :tabmove<CR>
 
 " Switch to the first tab
-nnoremap g0 :tabfirst<CR>
+nnoremap <LocalLeader>g0 :tabfirst<CR>
 " Switch to the last tab
-nnoremap g$ :tablast<CR>
+nnoremap <LocalLeader>g$ :tablast<CR>
 
 " Drop all tabs except current
-nnoremap gO :tabonly<CR>
+nnoremap <LocalLeader>gO :tabonly<CR>
 
 " Open file in tab
-nnoremap go :tabedit 
+nnoremap <LocalLeader>go :tabedit 

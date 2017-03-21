@@ -394,6 +394,10 @@ Plug 'majutsushi/tagbar'
 " Qt QML syntax highlight
 Plug 'calincru/qml.vim'
 
+" Highlights Wiki markup syntax
+" Styles wiki links removing surrounding brackets
+Plug 'chikamichi/mediawiki.vim'
+
 " last plugin
 
 " --- SNIGULP ---
@@ -901,6 +905,9 @@ autocmd FileType mostrc setlocal commentstring=%\ %s
 " Task Warrior
 autocmd FileType taskrc setlocal commentstring=#\ %s
 
+" abook
+autocmd FileType taskrc setlocal commentstring=#\ %s
+
 " ---
 
 " TurboMark
@@ -1080,11 +1087,6 @@ noremap gE ge
 " Select until whitespace instead of beginning of next word
 vnoremap w aW
 
-" Extending the series to plugins
-
-onoremap iw iW
-onoremap iW iw
-
 " nmap ysiw ysiW
 " augroup mySurround|au!|autocmd VimEnter * noremap ysiw ysiW|augroup END
 " map ysiw <Plug>YsurroundiW
@@ -1160,28 +1162,33 @@ nnoremap <LocalLeader>S :set
 " https://vimgifs.com/caret/
 
 " Start of line
+" Line beginning (FNB)
 nnoremap 0 ^
 nnoremap ^ 0
+" For wrapped lines
+nnoremap g^ g0
+nnoremap g0 g^
 
 " End of line
+" Line end (FNB)
 nnoremap $ g_
 nnoremap g_ $
 
 " Quick surround
 
-map <LocalLeader>' ysiW'
-map <LocalLeader>" ysiW"
-map <LocalLeader>* ysiW*
-map <LocalLeader>) ysiW)
+map <LocalLeader>' ysiw'
+map <LocalLeader>" ysiw"
+map <LocalLeader>* ysiw*
+map <LocalLeader>) ysiw)
 map <LocalLeader>( ys$)
-map <LocalLeader>] ysiW]
+map <LocalLeader>] ysiw]
 map <LocalLeader>[ ys$]
-map <LocalLeader>d> ysiW>
+map <LocalLeader>d> ysiw>
 
 " Quotes
 
-map <LocalLeader>q ysiW'
-map <LocalLeader>Q ysiW"
+map <LocalLeader>q ysiw'
+map <LocalLeader>Q ysiw"
 
 map <LocalLeader>d' ds'
 map <LocalLeader>d" ds"
@@ -1300,6 +1307,10 @@ noremap ciQ ci"
 noremap caq ca'
 noremap caQ ca"
 
+" Extending the series to plugins
+onoremap iw iW
+onoremap iW iw
+
 " --- sgnippam motsuC ---
 
 " Tengerid Commands
@@ -1380,8 +1391,6 @@ augroup END
 
 " Transparent background
 " hi Normal guibg=NONE ctermbg=NONE
-
-
 
 
 
