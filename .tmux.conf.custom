@@ -201,3 +201,5 @@ set -g status-left "#[fg=green]: #h : #[fg=brightblue]#(curl icanhazip.com) #[fg
 # Show session name, window & pane number, date and time on right side of
 set -g status-right-length 60
 set -g status-right "#[fg=cyan]#S (S) #[fg=cyan,bold]#I#[fg=cyan,none] (W) #P (P) #[fg=white]|#[fg=green] %l:%M %p #[fg=white]|#[fg=yellow] %a, #[fg=yellow,underscore]%d#[fg=yellow,none] %b %Y "
+
+#vim: ft=tmux

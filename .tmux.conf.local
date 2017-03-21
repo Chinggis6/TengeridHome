@@ -253,8 +253,6 @@ bind ` send-prefix
 # Window and pane activation, pane resizing, automatic copy mode
 set -g mouse on
 
-
-
 # Confirmation-less closing
 
 # confirm-before -p "kill-window #W? (y/n)" kill-window
