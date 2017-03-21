@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl "https://en.wikipedia.org/wiki/$1?action=raw" #| less

@@ -128,3 +128,10 @@ set reverse_name
 
 # Format of quoting header
 set attribution = "On %d, %n wrote:"
+
+# No smart wrapping
+set nosmart_wrap
+# No wrap markers
+set nomarkers
+
+

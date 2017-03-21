@@ -382,3 +382,8 @@ set -x pqiv "$HOME/.pqivrc"
 set -x resd "$HOME/.res"
 set -x resume "$resd/Resume.md"
 set -x res "$resume"
+
+# timedatectl of systemd
+# /etc/localtime
+# tzselect of glibc
+# set -x TZ

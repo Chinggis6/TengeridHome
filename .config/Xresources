@@ -157,6 +157,10 @@ URxvt.shading           : 15
 ! URxvt.scrollTtyKeypress : true
 ! URxvt.scrollWithBuffer  : false
 
+
+! Use Shift+Page Up/Down (Actual Page Up/Down, not those on Keypad) to scroll
+URxvt.scrollTtyOutput: true
+
 ! Remove Ctrl+Shift ISO mode
 ! ISO 14755 and KEYCAP PICTURE INSERT MODE text pop ups on the screen on C-S key press
 URxvt*iso14755: false
