@@ -200,7 +200,7 @@ set -x PASSWORD_STORE_DIR "$XDG_DATA_HOME/pass"
 # --- SYSTEM FILES ---- #
 # Completitions, functions
 set -x share '/usr/share'
-# Examples 
+# Examples
 set -x doc "$share/doc"
 set -x example "$doc"
 # .desktop files
@@ -213,6 +213,9 @@ set -x header "$include"
 set -x fonts "$share/fonts"
 # Icons
 set -x icons "$share/icons"
+# Licences
+set -x licences "$share/licences"
+set -x lic "$licences"
 
 set -x lib '/usr/lib/'
 
@@ -375,3 +378,7 @@ set -x w3m "$HOME/.w3m/config"
 set -x keymap "$HOME/.w3m/keymap"
 
 set -x pqiv "$HOME/.pqivrc"
+
+set -x resd "$HOME/.res"
+set -x resume "$resd/Resume.md"
+set -x res "$resume"

@@ -11,6 +11,21 @@ Vim has three major modes: Normal, Insert, and Visual unlike Vi which had only t
 
 # Ex mode (:)
 
+di, :digraph
+
+verbose imap <c-k> # see if key is mapped, useful for identifying plugin mappings
+
+## Variables
+
+$MYVIMRC - path of .vimrc file
+
+ls
+% - current file
+# - alternate file
+
+saveas - save and switch to
+	also :sav
+
 m - move lines (eg 14m20 move 14th line to 20th (shifting other lines up))
 
 .= - Show *current* line **number**
@@ -26,6 +41,39 @@ center - center the selected text
 sview - split view in read only mode
 
 # Normal mode (ESC)
+
+cit - change inside tag
+yit - yank inside tag
+ci" - change inside ""
+ci' - change inside '
+ctX - change until X (not including)
+cfX - change until X (and including)
+
+cb - change to word beginning (and not including)
+db - delete to word beginning
+
+ce/de - delete to word end (and including (strangely), and also cw works the same when it should not and instead change the WORD under cursor)
+
+
+## Searching
+
+/[abc] search for a, b, or c CHARACTERS
+
+ga - print ascii, hex, and octal values of character under cursor
+g8 - print hex value of character under cursor
+ge  - jump to the end of previous word (also gE)
+g^g - give info about current position
+	- print column, line, word, and byte for current position
+
+## Scrolling
+
+^y - scroll up one line
+^e - scroll down one line (e for extra)
+
+zz - center the line (z.)
+zt - top the line
+zb - bottom the line
+
 
 ## Spelling
 zg - good word, add to spelling dictionary
@@ -59,6 +107,7 @@ gk - same to go up
 
 Y - copy line (without new line character)
 
+## Increment numbers
 ^a - increment number
 ^x - decrement number
 
@@ -107,12 +156,14 @@ gf - edit file under cursor
 _ - move n-1 lines down (non-blank character)
 
 ## Splits
+also called Windows, Panes
 
+^w o - only, close (but not exit buffers) all but current split
+	:only
 ^w = - equate all splits' widths
 ^w _ - maximize split's height
-^w + + increase height (allows number input)
-^w + - decrease height 
-
+^w + increase height (allows number input)
+^w - decrease height
 
 ^w ^w - cycle through splits
 ^w q - close a split
@@ -147,9 +198,6 @@ A - append *after* **line**
 
 U - undo the last line completely (cannot be redone)
 
-zz - **center** the line (z.)
-zt - top the line
-zb - bottom the line
 
 } - go a **paragraph** forward
 
@@ -199,6 +247,10 @@ g~w - change word case
 
 # Insert mode (i)
 
+^o - temporarily switch to Normal Mode and then back after one command
+
+^k - insert digraph
+
 ^c - exit from Insert mode and switch to Normal mode (same as Esc)
 
 ^n - complete word already existing in the file, by next first match
@@ -225,7 +277,7 @@ g~w - change word case
 
 ^j - move a **line** *after* down
 
-^r - paste (0 from selection, " from clipboard) 
+^r - paste (0 from selection, " from clipboard)
 
 dib - delete between brackets
 dab - delete brackets
@@ -241,7 +293,7 @@ N - previous search term
 gn - visually select next term
 gN - visually select previous term
 
---- 
+---
 
 # Visual mode
 
@@ -268,4 +320,4 @@ gU - uppercase text
 
 # Others
 
-> vim: ft=markdown 
+> vim: ft=markdown

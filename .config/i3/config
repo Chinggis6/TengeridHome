@@ -213,7 +213,7 @@ mode "$mode_system" {
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -226,7 +226,7 @@ bindsym $mod+Pause mode "$mode_system"
 workspace_layout tabbed
 hide_edge_borders both
 
-# bar toggle, hide or show 
+# bar toggle, hide or show
 bindsym $mod+m bar mode toggle
 
 bindsym --release Print exec --no-startup-id scrot --select 'Screenshot-%b-%d-%y_%H-%m-%S_$wx$h.png' -e 'mv $f ~/.scrot/'
@@ -237,6 +237,8 @@ bindsym $mod+d exec "rofi -combi-modi drun,run -show combi"
 bindsym $mod+w exec "rofi -show window"
 #bindsym Mod1+x exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
 bindsym Ctrl+Mod1+l exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
+# --grayscale, --text
+bindsym Ctrl+Mod1+b exec --no-startup-id i3lock-fancy -g -t "STAY AWAY !!!"
 bindsym Mod1+b exec --no-startup-id i3lock --color=87ceeb --image "$HOME/SatanicBear.png"
 
 exec --no-startup-id redshift-gtk
@@ -259,11 +261,23 @@ exec --no-startup-id xinput --disable "ETPS/2 Elantech Touchpad"
 # Set keyboard layout
 exec --no-startup-id setxkbmap -layout "us" -option "grp:alt_shift_toggle"
 
+# Keyboard layout indicator hanging on tray
+exec --no-startup-id fbxkb
+
 # Read Xresources configuration
 exec --no-startup-id xrdb -merge $C/Xresources
 
 # Turn off NumLock key
 exec --no-startup-id numlockx off
+
+# Set keyboard layout
+exec --no-startup-id setxkbmap -layout "us" -option "grp:alt_shift_toggle"
+
+# Start PN Mixer volume controller (hangs on tray)
+exec --no-startup-id pnmixer
+
+# Battery status indicator on tray
+# exec --no-startup-id batterymon
 
 # exec --no-startup-id urxvtd
 
@@ -319,6 +333,7 @@ bindsym XF86AudioLowerVolume exec "mpc -p $port volume -$step"
 # ---
 
 # Cycle through workspaces
+bindsym $mod+grave workspace next
 bindsym $mod+bracketright workspace next
 bindsym $mod+bracketleft workspace prev
 

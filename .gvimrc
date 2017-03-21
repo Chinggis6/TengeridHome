@@ -9,8 +9,8 @@ colorscheme neodark
 
 " Remove Menubar and Toolbar
 
-" set guioptions -=m 
-" set guioptions -=T
+set guioptions -=m 
+set guioptions -=T
 
 " Remove scroll bars
 

@@ -1,5 +1,16 @@
 % unsetkey
 
+% Headings
+color overstrike brightblue black
+
+% Text
+color normal lightgray black
+
+% Some option values
+color underline yellow black
+
+color status yellow blue
+
 unsetkey "s"
 unsetkey "S"
 unsetkey "^s"
@@ -14,6 +25,10 @@ setkey page_up "^b"
 
 setkey up "k"
 setkey down "j"
+
+setkey up "^y"
+setkey down "^e"
+
 setkey "column_left" "h"
 setkey "column_right" "l"
 

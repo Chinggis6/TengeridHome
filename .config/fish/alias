@@ -10,6 +10,14 @@
 
 # --- DEFAULT OPTIONS ---
 
+# Of gifsicle package
+alias gifview='gifview --animate --new-window root'
+
+# Open media using external programs defined in .mailcap file
+alias rtv='rtv --enable-media'
+
+alias sl='sl -l -a -F -c'
+
 # Also display directory history, --list
 alias nextd='nextd -l'
 alias prevd='prevd -l'
@@ -125,9 +133,9 @@ alias tpon="xinput --enable 'ETPS/2 Elantech Touchpad'"
 alias x='exit'
 alias xx='exit;exit'
 alias news='newsbeuter -r'
-# --symbolic --relative
+# --symbolic, --relative, --force
 # ln --relative cannot be done, for hardlinks
-alias lns='ln -s -r'
+alias lns='ln -srf'
 alias untar='tar -xf'
 # pastebin, pass with | p
 alias p="curl -F 'sprunge=<-' http://sprunge.us"
@@ -166,6 +174,7 @@ alias vedit='vim'
 alias evim='vim' # Easy vim, modeless, always in Insert mode, please do put the handkerchief
 alias eview='vim'
 alias xedit='vim' # right, not a replacement for Emacs
+alias nvim='vim'
 
 
 
@@ -414,3 +423,10 @@ alias taskrm='trm'
 # alias zathura
 # alias fpp
 # alias abook
+
+# PQ Image Viewer
+alias iv='pqiv'
+alias view='iv'
+alias vw='view'
+
+alias i3l='i3lock-fancy'

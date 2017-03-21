@@ -41,6 +41,9 @@
 " Show option value
 " :set number?
 
+" Empty option of value (for non binary, un-toggled, valued options)
+" :set indentexpr&
+
 " Invert option's value
 " : set invnumber
 
@@ -90,11 +93,14 @@
 " " Normal mode paste
 " ^r Insert mode paste
 " Registers
-" % - filename (pseudo-register)
-" + - Clipboard
 " * - Primary selection
+" + - Clipboard
+" % - current file's name (pseudo-register)
+" # - alternate file's name
 
 " ^] jump in Help pages
+
+" ^o temporarily switch to Normal Mode and then back after one command
 
 " --- ORTNI ---
 
@@ -151,7 +157,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Spacemacs key bindings for Vim
 " https://github.com/meitham/vim-spacemacs
-Plug 'meitham/vim-spacemacs'
+" Plug 'meitham/vim-spacemacs'
 
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -288,7 +294,7 @@ Plug 'pbrisbin/vim-mkdir'
 
 " Dep
 " Better increment, of dates etc
-" 10<C-a> increments, 5<C-a> decrements
+" 10<C-a> increments, 5<C-x> decrements
 Plug 'tpope/vim-speeddating'
 
 " Better repeating (.)
@@ -331,7 +337,8 @@ Plug 'honza/vim-snippets'
 
 " Interactive scratchpad
 " PHP support requires psysh
-Plug 'metakirby5/codi.vim'
+" Doesn't work on my Vim 8.0 (+job, +channel) but works on Nvim
+" Plug 'metakirby5/codi.vim'
 
 " Auto-completion
 " Plug 'Valloric/YouCompleteMe'
@@ -473,6 +480,13 @@ set laststatus=2
 set noautoindent
 set nosmartindent
 set nocindent
+
+" Indentation based on file type (.md, .css)
+" Used by plugins and rules kept in indent/ directory as a .vim file (eg. ~.vim/plugged/vim-markdown/indent/markdown.vim)
+filetype indent off
+
+" set indentexpr? to see, eg indentexpr=GetMarkdownIndent(), indentexpr& to remove
+" set indentexpr=someFunction()
 
 " Disable automatic commenting on new line insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -769,6 +783,9 @@ highlight clear SignColumn
 " Trailing spaces bacground color
 highlight ExtraWhitespace ctermbg=black ctermfg=red guibg=black guifg=red
 
+" ^x ^o to invoke
+set omnifunc=csscomplete#CompleteCSS
+
 " --- SNOITPO ---
 
 " Search options
@@ -980,8 +997,9 @@ source ~/.vim/chinggis/tabular.vim
 " nnoremap P "*P
 
 " Five times more movement
-nnoremap <C-k> 5k
-nnoremap <C-j> 5j
+" ^k is used for inserting digraphs
+" nnoremap <C-k> 5k
+" nnoremap <C-j> 5j
 nnoremap <C-l> 5l
 nnoremap <C-h> 5h
 
@@ -1051,20 +1069,32 @@ vnoremap : Q
 noremap w W
 noremap b B
 noremap e E
+" Jump back to the end of the previous word
+noremap ge gE
 
 noremap W w
 noremap B b
 noremap E e
+noremap gE ge
 
 " Select until whitespace instead of beginning of next word
 vnoremap w aW
 
-" Jump back to the end of the previous word
-" Has to be run on the beginning of the previous word
-noremap <LocalLeader>w BE
+" Extending the series to plugins
+
+onoremap iw iW
+onoremap iW iw
+
+" nmap ysiw ysiW
+" augroup mySurround|au!|autocmd VimEnter * noremap ysiw ysiW|augroup END
+" map ysiw <Plug>YsurroundiW
+" map ysiW <Plug>Ysurroundiw
+
+" first-born
 
 " Sudo write the file
-cmap w!! w !sudo tee % >/dev/null
+" cmap w!! w !sudo tee % >/dev/null
+cmap w!! SudoWrite
 
 " Copy always from Primary selection
 map <MouseMiddle> "*p
@@ -1127,8 +1157,15 @@ noremap <C-w>s <C-w>v
 nnoremap <LocalLeader>S :set
 
 " Swap (exchange) for FBL
+" https://vimgifs.com/caret/
+
+" Start of line
 nnoremap 0 ^
 nnoremap ^ 0
+
+" End of line
+nnoremap $ g_
+nnoremap g_ $
 
 " Quick surround
 
@@ -1163,6 +1200,22 @@ map <LocalLeader>c> cs)>
 
 " ---
 
+" Spacemacs legacy
+
+nnoremap <leader>fs :write<CR>
+nnoremap <leader>fed :edit $MYVIMRC<CR>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+nnoremap <leader>bN :new<CR>
+" Native
+nnoremap <leader>bb :buffers<CR>
+" BufExplorer plugin
+nnoremap <leader>bB :BufExplorer<CR>
+" fzf
+nnoremap <leader>bf :Buffers<CR>
+
+" ---
+
 " Cursor moves through wrapped line
 nnoremap j gj
 nnoremap k gk
@@ -1174,7 +1227,8 @@ vnoremap k gk
 " noremap <silent> <LocalLeader>c *cgn
 
 " NO HIGHLIGHT
-noremap <LocalLeader>n :nohl<CR>
+" <silent> doesn't print ":nohl" in status line
+noremap <silent><LocalLeader>n :nohl<CR>
 
 " fzf
 " Fuzzy Finder
@@ -1211,7 +1265,7 @@ omap <leader><tab> <plug>(fzf-maps-o)
 noremap <LocalLeader>f :FZF<CR>
 
 
-noremap <LocalLeader>C :Codi<CR>
+" noremap <LocalLeader>C :Codi<CR>
 
 " Swoop
 " Default is <leader>l
@@ -1239,6 +1293,13 @@ noremap <LocalLeader>J :clear<CR>
 map <LocalLeader>e <C-y>,
 map <LocalLeader>E V<C-y>,
 
+" Change inside and around Quotes, single & double
+" Line-wise, no matter where the cursor is
+noremap ciq ci'
+noremap ciQ ci"
+noremap caq ca'
+noremap caQ ca"
+
 " --- sgnippam motsuC ---
 
 " Tengerid Commands
@@ -1255,6 +1316,13 @@ noremap <localleader>O :O
 " Save file as root user
 " Requires Eunuch plugin
 command! W SudoWrite
+
+command! WW saveas
+
+" Split to the right by default (vertically)
+" WARNING: Maps in search mode too
+" cnoremap sp vsp
+" cnoremap split vsplit
 
 " Reload vimrc on save instantly
 " http://www.bestofvim.com/tip/auto-reload-your-vimrc/
@@ -1312,8 +1380,6 @@ augroup END
 
 " Transparent background
 " hi Normal guibg=NONE ctermbg=NONE
-
-
 
 
 
