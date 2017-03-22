@@ -1,0 +1,66 @@
+# man zathurarc
+
+# --- --- ---
+
+# Use primary selection instead of clipboard for copying
+set selection-clipboard primary
+
+# Tell what is selected and copied from page
+set selection-notification true
+
+# statusline, command-line, horizontal scrollbar, vertical scrollbar
+set guioptions schv
+
+# Show ~ instead of home/ on the title
+set window-title-home-tilde true
+
+# Show ~ instead of home/ on status bar
+set statusbar-home-tilde true
+
+# Show page number dynamically in the title too, eg [3/7]
+set window-title-page true
+
+# Fit on open
+set adjust-open best-fit
+
+# --- --- ---
+
+# Custom mappings
+
+# Toggle status bar
+map t toggle_statusbar
+
+# Invert colors
+map I set recolor
+
+# Easy zoom
+map = zoom in
+map - zoom out
+map + zoom default
+
+# Remove command-line bar
+map b set 'guioptions s'
+
+# Remove the whole bottom bar
+map B set 'guioptions b'
+
+# Toggle Page Mode
+# Page Mode is displaying the book in two columns
+map D toggle_page_mode
+
+" Info about the document (creator and publisher application, creation and modification dates)
+map i feedkeys ":info<Return>"
+
+" Semi-colon to Command
+map ; feedkeys ":"
+
+" Exact one page down/up
+map ] navigate next
+map [ navigate previous
+
+" Further Vim compatibility
+map <C-e> scroll down
+map <C-y> scroll up
+
+
+# vim: ft=zathura

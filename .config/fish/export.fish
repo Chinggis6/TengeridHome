@@ -366,8 +366,11 @@ set -x gitconfig "$HOME/.gitconfig"
 
 set -x userscripts "$HOME/.local/share/qutebrowser/userscripts"
 
-set -x task "$C/task/taskrc"
+set -x task "$TASKRC"
 set -x taskrc "$task"
+set -x tasks "$TASKDATA"
+set -x taskdata "$tasks"
+set -x taskd "$C/task"
 
 set -x rtorrent "$HOME/.rtorrent.rc"
 set -x torrent "$rtorrent"
@@ -393,3 +396,16 @@ set -x abookd "$HOME/.abook"
 set -x abook "$abookd/abookrc"
 set -x abookrc "$abook"
 set -x addressbook "$abookd/addressbook"
+
+set -x PASSWORD_STORE_X_SELECTION 1
+
+set -x zathura "$C/zathura/zathurarc"
+set -x zath "$zathura"
+
+# set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
+set -x FZF_DEFAULT_COMMAND 'rg --hidden -e ""'
+
+set -x vimperator "$HOME/.vimperatorrc"
+set -x vimper "$vimperator"
+
+set -x readme "$HOME/README.md"

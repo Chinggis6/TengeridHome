@@ -114,3 +114,6 @@ F11/12 - Cycle through nick list (users)
 
 # Alias
 /alias add bs /buffer swap
+
+^r - Search Mode
+^q - Exit Search Mode

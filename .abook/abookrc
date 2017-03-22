@@ -1,26 +1,39 @@
+# Options
+
 # Default is lynx
-set www_command                  = w3m
+set www_command                    = w3m
 # Default is EU
-set address_style                = us
-set add_email_prevent_duplicates = true
-set use_colors                   = true
+set address_style                  = us
+set add_email_prevent_duplicates   = true
+set use_colors                     = true
+set show_all_emails                = false
+set mutt_return_all_emails         = false
+# Default is nick (Nickname/Alias)
+set sort_field                     = email
+# Default is standard
+set preserve_fields                = all
+
+# Main list entries
+set index_format                   = " {name:22} {email:40} {mobile|workphone|phone:12}"
 
 # Colors
-set color_header_fg              = blue
-set color_header_bg              = default
-set color_footer_fg              = blue
-set color_footer_bg              = default
-set color_list_header_fg         = cyan
-set color_list_header_bg         = default
+
+set color_header_fg                = blue
+set color_header_bg                = default
+set color_footer_fg                = blue
+set color_footer_bg                = default
+set color_list_header_fg           = cyan
+set color_list_header_bg           = default
+# set color_field_value_fg         = gray
+
+# Custom fields
+# field birthday                   = Birthday, date
+
+# Custom tabs
+# view MyView                      = birthday, ...
 
 
 
 
 
-
-
-
-
-
-
-# vim ft=abook
+# vim ft                           = abook

@@ -184,6 +184,11 @@ bindsym $mod+r mode "resize"
 set $bumblebee $HOME/.config/i3/bumblebee-status/bumblebee-status
 set $commandline -m memory time date -p root.path=/ date.format="%a, %b %d %Y" time.format="%H:%M" -t solarized-powerline
 bar {
+
+# strip_workspace_numbers yes
+binding_mode_indicator yes
+# separator_symbol "/"
+
   font pango:Inconsolata 8
     position top
 #    tray_output none
@@ -322,16 +327,18 @@ bindsym XF86MonBrightnessDown exec "light -U -p 20"
 # Volume
 
 # Global volume control
-# bindsym XF86AudioLowerVolume exec amixer sset Master 2%-
-# bindsym XF86AudioRaiseVolume exec amixer sset Master 2%+
+set $step 5
+bindsym XF86AudioRaiseVolume exec amixer set Master $step%+
+bindsym XF86AudioLowerVolume exec amixer set Master $step%-
 # Global mute
 bindsym XF86AudioMute exec amixer sset Master toggle
 
 # ---
 
-set $step 5
-bindsym XF86AudioRaiseVolume exec "mpc -p $port volume +$step"
-bindsym XF86AudioLowerVolume exec "mpc -p $port volume -$step"
+# MPD volume control
+# set $step 5
+# bindsym XF86AudioRaiseVolume exec "mpc -p $port volume +$step"
+# bindsym XF86AudioLowerVolume exec "mpc -p $port volume -$step"
 # bindsym XF86AudioMute exec mpc volume 0
 
 # ---

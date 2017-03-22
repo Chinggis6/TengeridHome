@@ -17,6 +17,9 @@ set guioptions -=T
 set guioptions -=r
 set guioptions -=L
 
+" No pop up dialogs
+set go+=c
+
 " Display emoji
 " Untested
 " Possibly only in macOS

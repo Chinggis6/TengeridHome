@@ -398,6 +398,10 @@ Plug 'calincru/qml.vim'
 " Styles wiki links removing surrounding brackets
 Plug 'chikamichi/mediawiki.vim'
 
+" JUNEGUNN!!!!!!! This guy rocks!
+" Hero of Vim
+Plug 'junegunn/vim-easy-align'
+
 " last plugin
 
 " --- SNIGULP ---
@@ -544,6 +548,12 @@ set fileencoding=utf-8
 " Default is 0
 set scrolloff=5
 set sidescrolloff=5
+
+" Scroll half the window height
+" Instead of just one line down/up when reach the end (scroll limit)
+" So the cursor stays above
+" Not applicable to scrolling shortcuts (^e, ^d, ^f)
+set scrolljump=-50
 
 " Nerdfont for Gvim
 " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
@@ -907,6 +917,15 @@ autocmd FileType taskrc setlocal commentstring=#\ %s
 
 " abook
 autocmd FileType taskrc setlocal commentstring=#\ %s
+
+" Zathura
+autocmd FileType zathura setlocal commentstring=#\ %s
+
+" Unix (ending in rc)
+autocmd FileType unix setlocal commentstring=#\ %s
+
+" Vimperator
+autocmd FileType unix setlocal commentstring="\ %s
 
 " ---
 
@@ -1310,6 +1329,20 @@ noremap caQ ca"
 " Extending the series to plugins
 onoremap iw iW
 onoremap iW iw
+
+" Do not exit from Visual Mode when shifting text
+" So it can be repeatedly shifted back and forth
+vnoremap < <gv
+vnoremap > >gv
+
+" Easy Align plugin
+" https://github.com/junegunn/vim-easy-align
+" gaip=, vipga=; inner paragraph, align by =
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" Use gaip*| to align a table
 
 " --- sgnippam motsuC ---
 

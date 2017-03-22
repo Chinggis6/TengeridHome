@@ -1,0 +1,43 @@
+" Number tabs
+set tabnumbers
+
+" Ctrl+A fix
+inoremap <C-a> <C-Home><C-S-End>
+
+" tabs, navigation
+set toolbars=none
+
+" Auto-complete everything
+set complete=bfhlsSt
+
+" Gvim as editor
+set editor='gvim -f'
+
+" Set DGG as the default search and suggest engine
+set defsearch=duckduckgo
+set suggestengines=duckduckgo
+
+" Search options
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+" Previous page in history
+nnoremap <S-j> :tabprevious<CR>
+" Next page in history
+nnoremap <S-k> :tabnext<CR>
+
+nmap <Tab><Tab> :buffer! 
+
+" Do not close the window when the last tab is closed.
+set! browser.tabs.closeWindowWithLastTab=false
+
+" Homepage
+set! browser.startup.homepage="https:/en.wikipedia.org/wiki/Portal:Current_events"
+
+" Use "Firefox" instead of the default "Vimperator" string in window titles.
+" set titlestring="Firefox"
+set titlestring="GNU Icecat"
+
+colorscheme darkness

@@ -10,6 +10,13 @@
 
 # --- DEFAULT OPTIONS ---
 
+# Owned by findutils together with xargs
+# -iname should contain pattern, eg ".vimper*"
+# -type d to search for directories only
+# Append -ls for `ls` like format
+# Pipe to xargs to do operation on every file, eg | xargs cat (or rm to remove)
+alias find='find -type f -iname'
+
 alias weather='weather -l'
 
 # Of gifsicle package
@@ -307,9 +314,14 @@ alias disable='sdis'
 
 # Journald event manager
 
-alias j="journalctl"
-# --catalog --pager-end
+# --reverse (recent events on top)
+alias journalctl='journalctl -r'
+alias j='journalctl'
 
+# --unit
+alias ju='j -u'
+
+# --catalog --pager-end
 alias jls='j -xe'
 
 # Netctl network manager
@@ -433,3 +445,15 @@ alias view='iv'
 alias vw='view'
 
 alias i3l='i3lock-fancy'
+
+alias manhtml='man -H'
+
+alias mpcc='mpc current'
+alias mpcp='mpc searchplay'
+# eg. +10%
+alias mpcs='mpc seek'
+alias mpca='mpc list Artist'
+alias mpct='mpc list Title'
+alias mpcS='mpc stats'
+
+alias zath='zathura'
