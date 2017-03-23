@@ -176,7 +176,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'mbbill/undotree'
 
 " Align tables well
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 
 " Three plugins in one
 " Abbreviations, Substitution, and Case conversion (called Coercion)
@@ -401,6 +401,10 @@ Plug 'chikamichi/mediawiki.vim'
 " JUNEGUNN!!!!!!! This guy rocks!
 " Hero of Vim
 Plug 'junegunn/vim-easy-align'
+
+Plug 'joshdick/onedark.vim'
+
+Plug 'chriskempson/base16-vim'
 
 " last plugin
 
@@ -767,6 +771,7 @@ set pumheight=4
 set helpheight=30
 
 " True colors (24 bit)
+" Vim colors
 " URxvt does not support the colors unlike xterm
 let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
@@ -998,6 +1003,7 @@ nmap <M-(>  <Plug>(exjumplist-previous-buffer)
 
 nnoremap <localleader>T :TagbarToggle<CR>
 
+let base16colorspace=256  " Access colors present in 256 colorspace
 
 " Plugin options
 
@@ -1016,7 +1022,7 @@ source ~/.vim/chinggis/fkeys.vim
 source ~/.vim/chinggis/reverse.vim
 
 " Tabularize key bindings
-source ~/.vim/chinggis/tabular.vim
+" source ~/.vim/chinggis/tabular.vim
 
 " Use primary selection as default clipboard
 " nnoremap p "*p
