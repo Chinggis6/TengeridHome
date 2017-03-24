@@ -35,8 +35,8 @@ set -x SHELL '/usr/bin/fish'
 set -x AUR 'https://aur.archlinux.org'
 set -x GIT 'https://github.com'
 
-set -x BOI "$HOME/.org/BOI.org"
-set -x BOT "$HOME/.org/BOT.org"
+set -x BOI "$HOME/.md/BOI.md"
+set -x BOT "$HOME/.md/BOT.md"
 set -x books "$BOT" "$BOI"
 
 # CONFIGURATION FILES
@@ -168,8 +168,11 @@ set -x A "$alias"
 # Ranger file manager
 set -x rcd "$C/ranger"
 set -x rc "$rcd/rc.conf"
+set -x ranger "$rc"
 set -x rcb "$rcd/bookmarks"
 set -x commands "$rcd/commands.py"
+set -x scope "$rcd/scope.sh"
+set -x rifle "$rcd/rifle.conf"
 
 # Cmus music player
 set -x cmusd "$C/cmus"

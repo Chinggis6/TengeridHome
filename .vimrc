@@ -102,6 +102,9 @@
 
 " ^o temporarily switch to Normal Mode and then back after one command
 
+" ^o/^i navigate through jumplist
+" g;/g, navigate trough changelist
+
 " --- ORTNI ---
 
 " --- PLUGINS ---
@@ -1196,8 +1199,8 @@ nnoremap g0 g^
 
 " End of line
 " Line end (FNB)
-nnoremap $ g_
-nnoremap g_ $
+" nnoremap $ g_
+" nnoremap g_ $
 
 " Quick surround
 
@@ -1327,10 +1330,17 @@ map <LocalLeader>E V<C-y>,
 
 " Change inside and around Quotes, single & double
 " Line-wise, no matter where the cursor is
-noremap ciq ci'
-noremap ciQ ci"
-noremap caq ca'
-noremap caQ ca"
+noremap ciQ ci'
+noremap caQ ca'
+noremap caq ca"
+noremap ciq ci"
+
+" cib affects () parentheses, and ciB {} curly brackets
+" S stands for Square Brackets
+noremap ciS ci]
+noremap caS ca]
+
+
 
 " Extending the series to plugins
 onoremap iw iW
@@ -1349,6 +1359,9 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " Use gaip*| to align a table
+
+noremap gD g^dg$g^
+noremap gdd g^dg$g^
 
 " --- sgnippam motsuC ---
 

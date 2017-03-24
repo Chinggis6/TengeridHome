@@ -2,16 +2,16 @@
 " Extends G for Tabs tradition
 
 " Open a new tab after current
-nnoremap gn :tabnew<CR>
+nnoremap <LocalLeader>gn :tabnew<CR>
 " Open a new tab before current
-nnoremap gN :tabnew-1<CR>
+nnoremap <LocalLeader>gN :tabnew-1<CR>
 
 " Drop current tab switching to the next
-nnoremap gd :tabclose<CR>
+nnoremap <LocalLeader>gd :tabclose<CR>
 " Drop tab switching to the previous
 " qutebrowser legacy
 " <bar> is | to chain commands
-nnoremap gD :tabclose <bar> tabprevious<CR>
+nnoremap <LocalLeader>gD :tabclose <bar> tabprevious<CR>
 
 " Force drop without saving switching to the next
 nnoremap gC :tabclose!<CR>

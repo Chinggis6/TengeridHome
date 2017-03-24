@@ -269,6 +269,8 @@ exec --no-startup-id setxkbmap -layout "us" -option "grp:alt_shift_toggle"
 # Remap escape to Caps lock
 # Might esp. be useful on Vim being in the same home row as hjkl nav. keys
 # exec --no-startup-id setxkbmap -option caps:escape
+# Keep Esc as Caps Lock
+exec --no-startup-id setxkbmap -option caps:swapescape
 
 # Keyboard layout indicator hanging on tray
 exec --no-startup-id fbxkb

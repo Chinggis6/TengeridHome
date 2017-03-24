@@ -432,6 +432,7 @@ alias tls='task ls'
 alias trm='task rm'
 alias tadd='task add'
 alias taskls='tls'
+alias taskl='tls'
 alias taskadd='tadd'
 alias taskrm='trm'
 
@@ -457,3 +458,7 @@ alias mpct='mpc list Title'
 alias mpcS='mpc stats'
 
 alias zath='zathura'
+
+alias ran='ranger'
+
+alias wee='weechat'
