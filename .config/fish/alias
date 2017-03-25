@@ -170,6 +170,8 @@ alias urxvt='urxvtc'
 # RADICALISM
 # Command substitution
 
+alias pwd='echo Use A-d !'
+
 # alias cat='pygmentize'
 
 # alias ed='vim'

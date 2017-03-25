@@ -156,8 +156,8 @@ set -x fc "$completions"
 
 # all functions end in .fish
 set -x functions "$F/functions"
-set -x func "$functions"
-set -x ff "$functions"
+set -x funcd "$functions"
+set -x Fu "$functions"
 
 # My environment variables and command aliases
 set -x export "$F/export.fish"
