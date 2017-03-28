@@ -13,14 +13,8 @@
 
 # c - new window
 # w - window list
-# , - rename window
 # n/p - next/previous window
 # t - show time
-# x - kill pane
-# $ - rename session
-# & - kill window
-# f - find window
-# ! - break pane into window
 # t - clock
 # ? - key maps
 # % - vertical split

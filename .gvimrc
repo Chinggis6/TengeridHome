@@ -5,11 +5,11 @@
 " colorscheme quantum
 " colorscheme neodark
 set background=dark
-colorscheme neodark
+colorscheme solarized
 
 " Remove Menubar and Toolbar
 
-set guioptions -=m 
+set guioptions -=m
 set guioptions -=T
 
 " Remove scroll bars

@@ -1,0 +1,4 @@
+calendar = /home/chinggis/.when/calendar
+editor = vim -p
+monday_first = yes
+header = no

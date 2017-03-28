@@ -15,7 +15,8 @@ set -x PATH $PATH /usr/local/bin $HOME/bin $HOME/.gem/ruby/2.4.0/bin ~/.bin
 set -x EDITOR 'vim -p'
 # Spacemacs
 # set -x VISUAL 'emacsclient -nw'
-set -x VISUAL 'gvim -p'
+# set -x VISUAL 'gvim -p'
+set -x VISUAL 'vim -p'
 # if not set opens commit message with VISUAL
 set -x GIT_EDITOR 'vim -p'
 set -x BROWSER 'qutebrowser'
@@ -55,7 +56,7 @@ set -x i3 "$i3d/config"
 # Tmux terminal multiplexer
 
 # set -x tmux "$HOME/.tmux.conf"
-set -x tmux "$HOME/.tmux.conf.local"
+set -x tmux "$HOME/.tmux.conf"
 set -x T "$tmux"
 
 set -x tmuxinator "$HOME/.tmuxinator/TS.yml"
@@ -329,7 +330,7 @@ set -x mutt "$HOME/.muttrc"
 set -x phpini '/etc/php/php.ini'
 set -x mycnf '/etc/mysql/my.cnf'
 
-set -x book "$HOME/BookOfTenger.md"
+set -x book "$HOME/.md/BOT.md"
 
 # GNU Readline
 # Read by bash, mysql etc

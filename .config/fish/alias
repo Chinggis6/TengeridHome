@@ -10,6 +10,8 @@
 
 # --- DEFAULT OPTIONS ---
 
+alias ln='ln -v -r'
+
 # Owned by findutils together with xargs
 # -iname should contain pattern, eg ".vimper*"
 # -type d to search for directories only
@@ -142,9 +144,9 @@ alias tpon="xinput --enable 'ETPS/2 Elantech Touchpad'"
 alias x='exit'
 alias xx='exit;exit'
 alias news='newsbeuter -r'
-# --symbolic, --relative, --force
+# --symbolic, --relative, --force, --verbose
 # ln --relative cannot be done, for hardlinks
-alias lns='ln -srf'
+alias lns='ln -srfv'
 alias untar='tar -xf'
 # pastebin, pass with | p
 alias p="curl -F 'sprunge=<-' http://sprunge.us"
@@ -169,8 +171,6 @@ alias urxvt='urxvtc'
 
 # RADICALISM
 # Command substitution
-
-alias pwd='echo Use A-d !'
 
 # alias cat='pygmentize'
 
@@ -464,3 +464,12 @@ alias zath='zathura'
 alias ran='ranger'
 
 alias wee='weechat'
+
+alias fed='funced'
+alias fsv='funcsave'
+
+# Skip all user reconfiguration
+alias novim='vim -u NONE'
+
+# --animate
+alias Animate='lolcat -a'

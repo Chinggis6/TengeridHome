@@ -185,12 +185,16 @@ set $bumblebee $HOME/.config/i3/bumblebee-status/bumblebee-status
 set $commandline -m memory time date -p root.path=/ date.format="%a, %b %d %Y" time.format="%H:%M" -t solarized-powerline
 bar {
 
+mode dock
+# mode invisible
+# position bottom
+position top
+
 # strip_workspace_numbers yes
 binding_mode_indicator yes
 # separator_symbol "/"
 
   font pango:Inconsolata 8
-    position top
 #    tray_output none
 # Modules:
 # nic (3), memory, date, time
@@ -212,8 +216,9 @@ set $Locker i3lock && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-#    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym l exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png", mode "default"
+    # bindsym l exec --no-startup-id $Locker, mode "default"
+	bindsym Ctrl+Mod1+l exec --no-startup-id i3lock-fancy -g -t "STAY AWAY !!!", mode "default"
+    # bindsym l exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png", mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
@@ -241,10 +246,10 @@ bindsym $mod+XF86WebCam exec --no-startup-id slip -q
 bindsym $mod+d exec "rofi -combi-modi drun,run -show combi"
 bindsym $mod+w exec "rofi -show window"
 #bindsym Mod1+x exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
-bindsym Ctrl+Mod1+l exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
 # --grayscale, --text
-bindsym Ctrl+Mod1+b exec --no-startup-id i3lock-fancy -g -t "STAY AWAY !!!"
-bindsym Mod1+b exec --no-startup-id i3lock --color=87ceeb --image "$HOME/SatanicBear.png"
+bindsym Ctrl+Mod1+l exec --no-startup-id i3lock-fancy -g -t "Aquila non capit muscas"
+bindsym Ctrl+Mod1+t exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
+bindsym Ctrl+Mod1+b exec --no-startup-id i3lock --color=87ceeb --image "$HOME/SatanicBear.png"
 
 exec --no-startup-id redshift-gtk
 # exec --no-startup-id dropbox start
@@ -286,6 +291,12 @@ exec --no-startup-id setxkbmap -layout "us" -option "grp:alt_shift_toggle"
 
 # Start PN Mixer volume controller (hangs on tray)
 exec --no-startup-id pnmixer
+
+# Hide mouse cursor when idle
+# Install updated unclutter-xfixes-git
+exec --no-startup-id unclutter
+# Hide cursor when key is pressed
+exec --no-startup-id xbanish
 
 # Battery status indicator on tray
 # exec --no-startup-id batterymon

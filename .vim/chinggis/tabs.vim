@@ -14,7 +14,7 @@ nnoremap <LocalLeader>gd :tabclose<CR>
 nnoremap <LocalLeader>gD :tabclose <bar> tabprevious<CR>
 
 " Force drop without saving switching to the next
-nnoremap gC :tabclose!<CR>
+nnoremap <LocalLeader>gC :tabclose!<CR>
 
 " " Move tab right
 nnoremap <LocalLeader>gm :+1tabmove<CR>

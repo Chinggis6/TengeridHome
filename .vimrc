@@ -105,6 +105,20 @@
 " ^o/^i navigate through jumplist
 " g;/g, navigate trough changelist
 
+" Spelling
+" Add word to dictionary
+" zg - good word
+" zG - good word (temporary)
+" Remove word from dictionary
+" zw - wrong word
+" ZW - wrong word (temporary)
+
+" gqip - reformat paragraph, make into one line
+" vipJ - same in and through Visual Mode
+
+" n - go to last search
+" gn - go to last search and visually select it
+
 " --- ORTNI ---
 
 " --- PLUGINS ---
@@ -135,7 +149,10 @@ Plug 'scrooloose/nerdtree'
 
 " Vim wiki
 " \ww to go to index.wiki
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
+
+" Verbose search
+" Plug 'henrik/vim-indexed-search'
 
 " Improved incremental searching
 Plug 'haya14busa/incsearch.vim'
@@ -403,11 +420,14 @@ Plug 'chikamichi/mediawiki.vim'
 
 " JUNEGUNN!!!!!!! This guy rocks!
 " Hero of Vim
+" ga to align
 Plug 'junegunn/vim-easy-align'
 
 Plug 'joshdick/onedark.vim'
 
 Plug 'chriskempson/base16-vim'
+
+Plug 'pangloss/vim-javascript'
 
 " last plugin
 
@@ -700,7 +720,7 @@ set history=1000
 
 " Command mode height in statusline
 " set cmdheight=1
-" set cmdheight=2
+set cmdheight=2
 
 " Show whitespace as characters (tab, space)
 " Useful to see end of line or trail spaces
@@ -808,6 +828,16 @@ highlight ExtraWhitespace ctermbg=black ctermfg=red guibg=black guifg=red
 " ^x ^o to invoke
 set omnifunc=csscomplete#CompleteCSS
 
+" Vi compatibility for changing words
+" Add $ to the end of the word to be changed instead of removing
+set cpoptions+=$
+
+" Copy indentation of the current line
+" set smartindent
+set copyindent
+
+" last option
+
 " --- SNOITPO ---
 
 " Search options
@@ -910,6 +940,9 @@ let g:airline_powerline_fonts =1
 " simple, dark, monochrome, understated, distinguished, jellybeans, term
 let g:airline_theme='distinguished'
 
+" Always show tab line (even for single tab)
+let g:airline#extensions#tabline#enabled = 1
+
 " ---
 
 " Vim commentary
@@ -1008,6 +1041,29 @@ nnoremap <localleader>T :TagbarToggle<CR>
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 
+" Vim Javascript plugin
+" Syntax highlighting
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow  = 1
+
+set foldmethod=syntax
+set conceallevel=1
+
+let g:javascript_conceal_function                  = "ƒ"
+let g:javascript_conceal_null                      = "ø"
+let g:javascript_conceal_this                      = "@"
+let g:javascript_conceal_return                    = "⇚"
+let g:javascript_conceal_undefined                 = "¿"
+let g:javascript_conceal_NaN                       = "ℕ"
+let g:javascript_conceal_prototype                 = "¶"
+let g:javascript_conceal_static                    = "•"
+let g:javascript_conceal_super                     = "Ω"
+let g:javascript_conceal_arrow_function            = "⇒"
+let g:javascript_conceal_noarg_arrow_function      = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
+
+" last plugin option
 " Plugin options
 
 " --- SNOITPO NIGULP ---
@@ -1237,7 +1293,7 @@ map <LocalLeader>c> cs)>
 
 " Spacemacs legacy
 
-nnoremap <leader>fs :write<CR>
+" nnoremap <leader>fs :write<CR>
 nnoremap <leader>fed :edit $MYVIMRC<CR>
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
@@ -1351,6 +1407,9 @@ onoremap iW iw
 vnoremap < <gv
 vnoremap > >gv
 
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
 " Easy Align plugin
 " https://github.com/junegunn/vim-easy-align
 " gaip=, vipga=; inner paragraph, align by =
@@ -1362,6 +1421,37 @@ nmap ga <Plug>(EasyAlign)
 
 noremap gD g^dg$g^
 noremap gdd g^dg$g^
+
+" Center the screen
+noremap G Gzzzv
+noremap n nzzzv
+noremap N Nzzzv
+noremap } }zzzv
+noremap { {zzzv
+
+" Close all buffers
+nnoremap XX :qa<CR>
+
+" Add dashes to words
+" set iskeyword+=-
+
+" Easier Omni-completion
+inoremap <C-]> <C-X><C-]>
+inoremap <C-F> <C-X><C-F>
+inoremap <C-D> <C-X><C-D>
+inoremap <C-L> <C-X><C-L>
+inoremap <C-O> <C-X><C-O>
+
+noremap <Leader>w :write<CR>
+noremap <Leader>o :tabedit
+
+" Swap Visual modes
+" Visual Line Mode
+noremap v V
+" Visual Block Mode
+noremap V <C-v>
+" Visual Mode
+noremap <C-v> v
 
 " --- sgnippam motsuC ---
 
@@ -1444,8 +1534,16 @@ augroup END
 " Transparent background
 " hi Normal guibg=NONE ctermbg=NONE
 
+" Tmux title with open file in Vim
+autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+autocmd VimLeave * call system("tmux rename-window bash")
+autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+set title
 
+" Change just file name in Filename.Extension format
+autocmd BufEnter *.fish set iskeyword-=.
 
+unmap zg?
 
 " ---
 " Vim is Beautiful

@@ -15,3 +15,6 @@ brightness
 
 # No cursor blinking
 cursor
+
+# Turn off NumLock key
+numlockx off
