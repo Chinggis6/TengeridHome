@@ -1063,6 +1063,10 @@ let g:javascript_conceal_arrow_function            = "⇒"
 let g:javascript_conceal_noarg_arrow_function      = "🞅"
 let g:javascript_conceal_underscore_arrow_function = "🞅"
 
+" Flash yank
+" Set background color
+hi Flashy guibg=yellow ctermbg=yellow
+
 " last plugin option
 " Plugin options
 
@@ -1446,11 +1450,9 @@ noremap <Leader>w :write<CR>
 noremap <Leader>o :tabedit
 
 " Swap Visual modes
-" Visual Line Mode
-noremap v V
-" Visual Block Mode
-noremap V <C-v>
-" Visual Mode
+
+" Swap Visual with Visual Block
+noremap v <C-v>
 noremap <C-v> v
 
 " --- sgnippam motsuC ---

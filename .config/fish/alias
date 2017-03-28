@@ -473,3 +473,10 @@ alias novim='vim -u NONE'
 
 # --animate
 alias Animate='lolcat -a'
+
+alias bukuls='buku --print' # or -p
+alias bukuadd='buku --add' # or -a
+alias bukudel='buku --delete' # or -d
+# Edit in $EDITOR
+alias bukuedit='buku --write' #or -w
+alias bukued='bukuedit'

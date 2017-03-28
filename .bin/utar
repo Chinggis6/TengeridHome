@@ -1,0 +1,4 @@
+#!/bin/fish
+
+# --directory, move into existing directory
+command mkdir (string trim --right --chars .tar.gz "$argv"); and command tar -xf "$argv" -C (string trim --right --chars .tar.gz "$argv")

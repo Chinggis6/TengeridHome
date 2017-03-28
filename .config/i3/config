@@ -106,20 +106,20 @@ bindsym $mod+a focus parent
 # Font Awesome
 # http://fontawesome.io/cheatsheet/
 
-set $ws1 "1. tmux ☯"
+set $ws1 "tmux ☯"
 bindsym $mod+1 workspace $ws1
 bindsym $mod+Shift+1 move container to workspace $ws1
 
-set $ws2 "2. qt ⚓"
+set $ws2 "qt ⚓"
 bindsym $mod+2 workspace $ws2
 bindsym $mod+Shift+2 move container to workspace $ws2
 
 
-set $ws3 "3. wch ⚓"
+set $ws3 "wch ⚓"
 bindsym $mod+3 workspace $ws3
 bindsym $mod+Shift+3 move container to workspace $ws3
 
-set $ws4 "4. mt"
+set $ws4 "mt"
 bindsym $mod+4 workspace $ws4
 bindsym $mod+Shift+4 move container to workspace $ws4
 
@@ -190,7 +190,7 @@ mode dock
 # position bottom
 position top
 
-# strip_workspace_numbers yes
+strip_workspace_numbers yes
 binding_mode_indicator yes
 # separator_symbol "/"
 
