@@ -120,8 +120,8 @@ za - toggle fold
 zf#j - create fold from cursor down # lines
 zf/string - create fold down to string (but not including)
 
-zd - delete created fold
-zE - deleted all created folds
+zd - delete created fold (removes folding, not its content; differs from just opening, so it cannot be closed again)
+zE - deleted all created folds (erase)
 
 ]z - go to the end of the fold
 [z - go to the beginning of the fold

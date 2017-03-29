@@ -223,6 +223,8 @@ set -x lic "$licences"
 
 set -x lib '/usr/lib/'
 
+set -x fortune "$share/fortune"
+
 
 # --- SELIF METSYS ---- #
 
@@ -413,3 +415,5 @@ set -x vimperator "$HOME/.vimperatorrc"
 set -x vimper "$vimperator"
 
 set -x readme "$HOME/README.md"
+
+set -x spell "$HOME/.vim/spell/en.utf-8.add"

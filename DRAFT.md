@@ -2,6 +2,8 @@
 
 Documentation of Linux environment as implemented on Arch Linux
 
+Choice in Software, Preference in Applications
+
 ## Software Solution
 
 **Software Stack**
@@ -97,7 +99,7 @@ mpd / ncmpcpp (with tag editor, lyrics fetcher features)
 	rather than cmus, mocp
 
 ### Video Player
-	mpv
+mpv
 	rather than VLC, mplayer
 
 ### Reddit client
@@ -109,12 +111,35 @@ URxvt
 
 ### Programming Language
 PHP
+	rather than Haskell, C++, Lisp, etc
 
 ### Screenshot Manager
 scrot / maim + slop / slip (+ video recording)
 
+### Cheatsheet Manager
+cheat
+
+### Task Manager
+task (Task Warrior)
+
+### Weather / Forecast
+weather
+
 ### Keyboard
 QWERTY
+
+### Leaders
+
+Leader keys
+
+#### i3
+Windows key
+
+#### Vim
+Space as Global Leader, and Backspace as Local Leader
+
+#### Tmux
+Backtick
 
 ### Personal preferences
 

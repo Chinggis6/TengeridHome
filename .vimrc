@@ -5,7 +5,7 @@
 " ------ --- ------
 "
 " Chinggis Tenger
-" Vimmer, Archer
+" Vimmer, Archer, and Fisher
 " The Son of Web
 " Filius VVeborum
 "
@@ -118,6 +118,9 @@
 
 " n - go to last search
 " gn - go to last search and visually select it
+
+" ]], [[ go to next/previous heading
+" zj, zk go to next/previous fold (beginning of the fold)
 
 " --- ORTNI ---
 
@@ -268,7 +271,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'kana/vim-scratch'
 
 " Tab completion
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 
 " Rich text highlight in Vim
 Plug 'bpstahlman/txtfmt'
@@ -429,6 +432,11 @@ Plug 'chriskempson/base16-vim'
 
 Plug 'pangloss/vim-javascript'
 
+Plug 'terryma/vim-expand-region'
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
 " last plugin
 
 " --- SNIGULP ---
@@ -439,12 +447,22 @@ call plug#end()
 " set noloadplugins
 set loadplugins
 
+" Space and Backspace as Leaders
+noremap <space> <Nop>
+noremap <backspace> <Nop>
+
+" Hardcore Vim
+" Switch to Command Mode to Command
+" Encouragement to use J to Join Lines; and Ctrl-O to TempOrarily switch to Command Mode, just for one key stroke
+inoremap <backspace> <nop>
+
 " Space as global leader
 " Analogous to Major mode
-let mapleader=" "
-" Comma as local leader
+let mapleader="\<Space>"
+
+" Backspace as local leader
 " Analogous to Minor mode
-let maplocalleader=","
+let maplocalleader="\<Backspace>"
 
 " Integrate Limelight with Goyo
 autocmd! User GoyoEnter Limelight
@@ -1161,20 +1179,25 @@ vnoremap : Q
 
 " first-born is a word
 
-noremap w W
-noremap b B
-noremap e E
+" noremap w W
+" noremap b B
+" noremap e E
 " Jump back to the end of the previous word
-noremap ge gE
+" noremap ge gE
 
-noremap W w
-noremap B b
-noremap E e
-noremap gE ge
+" noremap W w
+" noremap B b
+" noremap E e
+" noremap gE ge
 
 " Select until whitespace instead of beginning of next word
-vnoremap w aW
+" vnoremap w aW
 
+" Extending the series to plugins
+" onoremap iw iW
+" onoremap iW iw
+
+" Not needed
 " nmap ysiw ysiW
 " augroup mySurround|au!|autocmd VimEnter * noremap ysiw ysiW|augroup END
 " map ysiw <Plug>YsurroundiW
@@ -1264,19 +1287,33 @@ nnoremap g0 g^
 
 " Quick surround
 
-map <LocalLeader>' ysiw'
-map <LocalLeader>" ysiw"
-map <LocalLeader>* ysiw*
-map <LocalLeader>) ysiw)
-map <LocalLeader>( ys$)
-map <LocalLeader>] ysiw]
-map <LocalLeader>[ ys$]
-map <LocalLeader>d> ysiw>
+" Extending Surround.vim
 
 " Quotes
+map <LocalLeader>' ysiW'
+map <LocalLeader>" ysiW"
+map <LocalLeader>q ysiW'
+map <LocalLeader>Q ysiW"
+map <LocalLeader>p ysiW)
+map <LocalLeader>P ysiW]
 
-map <LocalLeader>q ysiw'
-map <LocalLeader>Q ysiw"
+" Change surround quotes
+map csq cs"'
+map csQ cs'"
+
+" Change surround parentheses
+map csp cs])
+map csP cs)]
+
+" Parentheses
+map <LocalLeader>) ysiW)
+map <LocalLeader>( ys$)
+map <LocalLeader>] ysiW]
+map <LocalLeader>[ ys$]
+
+" Other
+map <LocalLeader>* ysiW*
+map <LocalLeader>d> ysiW>
 
 map <LocalLeader>d' ds'
 map <LocalLeader>d" ds"
@@ -1374,9 +1411,9 @@ nmap <CR> <nop>
 nmap <space> <nop>
 
 " New line after current line without switching to Insert mode
-nmap <CR> o<Esc>
+" nmap <CR> o<Esc>
 " New line before current line
-nmap <Backspace> O<Esc>
+" nmap <Backspace> O<Esc>
 
 " Don't clear clipboard after pasting in Visual mode
 vnoremap p "_dP
@@ -1402,9 +1439,6 @@ noremap caS ca]
 
 
 
-" Extending the series to plugins
-onoremap iw iW
-onoremap iW iw
 
 " Do not exit from Visual Mode when shifting text
 " So it can be repeatedly shifted back and forth
@@ -1436,15 +1470,16 @@ noremap { {zzzv
 " Close all buffers
 nnoremap XX :qa<CR>
 
-" Add dashes to words
-" set iskeyword+=-
+" Remove underscores from word definition
+" Affects cw, dw, yw etc
+set iskeyword-=_
 
 " Easier Omni-completion
-inoremap <C-]> <C-X><C-]>
-inoremap <C-F> <C-X><C-F>
-inoremap <C-D> <C-X><C-D>
-inoremap <C-L> <C-X><C-L>
-inoremap <C-O> <C-X><C-O>
+" inoremap <C-]> <C-X><C-]>
+" inoremap <C-F> <C-X><C-F>
+" inoremap <C-D> <C-X><C-D>
+" inoremap <C-L> <C-X><C-L>
+" inoremap <C-O> <C-X><C-O>
 
 noremap <Leader>w :write<CR>
 noremap <Leader>o :tabedit
@@ -1452,8 +1487,8 @@ noremap <Leader>o :tabedit
 " Swap Visual modes
 
 " Swap Visual with Visual Block
-noremap v <C-v>
-noremap <C-v> v
+" noremap v <C-v>
+" noremap <C-v> v
 
 " --- sgnippam motsuC ---
 
@@ -1490,8 +1525,8 @@ augroup END " }
 " Vim abbreviations
 " Evaluates after Esc
 " Like Visual block mode replacements
-abbrev _me Chinggis6@iCloud.com
-abbrev _CTA Chinggis Tenger Atsyz
+abbrev me Chinggis6@iCloud.com
+abbrev CTA Chinggis Tenger Atsyz
 
 au FileType markdown abbr _l [](http://)<ESC>T[i
 
@@ -1533,6 +1568,14 @@ augroup rainbow_lisp
   autocmd FileType lisp,clojure,scheme RainbowParentheses
 augroup END
 
+augroup non_lisp
+  autocmd!
+  autocmd FileType vim,javascript,php,python RainbowParentheses
+augroup END
+
+" Uncomment to see the effect
+" ((((((((((()))))))))))
+
 " Transparent background
 " hi Normal guibg=NONE ctermbg=NONE
 
@@ -1546,6 +1589,10 @@ set title
 autocmd BufEnter *.fish set iskeyword-=.
 
 unmap zg?
+
+autocmd BufEnter,FileType python :TagbarOpen<CR>
+" Vim plugins
+autocmd BufEnter *.vim :TagbarOpen<CR>
 
 " ---
 " Vim is Beautiful
