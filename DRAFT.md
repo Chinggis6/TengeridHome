@@ -14,7 +14,7 @@ Custom computing environment setup
 i3, i3-gaps
 
 ### Locker
-i3lock-fancy
+[i3lock-fancy](https://github.com/meskarune/i3lock-fancy)
 
 ### Tray
 bumblebee-status, i3bar
@@ -35,10 +35,10 @@ abook
 mutt
 
 ### Text Editor / IDE
-Vim *rather than Emacs, Spacemacs, nano, pico, Atom, Brackets, Visual Studio, ed, NeoVim, NyaoVim etc*
+Vim rather than Emacs, Spacemacs, nano, pico, Atom, Brackets, Visual Studio, ed, NeoVim, NyaoVim etc
 
 ### Multiplexer
-tmux *rather than screen, without byobu and Oh My Tmux
+tmux rather than screen, without byobu and Oh My Tmux
 *
 ### Brightness / Contrast manager
 redshift
