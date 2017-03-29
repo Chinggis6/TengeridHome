@@ -2,7 +2,7 @@
 
 Documentation of Linux environment as implemented on Arch Linux
 
-Choice in Software, Preference in Applications
+*Choice in Software*, *Preference in Applications*
 
 ## Software Solution
 
@@ -35,13 +35,11 @@ abook
 mutt
 
 ### Text Editor / IDE
-Vim
-	rather than Emacs, Spacemacs, nano, pico, Atom, Brackets, Visual Studio, ed, NeoVim, NyaoVim etc
+Vim *rather than Emacs, Spacemacs, nano, pico, Atom, Brackets, Visual Studio, ed, NeoVim, NyaoVim etc*
 
 ### Multiplexer
-tmux
-	rather than screen, without byobu and Oh My Tmux
-
+tmux *rather than screen, without byobu and Oh My Tmux
+*
 ### Brightness / Contrast manager
 redshift
 
