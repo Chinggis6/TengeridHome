@@ -82,7 +82,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -244,10 +244,10 @@ bindsym Shift+Print exec --no-startup-id scrot
 bindsym XF86WebCam exec --no-startup-id slip -r
 bindsym $mod+XF86WebCam exec --no-startup-id slip -q
 bindsym $mod+d exec "rofi -combi-modi drun,run -show combi"
-bindsym $mod+w exec "rofi -show window"
-#bindsym Mod1+x exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
-# --grayscale, --text
+bindsym Ctrl+Mod1+w exec "rofi -show window"
+# --grayscale, --text, --pixelate
 bindsym Ctrl+Mod1+l exec --no-startup-id i3lock-fancy -g -t "Aquila non capit muscas"
+#bindsym Mod1+x exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
 bindsym Ctrl+Mod1+t exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
 bindsym Ctrl+Mod1+b exec --no-startup-id i3lock --color=87ceeb --image "$HOME/SatanicBear.png"
 
@@ -317,7 +317,7 @@ bindsym XF86AudioNext exec --no-startup-id mpc -p $port next
 # Use xbindkeys -k to find key codes
 
 bindsym XF86ScreenSaver exec --no-startup-id xclock
-bindsym XF86Calculator exec --no-startup-id xcalc 
+bindsym XF86Calculator exec --no-startup-id xcalc
 
 
 # ---
@@ -370,7 +370,54 @@ bindsym $mod+Shift+Return exec --no-startup-id  urxvt -e ranger
 
 exec --no-startup-id notify-send "Welcome to the System, My Lord!"
 
-client.focused #4c7899 #285577 #ffffff #2e9ef4
-client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused #333333 #222222 #888888 #292d2e
-client.urgent #2f343a #900000 #ffffff #900000
+# i3 Gaps
+for_window [class="^.*"] border pixel 0
+smart_gaps on
+gaps inner 10
+gaps outer 2
+smart_borders on
+
+
+# Simply press $mod+Shift+g to enter the gaps mode.
+# Then choose between o and i for modifying outer / inner gaps.
+# In this mode, you can press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace).
+# If you also press Shift with these keys, the change will be global for all workspaces.
+
+# Press Esc to exit from Modes
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}

@@ -10,6 +10,12 @@
 
 # --- DEFAULT OPTIONS ---
 
+# Be very verbose and yank to primary
+alias xsel='xsel -vvvv -p'
+# Copy to clipboard instead
+alias sel='xsel -vvvv -b'
+alias xselc='sel'
+
 alias ln='ln -v -r'
 
 # Owned by findutils together with xargs
@@ -189,7 +195,7 @@ alias nvim='vim'
 
 
 
-alias xev="xbindkeys -k"
+alias xev="xbindkeys -k -v"
 
 alias Cd="pushd"
 alias cD="popd"
@@ -467,6 +473,8 @@ alias wee='weechat'
 
 alias fed='funced'
 alias fsv='funcsave'
+alias fsave='fsv'
+alias fsav='fsv'
 
 # Skip all user reconfiguration
 alias novim='vim -u NONE'
@@ -480,3 +488,15 @@ alias bukudel='buku --delete' # or -d
 # Edit in $EDITOR
 alias bukuedit='buku --write' #or -w
 alias bukued='bukuedit'
+
+alias passadd='pass insert'
+alias passin='passadd'
+alias passdel='pass rm --force'
+alias passrm='passdel'
+alias passren='pass rename'
+# Generates and add as name, length can be given
+alias passgen='pass generate'
+alias passmake='passgen'
+alias passmk='passmake'
+
+alias reddit='rtv'
