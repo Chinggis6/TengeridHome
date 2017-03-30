@@ -475,6 +475,8 @@ alias fed='funced'
 alias fsv='funcsave'
 alias fsave='fsv'
 alias fsav='fsv'
+alias fs='fsv'
+alias fw='fsv'
 
 # Skip all user reconfiguration
 alias novim='vim -u NONE'
@@ -500,3 +502,9 @@ alias passmake='passgen'
 alias passmk='passmake'
 
 alias reddit='rtv'
+
+# As provided by sqlite package
+# sqlite2 package is just for version 2
+alias sqlite3='sqlite'
+
+alias fkr='fish_key_reader'

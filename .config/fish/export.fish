@@ -417,3 +417,6 @@ set -x vimper "$vimperator"
 set -x readme "$HOME/README.md"
 
 set -x spell "$HOME/.vim/spell/en.utf-8.add"
+
+# Function names
+set -x fukb fish_user_key_bindings

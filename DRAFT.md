@@ -161,3 +161,13 @@ Backtick
 
 * Ctrl+E to Auto Complete
 	on shells / terminals
+
+### File Manager
+
+Ranger
+	rather than Midnight Commander (mc), vifm, Thor, SpaceFM
+
+### Bittorrent client
+
+rtorrent
+	rather than Transmission, uTorrent

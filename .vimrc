@@ -122,6 +122,8 @@
 " ]], [[ go to next/previous heading
 " zj, zk go to next/previous fold (beginning of the fold)
 
+" 1z= correct spelling (choosing first suggestion)
+
 " --- ORTNI ---
 
 " --- PLUGINS ---
@@ -136,7 +138,9 @@ Plug 'zirrostig/vim-schlepp'
 Plug 'altercation/vim-colors-solarized'
 
 " Language pack, 70+ packages
-Plug 'sheerun/vim-polyglot'
+" Slows down a lot
+" Fish iskeyword (-,_,.) and indentation frustrates
+" Plug 'sheerun/vim-polyglot'
 
 " gcc for commenting lines
 Plug 'tpope/vim-commentary'
@@ -253,7 +257,7 @@ Plug 'cespare/vim-toml'
 
 " Note taking and note management in Vim
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
+" Plug 'xolox/vim-notes'
 
 " Extended session management
 " :OpenSession
@@ -350,7 +354,7 @@ Plug 'rhysd/clever-f.vim'
 " <leader>c<space> toggle comment
 " <leader>cs sexy comment
 " <leader>cu uncomment
-Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
 
 " Snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -426,9 +430,9 @@ Plug 'chikamichi/mediawiki.vim'
 " ga to align
 Plug 'junegunn/vim-easy-align'
 
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
 
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 
 Plug 'pangloss/vim-javascript'
 
@@ -550,7 +554,7 @@ set title
 " Tab autocompletion shows menu in Ex mode above the command
 set wildmenu
 set wildmode=longest:full,full
-set wildignore=*.swp,.git
+set wildignore+=*.swp,.git,*.bmp,*.gif,*.ico,*.jpg,*.png,*.pdf,*.psd
 
 " set clipboard=unnamedplus
 " Copy to Primary selection
@@ -788,7 +792,7 @@ set linebreak
 " tw
 set textwidth=200
 
-compiler fish
+" compiler fish
 
 " Report messages like "1 line less" even if just one line is changed
 " Default is 2
@@ -1437,17 +1441,6 @@ noremap ciq ci"
 noremap ciS ci]
 noremap caS ca]
 
-
-
-
-" Do not exit from Visual Mode when shifting text
-" So it can be repeatedly shifted back and forth
-vnoremap < <gv
-vnoremap > >gv
-
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
-
 " Easy Align plugin
 " https://github.com/junegunn/vim-easy-align
 " gaip=, vipga=; inner paragraph, align by =
@@ -1489,6 +1482,20 @@ noremap <Leader>o :tabedit
 " Swap Visual with Visual Block
 " noremap v <C-v>
 " noremap <C-v> v
+
+" Unmap Tab and S-Tab
+" Use Ctrl-I and Ctrl-D instead
+inoremap <Tab> <Nop>
+inoremap <S-Tab> <Nop>
+
+" Use > to shift (accepts input for range)
+" vnoremap <Tab> >gv
+" vnoremap <S-Tab> <gv
+
+" Do not exit from Visual Mode when shifting text
+" So it can be repeatedly shifted back and forth
+vnoremap < <gv
+vnoremap > >gv
 
 " --- sgnippam motsuC ---
 
@@ -1542,11 +1549,11 @@ au InsertLeave * set notimeout
 
 " -- Fish plugin ---
 " Set up :make to use fish for syntax checking.
-autocmd FileType fish compiler fish
+" autocmd FileType fish compiler fish
 " Set this to have long lines wrap inside comments.
-autocmd FileType fish setlocal textwidth=79
+" autocmd FileType fish setlocal textwidth=79
 " Enable folding of block structures in fish.
-autocmd FileType fish setlocal foldmethod=expr
+" autocmd FileType fish setlocal foldmethod=expr
 
 " Display current line number in bold text
 highlight CursorLineNr cterm=bold
@@ -1586,7 +1593,7 @@ autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
 
 " Change just file name in Filename.Extension format
-autocmd BufEnter *.fish set iskeyword-=.
+" autocmd FileType fish setlocal iskeyword-=.,-,_
 
 unmap zg?
 

@@ -316,6 +316,14 @@ bindsym XF86AudioStop exec --no-startup-id mpc -p $port stop
 bindsym XF86AudioPrev exec --no-startup-id mpc -p $port prev
 bindsym XF86AudioNext exec --no-startup-id mpc -p $port next
 
+bindsym XF86Back exec --no-startup-id mpc seek -2%
+bindsym XF86Forward exec --no-startup-id mpc seek +2%
+
+set $LOCKER i3lock-fancy -g -t "Aquila non capit muscas"
+bindsym XF86HomePage exec --no-startup-id $LOCKER
+
+bindsym XF86Mail exec --no-startup-id qutebrowser --backend webengine
+
 # Use xbindkeys -k to find key codes
 
 bindsym XF86ScreenSaver exec --no-startup-id xclock
