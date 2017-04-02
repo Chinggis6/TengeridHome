@@ -155,7 +155,7 @@ alias news='newsbeuter -r'
 alias lns='ln -srfv'
 alias untar='tar -xf'
 # pastebin, pass with | p
-alias p="curl -F 'sprunge=<-' http://sprunge.us"
+alias pastebin="curl -F 'sprunge=<-' http://sprunge.us"
 # http://ix.io/
 # pass with | pb
 alias pb="curl -F 'f:1=<-' ix.io"
@@ -347,6 +347,10 @@ alias g='git'
 alias c='g commit -a -m "Bulk commit :fish:"'
 alias p='g push -v'
 
+alias gitadd='git a'
+alias ga='gitadd'
+alias gita='gitadd'
+
 
 alias cl='g clone'
 alias add='g add'
@@ -356,7 +360,7 @@ alias commit='g commit'
 alias push='g push'
 
 # Pip Python package manager
-alias pi="sudo -E -H pip"
+alias pi="sudo -E pip"
 alias pin="pi install"
 alias pout="pi uninstall"
 alias pon="pi search"
@@ -436,9 +440,11 @@ alias resource='frl'
 alias moc='mocp'
 
 # Task Warrior
-alias tls='task ls'
-alias trm='task rm'
-alias tadd='task add'
+alias t='task'
+alias td='t done'
+alias tls='t ls'
+alias trm='t rm'
+alias tadd='t add'
 alias taskls='tls'
 alias taskl='tls'
 alias taskadd='tadd'
@@ -477,6 +483,7 @@ alias fsave='fsv'
 alias fsav='fsv'
 alias fs='fsv'
 alias fw='fsv'
+alias fls='functions'
 
 # Skip all user reconfiguration
 alias novim='vim -u NONE'
@@ -487,9 +494,23 @@ alias Animate='lolcat -a'
 alias bukuls='buku --print' # or -p
 alias bukuadd='buku --add' # or -a
 alias bukudel='buku --delete' # or -d
+alias bukurm='bukudel'
 # Edit in $EDITOR
 alias bukuedit='buku --write' #or -w
 alias bukued='bukuedit'
+# .md or .html
+alias bukuexport='buku -e'
+alias bukuex='bukuexport'
+alias bukuimport='buku -i'
+alias bukuim='bukuimport'
+# Default for the command (buku)
+alias bukusearch='buku -s'
+alias bukufind='buku search'
+# Open URL in browser
+alias bukuopen='buku -o'
+# Shorten URL in tiny.im (in 5 characters long ID)
+alias bukushorten='buku --shorten'
+alias bukushort='bukushorten'
 
 alias passadd='pass insert'
 alias passin='passadd'
@@ -505,6 +526,21 @@ alias reddit='rtv'
 
 # As provided by sqlite package
 # sqlite2 package is just for version 2
-alias sqlite3='sqlite'
+alias sqlite='sqlite3'
 
 alias fkr='fish_key_reader'
+
+alias cmd='command'
+
+alias mkd='mkdir'
+alias rmd='rmdir'
+
+alias changeshell='chsh'
+alias changevt='chvt'
+
+alias wikipedia='wikicurses'
+# Simple
+alias wiki='wiki -s'
+# One-line
+alias wiki1='command wiki -short'
+alias wikil='wiki1'

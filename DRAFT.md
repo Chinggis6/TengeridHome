@@ -171,3 +171,7 @@ Ranger
 
 rtorrent
 	rather than Transmission, uTorrent
+
+### Vim status line
+Airline plugin
+	enhanced by Git status indicator, icons, and whitespace indicator

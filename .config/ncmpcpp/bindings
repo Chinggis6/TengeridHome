@@ -17,6 +17,11 @@ def_key "n"
 def_key "N"
     previous_found_item
 
+def_key "ctrl-y"
+	scroll_up
+def_key "ctrl-e"
+	scroll_down
+
 def_key "k"
 	scroll_up
 def_key "j"

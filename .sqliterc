@@ -1,0 +1,4 @@
+.header on
+.separator " | "
+.mode column
+.prompt "> " ">> "

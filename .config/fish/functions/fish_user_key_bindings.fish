@@ -48,4 +48,8 @@ function fish_user_key_bindings
 	# Insert key (ic)
 	bind \e\[2~ true
 	bind -M insert \e\[2~ true
+
+	# Use C-P / C-N to navigate through history
+	bind k true
+	bind j true
 end

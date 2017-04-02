@@ -182,7 +182,8 @@ bindsym $mod+r mode "resize"
 #}
 
 set $bumblebee $HOME/.config/i3/bumblebee-status/bumblebee-status
-set $commandline -m memory time date -p root.path=/ date.format="%a, %b %d %Y" time.format="%H:%M" -t solarized-powerline
+# %Y for full year
+set $commandline -m memory time date -p root.path=/ date.format="%a, %b %d" time.format="%H:%M" -t solarized-powerline
 bar {
 
 mode dock
@@ -316,6 +317,7 @@ bindsym XF86AudioStop exec --no-startup-id mpc -p $port stop
 bindsym XF86AudioPrev exec --no-startup-id mpc -p $port prev
 bindsym XF86AudioNext exec --no-startup-id mpc -p $port next
 
+# Forward / Backward seeking
 bindsym XF86Back exec --no-startup-id mpc seek -2%
 bindsym XF86Forward exec --no-startup-id mpc seek +2%
 
@@ -360,9 +362,9 @@ bindsym XF86AudioMute exec amixer sset Master toggle
 
 # MPD volume control
 # set $step 5
-# bindsym XF86AudioRaiseVolume exec "mpc -p $port volume +$step"
-# bindsym XF86AudioLowerVolume exec "mpc -p $port volume -$step"
-# bindsym XF86AudioMute exec mpc volume 0
+bindsym Shift+XF86AudioRaiseVolume exec "mpc -p $port volume +$step"
+bindsym Shift+XF86AudioLowerVolume exec "mpc -p $port volume -$step"
+bindsym Shift+XF86AudioMute exec mpc volume 0
 
 # ---
 

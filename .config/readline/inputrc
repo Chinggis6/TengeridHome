@@ -39,7 +39,76 @@ set output-meta on
 set convert-meta off
 
 # Enable history substring search
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-"\e[C": forward-char
-"\e[D": backward-char
+# "\e[A": history-search-backward
+# "\e[B": history-search-forward
+# "\e[C": forward-char
+# "\e[D": backward-char
+
+# # command in Command Mode (insert-comment)
+# Defaults to # without spacing after
+set comment-begin "# "
+
+# Doesn't work for some reason
+# set vi-ins-mode-string "INS: "
+
+set bind-tty-special-chars off
+
+set keymap vi-command
+# Up
+"\e\[A": redraw-current-line
+# Down
+"\e\[B": redraw-current-line
+# Right
+"\e\[C": redraw-current-line
+# Left
+"\e\[D": redraw-current-line
+# Insert
+"\e\[2~": redraw-current-line
+# Del
+"\e\[3~": redraw-current-line
+# Page Up
+"\e\[5~": redraw-current-line
+# Page Down
+"\e\[6~": redraw-current-line
+# Home
+"\e\[7~": redraw-current-line
+# End
+"\e\[8~": redraw-current-line
+# j
+"j": redraw-current-line
+# k
+"k": redraw-current-line
+# Backspace (aka del)
+"\e\x7F": redraw-current-line
+Control-p: history-search-backward
+Control-n: history-search-forward
+Control-l: clear-screen
+
+set keymap vi-insert
+# Up
+"\e\[A": redraw-current-line
+# Down
+"\e\[B": redraw-current-line
+# Right
+"\e\[C": redraw-current-line
+# Left
+"\e\[D": redraw-current-line
+# Insert
+"\e\[2~": redraw-current-line
+# Del
+"\e\[3~": redraw-current-line
+# Page Up
+"\e\[5~": redraw-current-line
+# Page Down
+"\e\[6~": redraw-current-line
+# Home
+"\e\[7~": redraw-current-line
+# End
+"\e\[8~": redraw-current-line
+# Run stty erase undef to unbind it form terminal
+# Ctrl-V on bash then Backspace prints ^?
+# Backspace (aka del)
+"\C-?": redraw-current-line
+Control-p: history-search-backward
+Control-n: history-search-forward
+Control-l: clear-screen

@@ -18,3 +18,9 @@ cursor
 
 # Turn off NumLock key
 numlockx off
+
+# Swap Escape key with Caps Lock
+setxkbmap -option caps:swapescape
+
+# Unbind Backspace in terminal
+stty erase undef

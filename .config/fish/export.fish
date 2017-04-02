@@ -406,8 +406,7 @@ set -x addressbook "$abookd/addressbook"
 set -x PASSWORD_STORE_X_SELECTION 1
 
 set -x zathura "$C/zathura/zathurarc"
-set -x zath "$zathura"
-
+set -x zath "$zathura" 
 # set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 set -x FZF_DEFAULT_COMMAND 'rg --hidden -e ""'
 
@@ -420,3 +419,32 @@ set -x spell "$HOME/.vim/spell/en.utf-8.add"
 
 # Function names
 set -x fukb fish_user_key_bindings
+
+# SQLite
+set -x sqlite "$HOME/.sqliterc"
+set -x sqliterc "$sqlite"
+set -x sqliteh "$HOME/.sqlite_history"
+set -x sqlhist "$sqliteh"
+set -x ssqlh "$sqliteh"
+
+# Readline
+set -x readline "$C/readline/inputrc"
+set -x inputrc "$readline"
+set -x input "$readline"
+
+# Ignore duplicates and lines starting with space
+# igoredups, ignorespace
+set -x HISTCONTROL 'ignoreboth'
+
+set -x ssh "$HOME/.ssh/config"
+
+set -x geo 'User:Chinggis6/Project Geography'
+
+set -x gallery 'User:Chinggis6/Tengerid Gallery'
+set -x gal "$gallery"
+
+set -x scrot "$HOME/.scrot"
+
+# rlwrap
+set -x RLWRAP_HOME "$XDG_CONFIG_HOME/rlwrap"
+set -x INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"

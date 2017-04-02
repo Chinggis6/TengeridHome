@@ -124,6 +124,14 @@
 
 " 1z= correct spelling (choosing first suggestion)
 
+" S-i - Prepend to Line (insert)
+" S-a - Append to Line (add)
+
+" &option - option as set by `set` keyword
+" &l:option - local option; option with a local scope, affecting only the buffer or split its set in
+" @register, eg @" the unnamed register, primary selection; echo @"; let @a='hello' CTRL+R and "ap to paste from register a, or echo @a
+" = expression register, ^r and expression including variables of any kind
+
 " --- ORTNI ---
 
 " --- PLUGINS ---
@@ -437,6 +445,9 @@ Plug 'junegunn/vim-easy-align'
 Plug 'pangloss/vim-javascript'
 
 Plug 'terryma/vim-expand-region'
+
+" Wikipedia editor
+Plug 'aquach/vim-mediawiki-editor'
 
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
@@ -1298,16 +1309,45 @@ map <LocalLeader>' ysiW'
 map <LocalLeader>" ysiW"
 map <LocalLeader>q ysiW'
 map <LocalLeader>Q ysiW"
-map <LocalLeader>p ysiW)
-map <LocalLeader>P ysiW]
+" map <LocalLeader>p ysiW)
+" map <LocalLeader>P ysiW]
 
 " Change surround quotes
 map csq cs"'
 map csQ cs'"
 
 " Change surround parentheses
-map csp cs])
-map csP cs)]
+map csb cs])
+map csB cs)}
+map csp cs)]
+
+" Yank surround quotes
+map ysq ysW'
+map ysQ ysW"
+
+" Yank surround parentheses
+map ysb ysW)
+map ysB ysW]
+map ysp ysW]
+
+" Yank surround double parentheses
+" With Curlies, curly brackets
+map ysc ysw}lysw}
+map ysC ysw}lysw}aw\|<Esc>B
+" With Brackets
+map ysb ysw]lysw]
+
+" Yank surround around brackets
+" Supports tags, eg <small>
+" Parentheses
+map <LocalLeader>sb ysab
+" Curly brackets
+map <LocalLeader>sB ysaB
+map <LocalLeader>sc ysaB
+" Square brackets
+map <LocalLeader>sp ysa]
+" Surround around sentence
+map <LocalLeader>ss ysas
 
 " Parentheses
 map <LocalLeader>) ysiW)
@@ -1461,11 +1501,16 @@ noremap } }zzzv
 noremap { {zzzv
 
 " Close all buffers
-nnoremap XX :qa<CR>
+" nnoremap XX :qa<CR>
 
 " Remove underscores from word definition
 " Affects cw, dw, yw etc
+
+" Words don't contain underscores
 set iskeyword-=_
+
+" First-born is a word
+set iskeyword+=-
 
 " Easier Omni-completion
 " inoremap <C-]> <C-X><C-]>
@@ -1474,8 +1519,11 @@ set iskeyword-=_
 " inoremap <C-L> <C-X><C-L>
 " inoremap <C-O> <C-X><C-O>
 
+" Custom leader key bindings
 noremap <Leader>w :write<CR>
 noremap <Leader>o :tabedit
+noremap <Leader>r :source $MYVIMRC<CR>
+noremap <Leader>c :tabedit $MYVIMRC<CR>
 
 " Swap Visual modes
 
@@ -1485,8 +1533,8 @@ noremap <Leader>o :tabedit
 
 " Unmap Tab and S-Tab
 " Use Ctrl-I and Ctrl-D instead
-inoremap <Tab> <Nop>
-inoremap <S-Tab> <Nop>
+" inoremap <Tab> <Nop>
+" inoremap <S-Tab> <Nop>
 
 " Use > to shift (accepts input for range)
 " vnoremap <Tab> >gv
@@ -1496,6 +1544,19 @@ inoremap <S-Tab> <Nop>
 " So it can be repeatedly shifted back and forth
 vnoremap < <gv
 vnoremap > >gv
+
+" Key bindings for Wikipedia editor plugin
+noremap <localleader>wo :MWRead 
+noremap <localleader>ww :MWWrite<CR>
+noremap <localleader>wb :MWBrowse<CR>
+noremap <localleader>wd :MWDiff<CR>
+
+" let g:mediawiki_editor_url='en.wikipedia.org'
+let g:mediawiki_editor_url='commons.wikimedia.org'
+let g:mediawiki_editor_path='/w/'
+let g:mediawiki_editor_username='Chinggis6'
+
+" last custom mapping
 
 " --- sgnippam motsuC ---
 
@@ -1568,6 +1629,8 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
+source $HOME/.vim/commons.vim
+
 " Activate Rainbow Parentheses on LISP language family
 " :RainbowParentheses
 augroup rainbow_lisp
@@ -1575,7 +1638,7 @@ augroup rainbow_lisp
   autocmd FileType lisp,clojure,scheme RainbowParentheses
 augroup END
 
-augroup non_lisp
+augroup rainbow
   autocmd!
   autocmd FileType vim,javascript,php,python RainbowParentheses
 augroup END
@@ -1597,9 +1660,17 @@ set title
 
 unmap zg?
 
+" So J can receive input for range
+unmap J
+
 autocmd BufEnter,FileType python :TagbarOpen<CR>
 " Vim plugins
 autocmd BufEnter *.vim :TagbarOpen<CR>
+
+" Folding for ==sections==
+" autocmd BufEnter,FileType mediawiki :set foldexpr=getline(v:lnum)=~'^\\(=\\+\\)[^=]\\+\\1\\(\\s*\\)\\=\\s*$'?\">\".(len(matchstr(getline(v:lnum),'^=\\+'))-1):\"=\" & fdm=expr
+
+autocmd BufEnter,FileType startify :set modifiable
 
 " ---
 " Vim is Beautiful
