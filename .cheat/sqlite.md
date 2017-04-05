@@ -4,7 +4,7 @@
 
 > autoincrement can only set on INTEGER PRIMARY KEY column
 
-	update set name='name' and tag='tag' where id=1;
+	update set name='name', tag='tag' where id=1;
 
 	insert into table (name, tag) values ('name', 'tag'), ('name2', 'tag2');
 
@@ -13,6 +13,10 @@
 	create table table as select * from table2;
 
 	insert into table select * from table2;
+
+## Comment
+
+	create view as select * from table where column like '%string%'; --comment
 
 ## Master table containing other table names and their SQL
 	select * from sqlite_master;

@@ -253,7 +253,7 @@ xterm*utf8:               true
 xterm*utf8Title:          true
 xterm*eightBitInput:      false
 ! add -bc switch in xterm application file
-XTerm*cursorBlink: false
+xterm*cursorBlink: false
 ! xterm.vt100.blink: false
 
 URxvt.underlineURLs: false

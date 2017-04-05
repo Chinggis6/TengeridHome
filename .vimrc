@@ -124,13 +124,20 @@
 
 " 1z= correct spelling (choosing first suggestion)
 
-" S-i - Prepend to Line (insert)
-" S-a - Append to Line (add)
+" I prepend to line
+" A append to line
+" | move to n-th column (character-wise)
 
 " &option - option as set by `set` keyword
 " &l:option - local option; option with a local scope, affecting only the buffer or split its set in
 " @register, eg @" the unnamed register, primary selection; echo @"; let @a='hello' CTRL+R and "ap to paste from register a, or echo @a
 " = expression register, ^r and expression including variables of any kind
+
+" Insert mode
+" C-h delete a character backward
+" C-w delete a word backward
+" C-u delete a line backward
+" C-[ switch to normal mode
 
 " --- ORTNI ---
 
@@ -1506,11 +1513,18 @@ noremap { {zzzv
 " Remove underscores from word definition
 " Affects cw, dw, yw etc
 
+" ---
+" word definition
+
 " Words don't contain underscores
 set iskeyword-=_
 
 " First-born is a word
 set iskeyword+=-
+" don't is a word
+set iskeyword+='
+
+" ---
 
 " Easier Omni-completion
 " inoremap <C-]> <C-X><C-]>

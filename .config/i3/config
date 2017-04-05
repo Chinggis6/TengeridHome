@@ -11,6 +11,8 @@
 
 set $mod Mod4
 
+set $SHELL "/usr/bin/fish"
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -243,7 +245,7 @@ hide_edge_borders both
 bindsym $mod+m bar mode toggle
 
 bindsym --release Print exec --no-startup-id scrot --select 'Screenshot-%b-%d-%y_%H-%m-%S_$wx$h.png' -e 'mv $f ~/.scrot/'
-bindsym Shift+Print exec --no-startup-id scrot
+bindsym Shift+Print exec --no-startup-id scrot 'Screenshot-%b-%d-%y_%H-%m-%S_$wx$h.png' -e 'mv $f ~/.scrot/'
 bindsym XF86WebCam exec --no-startup-id slip -r
 bindsym $mod+XF86WebCam exec --no-startup-id slip -q
 bindsym $mod+d exec "rofi -combi-modi drun,run -show combi"
@@ -355,6 +357,15 @@ bindsym XF86MonBrightnessDown exec "light -U -p 20"
 set $step 5
 bindsym XF86AudioRaiseVolume exec amixer set Master $step%+
 bindsym XF86AudioLowerVolume exec amixer set Master $step%-
+
+# Get volume
+bindsym Ctrl+XF86AudioRaiseVolume exec notify-send $(pamixer --get-volume)
+bindsym Ctrl+Shift+XF86AudioRaiseVolume exec notify-send $(mpc volume)
+
+bindsym Ctrl+XF86AudioPlay exec notify-send $(mpc current -f "%title%")
+bindsym Ctrl+Shift+XF86AudioPlay exec notify-send $(mpc current -f "%artist%")
+# bindsym Ctrl+XF86AudioPlay exec $HOME/.bin/song_title
+
 # Global mute
 bindsym XF86AudioMute exec amixer sset Master toggle
 

@@ -438,8 +438,8 @@ set -x HISTCONTROL 'ignoreboth'
 
 set -x ssh "$HOME/.ssh/config"
 
-set -x geo 'User:Chinggis6/Project Geography'
-
+set -x geography 'User:Chinggis6/Project Geography'
+set -x geo "$geography"
 set -x gallery 'User:Chinggis6/Tengerid Gallery'
 set -x gal "$gallery"
 
@@ -448,3 +448,6 @@ set -x scrot "$HOME/.scrot"
 # rlwrap
 set -x RLWRAP_HOME "$XDG_CONFIG_HOME/rlwrap"
 set -x INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
+
+set -x rlwrap "$RLWRAP_HOME"
+set -x sqlitec "$RLWRAP_HOME/sqlite3_completion"

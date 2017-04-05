@@ -112,3 +112,9 @@ set keymap vi-insert
 Control-p: history-search-backward
 Control-n: history-search-forward
 Control-l: clear-screen
+
+# "gcc": insert-comment
+
+# Delete until previous directory in the file path
+# "\C-b": unix-filename-rubout
+# Control-b: unix-filename-rubout

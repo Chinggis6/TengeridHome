@@ -175,3 +175,9 @@ rtorrent
 ### Vim status line
 Airline plugin
 	enhanced by Git status indicator, icons, and whitespace indicator
+
+### Document Converter
+pandoc
+
+### Image Converter
+ImageMagick (convert)

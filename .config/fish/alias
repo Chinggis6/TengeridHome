@@ -526,7 +526,10 @@ alias reddit='rtv'
 
 # As provided by sqlite package
 # sqlite2 package is just for version 2
-alias sqlite='sqlite3'
+# alias sqlite='sqlite3'
+# -c --complete-filenames (always case insensitive)
+# --case-insensitive (commands)
+alias sqlite="rlwrap -a -N -i sqlite3"
 
 alias fkr='fish_key_reader'
 
@@ -544,3 +547,8 @@ alias wiki='wiki -s'
 # One-line
 alias wiki1='command wiki -short'
 alias wikil='wiki1'
+
+
+# Turn off cursor blinking
+# Update also in .desktop file
+alias xterm='xterm +bc'
