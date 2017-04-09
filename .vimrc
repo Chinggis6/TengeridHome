@@ -139,6 +139,10 @@
 " C-u delete a line backward
 " C-[ switch to normal mode
 
+" See what plugin is remapping the key
+" verbose map KEY
+" verbose is a separate command to put before other commands for verbosity, getting more information
+
 " --- ORTNI ---
 
 " --- PLUGINS ---
@@ -308,7 +312,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " HTML tags and Latex support for %
-Plug 'tmhedberg/matchit'
+" Plug 'tmhedberg/matchit'
 
 "Better URLs
 " Universal text linking
@@ -1296,11 +1300,11 @@ nnoremap <LocalLeader>S :set
 
 " Start of line
 " Line beginning (FNB)
-nnoremap 0 ^
-nnoremap ^ 0
+" nnoremap 0 ^
+" nnoremap ^ 0
 " For wrapped lines
-nnoremap g^ g0
-nnoremap g0 g^
+" nnoremap g^ g0
+" nnoremap g0 g^
 
 " End of line
 " Line end (FNB)

@@ -451,3 +451,21 @@ set -x INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 
 set -x rlwrap "$RLWRAP_HOME"
 set -x sqlitec "$RLWRAP_HOME/sqlite3_completion"
+
+set -x lyrics "$HOME/.lyrics"
+
+# eg: sed "/s/$alpha/*"
+# -i in-place replacement in file, -f sedscript (file with sed commands inside)
+# * asterisk with or without the last character
+# /Thr*/ Thr or Th
+# \w* for word, \w*. first word
+# \b boundary '\bword\b' new newer by default would match both new and newer
+# ^beg, end$, ;another statement, & matched string (match)
+# p print matches only, I ignore case (case-Insensitive), d delete matching line
+# '5,$ d' delete from 5th to last line, q quit
+# sed -n '$=' print last line number (count of lines), = print line number before each line
+# 'n;d' delete every other line (even lines such as 2,4,6 ...)
+set -x letters '[a-Z]'
+set -x letter "$letters"
+set -x alphanumeric '[0-Z]'
+set -x alpha "$alphanumeric"

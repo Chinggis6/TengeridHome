@@ -181,3 +181,9 @@ pandoc
 
 ### Image Converter
 ImageMagick (convert)
+
+### Line Editor
+ed
+
+### String Processor
+sed

@@ -103,8 +103,8 @@ alias df='df -h'
 
 # --verbose
 
-alias mv='mv -v'
-alias cp='cp -v'
+alias mv='mv -v -i'
+alias cp='cp -v -i'
 # --preserve-root is default
 # --no-preserve-root to enable / radical deletion
 # --one-file-system, skip directories mounted from other file systems
@@ -121,6 +121,11 @@ alias treepac='pactree -r'
 # https://github.com/rafaelrinaldi/whereami
 # npm install -g @rafaelrinaldi/whereami
 alias whereami='whereami -f human'
+
+# count, interval (in seconds)
+alias ping='ping -c 4 -i 5'
+
+alias whois='whois --verbose'
 
 # --- DEFAULTS END ---
 
@@ -292,6 +297,7 @@ alias i="yaourt -Qi"
 alias on="pacsearch"
 alias out="pacman -R"
 alias owner="pacman -Qo"
+alias o='owner'
 alias pkg='owner'
 alias update="pacman -Syu"
 # --groups
@@ -552,3 +558,6 @@ alias wikil='wiki1'
 # Turn off cursor blinking
 # Update also in .desktop file
 alias xterm='xterm +bc'
+
+# numbers (IP), TCP, Listeners, Processes (PID/Name)
+alias netstat1='netstat -ntlp'

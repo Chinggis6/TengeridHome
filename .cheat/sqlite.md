@@ -75,3 +75,11 @@ Dumps as a transaction form in exportable format
 ## Print system command output
 	.system clear
 	.shell ls
+
+## Built-in functions
+
+http://sqlite.org/lang_corefunc.html
+
+replace(column,string,string2)
+
+> Used with update inside set statement

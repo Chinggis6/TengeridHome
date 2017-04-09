@@ -1,0 +1,18 @@
+name: Session
+root: ~/
+windows:
+    - Ranger:
+        panes:
+        - ranger
+    - WeeChat:
+        panes:
+        - weechat
+    - SQLite:
+        panes:
+        - sqlite -cmd open .tenger.db
+    - Vim:
+        panes:
+        - vim
+    - Fish:
+        panes:
+        - fish
