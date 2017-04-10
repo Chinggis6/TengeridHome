@@ -23,5 +23,6 @@
 	* [Stack Overflow](http://stackoverflow.com/)
 	* [English Language and Usage](http://english.stackexchange.com/)
 	* [Travel](http://travel.stackexchange.com/)
+* [Command-line Fu](http://www.commandlinefu.com/commands/browse)
 
 # <base target="_parent" />

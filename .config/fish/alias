@@ -127,6 +127,13 @@ alias ping='ping -c 4 -i 5'
 
 alias whois='whois --verbose'
 
+# --quite
+alias bc='bc -q'
+
+# -terse, -exrates
+# quite mode, outputting just the result; update exchange rates for currency conversion
+alias qalc='qalc -t -e'
+
 # --- DEFAULTS END ---
 
 # ---
@@ -298,6 +305,9 @@ alias on="pacsearch"
 alias out="pacman -R"
 alias owner="pacman -Qo"
 alias o='owner'
+alias ow='owner'
+alias own='owner'
+alias ownr='owner'
 alias pkg='owner'
 alias update="pacman -Syu"
 # --groups
@@ -561,3 +571,13 @@ alias xterm='xterm +bc'
 
 # numbers (IP), TCP, Listeners, Processes (PID/Name)
 alias netstat1='netstat -ntlp'
+
+# --quite, no output
+alias playq='play -q'
+# same as soxi
+alias playi='sox --info'
+
+# !! is not supported in Fish
+# alias reroot='sudo !!'
+
+alias gdu='ncdu'

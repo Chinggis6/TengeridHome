@@ -1,0 +1,3 @@
+set commit-order = topo
+
+bind generic ; prompt

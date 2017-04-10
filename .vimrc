@@ -1324,29 +1324,29 @@ map <LocalLeader>Q ysiW"
 " map <LocalLeader>P ysiW]
 
 " Change surround quotes
-map csq cs"'
-map csQ cs'"
+" map csq cs"'
+" map csQ cs'"
 
 " Change surround parentheses
-map csb cs])
-map csB cs)}
-map csp cs)]
+" map csb cs])
+" map csB cs)}
+" map csp cs)]
 
 " Yank surround quotes
-map ysq ysW'
-map ysQ ysW"
+" map ysq ysW'
+" map ysQ ysW"
 
 " Yank surround parentheses
-map ysb ysW)
-map ysB ysW]
-map ysp ysW]
+" map ysb ysW)
+" map ysB ysW]
+" map ysp ysW]
 
 " Yank surround double parentheses
 " With Curlies, curly brackets
-map ysc ysw}lysw}
-map ysC ysw}lysw}aw\|<Esc>B
+" map ysc ysw}lysw}
+" map ysC ysw}lysw}aw\|<Esc>B
 " With Brackets
-map ysb ysw]lysw]
+" map ysb ysw]lysw]
 
 " Yank surround around brackets
 " Supports tags, eg <small>

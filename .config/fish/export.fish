@@ -469,3 +469,14 @@ set -x letters '[a-Z]'
 set -x letter "$letters"
 set -x alphanumeric '[0-Z]'
 set -x alpha "$alphanumeric"
+
+set -x draft "$HOME/DRAFT.md"
+set -x sites "$HOME/.frontpage/sites.md"
+
+# http://www.sherv.net/text/emoticons/devil.hand.sign-4573
+set -x dhs '\m/ (   `◉ _◉´)  \m/'
+
+# tmux prefix
+# to insert in Vim with C-r =$backtick
+set -x backtick '`'
+set -x bt "$backtick"

@@ -187,3 +187,15 @@ ed
 
 ### String Processor
 sed
+
+### FTP Client
+lftp
+
+### HTTP Client
+curl (see URL) **rather than wget**
+
+### Calculator / Currency Converter / Unit Converter
+qalc **rather than bc and calc**
+
+### Antivirus
+ClamAV (`clamscan`)

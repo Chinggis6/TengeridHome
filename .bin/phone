@@ -1,0 +1,10 @@
+#!/bin/fish
+
+# Get phone number based on contact name (first name)
+set phone (abook --mutt-query $argv --outformat vcard | grep CELL | string split : | tail -n 1)
+
+# Copy phone number to Primary selection (clipboard)
+echo $phone | command xsel -i
+
+# Output phone number to Standard output (screen)
+echo $phone
