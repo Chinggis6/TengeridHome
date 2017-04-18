@@ -19,3 +19,10 @@ Git and GitHub
 4. Push
 
 	git push -u origin master
+
+## Pushing
+
+* git remote add origin https://github.com/USER/REPO
+
+> -u is --set-upstream
+* git push -u origin master
