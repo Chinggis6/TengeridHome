@@ -373,6 +373,7 @@ set -x weechat "$HOME/.weechat/alias.conf"
 
 set -x ignore "$HOME/.gitignore"
 set -x gitconfig "$HOME/.gitconfig"
+set -x gcfg "$gitconfig"
 
 set -x userscripts "$HOME/.local/share/qutebrowser/userscripts"
 
