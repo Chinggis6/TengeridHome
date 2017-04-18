@@ -11,7 +11,7 @@ source "$HOME/.config/fish/export.fish"
 source "$HOME/.config/fish/alias"
 
 # Zero brightness
-brightness
+# brightness
 
 # No cursor blinking
 cursor

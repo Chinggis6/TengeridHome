@@ -22,7 +22,12 @@ Git and GitHub
 
 ## Pushing
 
-* git remote add origin https://github.com/USER/REPO
+	git remote add origin https://github.com/USER/REPO
 
 > -u is --set-upstream
-* git push -u origin master
+
+	git push -u origin master
+
+> After this command the input username and password will be saved (inside root folder) without further prompting
+
+	git config credential.helper store

@@ -236,7 +236,7 @@ URxvt*color15:                 S_base3
 ! Lemon Chiffon
 ! URxvt.cursorColor: #FFF8C6
 ! Coffee
-! URxvt.cursorColor: #6F4E37
+URxvt.cursorColor: #6F4E37
 
 ! ---
 

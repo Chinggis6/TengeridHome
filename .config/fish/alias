@@ -293,7 +293,7 @@ alias feh='pqiv'
 
 # Pacman package manager
 
-alias pacman="sudo -E pacman --noconfirm"
+alias pacman="sudo -E pacman --noconfirm --color=always"
 alias in="pacman -S"
 alias aur="yaourt"
 alias inn="yaourt -S --noconfirm --force"

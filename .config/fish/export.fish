@@ -331,6 +331,7 @@ set -x rofi "$C/rofi.theme"
 set -x termite "$C/termite/config"
 
 set -x mutt "$HOME/.muttrc"
+set -x muttd "$HOME/.mutt"
 
 set -x phpini '/etc/php/php.ini'
 set -x mycnf '/etc/mysql/my.cnf'
