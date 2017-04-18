@@ -1,3 +1,5 @@
+# yaourt -S rtorrent-vi-color --noconfirm
+
 # Global upload / download rate in KiB
 # 0 for unlimited
 

@@ -270,7 +270,7 @@ exec --no-startup-id clipit
 exec --no-startup-id dunst
 
 # Set wallpaper
-exec --no-startup-id feh --bg-scale "$HOME/Tengerid Wallpaper.png"
+exec --no-startup-id command feh --bg-scale "$HOME/.wall.png"
 
 # Disable touchpad
 exec --no-startup-id xinput --disable "ETPS/2 Elantech Touchpad"

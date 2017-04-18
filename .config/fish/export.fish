@@ -162,9 +162,7 @@ set -x Fu "$functions"
 
 # My environment variables and command aliases
 set -x export "$F/export.fish"
-set -x E "$export"
 set -x alias "$F/alias"
-set -x A "$alias"
 
 # Ranger file manager
 set -x rcd "$C/ranger"
@@ -210,6 +208,8 @@ set -x example "$doc"
 # .desktop files
 set -x applications "$share/applications"
 set -x desktop "$applications"
+set -x apps "$applications"
+set -x A "$applications"
 # header files
 set -x include "/usr/include"
 set -x header "$include"
@@ -300,6 +300,8 @@ set -x input "$mpvd/input.conf"
 
 set -x rtorrent "$HOME/.rtorrent.rc"
 set -x rtor "$rtorrent"
+set -x rtr "$rtorrent"
+set -x rt "$rtorrent"
 
 set -x spacemacs "$HOME/.spacemacs"
 
@@ -492,3 +494,16 @@ set -x aria2d "$C/aria2"
 set -x ariad "$aria2d"
 
 set -x redshift "$C/redshift.conf"
+
+set -x qutedesktop "$A/qutebrowser.desktop"
+set -x qutedesk "$qutedesktop"
+set -x qutedsk "$qutedesktop"
+
+set -x watch "$HOME/.watch"
+set -x W "$watch"
+
+# set_color
+set -x fish_color_history_current 'brcyan'
+
+# $status is $? in fish for error code (0 executed successfully, 127 command failed to execute)
+# set -q (--query) ouputs amount of unset variables in the query

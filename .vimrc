@@ -463,6 +463,13 @@ Plug 'aquach/vim-mediawiki-editor'
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+" Dep. of the below
+Plug 'Shougo/unite.vim'
+" File explorer
+Plug 'Shougo/vimfiler.vim'
+" Use as default (instead of netrw)
+let g:vimfiler_as_default_explorer = 1
+
 " last plugin
 
 " --- SNIGULP ---
@@ -749,7 +756,8 @@ set ttymouse=xterm2
 set formatoptions+=j
 
 " Change directory to the opened file's or switched buffer's
-set autochdir
+" Vimfiler doesn't work with it
+" set autochdir
 
 " Larger command history
 " Default value is 50

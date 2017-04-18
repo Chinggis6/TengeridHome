@@ -190,6 +190,10 @@ alias urxvt='urxvtc'
 # RADICALISM
 # Command substitution
 
+# systemd
+# eg: timedatectl set-time 2017-04-19 21:17:42
+alias date='timedatectl'
+
 # alias cat='pygmentize'
 
 # alias ed='vim'
@@ -301,7 +305,9 @@ alias outt="yaourt -R --noconfirm --force"
 # alias i="pacman -Qi"
 # alias inf="yaourt -Qi"
 alias i="yaourt -Qi"
-alias on="pacsearch"
+# alias on="pacsearch"
+alias on='pacman -Ssq'
+alias onn='yaourt -Ssq'
 alias out="pacman -R"
 alias owner="pacman -Qo"
 alias o='owner'
@@ -367,7 +373,7 @@ alias gitadd='git a'
 alias ga='gitadd'
 alias gita='gitadd'
 
-alias gst = 'git status -sb'
+alias gst='git status -sb'
 
 
 alias cl='g clone'
@@ -582,6 +588,29 @@ alias playi='sox --info'
 # !! is not supported in Fish
 # alias reroot='sudo !!'
 
+# ncurses du (disk usage)
 alias gdu='ncdu'
 
+# ---
+# SHORT commands
 alias ya='yaourt'
+alias yao='ya'
+alias yau='ya'
+alias yu='ya'
+
+alias rtor='rtorrent'
+alias rtr='rtor'
+
+alias tdc='timedatectl'
+alias tdcl='tdc'
+alias tdctl='tdc'
+# ---
+
+# Enforcement
+
+alias pwd='echo Use Alt-D'
+
+# ---
+
+# print cd history highlighting the current one (fish_color_history_current env)
+alias dirhist='dirh'
