@@ -187,8 +187,7 @@ set $bumblebee $HOME/.config/i3/bumblebee-status/bumblebee-status
 # %Y for full year
 set $commandline -m memory time date -p root.path=/ date.format="%a, %b %d" time.format="%H:%M" -t solarized-powerline
 bar {
-
-mode dock
+  mode dock
 # mode invisible
 # position bottom
 position top
@@ -205,13 +204,13 @@ binding_mode_indicator yes
 #    status_command $bumblebee -m nic disk:root cpu memory battery date time dnf -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline
 #time pasink pasource
   colors {
-    separator #666666
-    background #000000
-    statusline #ffffff
-    focused_workspace #4c7899 #285577 #ffffff
-    active_workspace #333333 #5f676a #ffffff
-    inactive_workspace #333333 #222222 #888888
-    urgent_workspace #2f343a #900000 #ffffff
+    separator #dc322f
+    background #002b36
+    statusline #268bd2
+    focused_workspace #fdf6e3 #859900 #fdf6e3
+    active_workspace #fdf6e3 #6c71c4 #fdf6e3
+    inactive_workspace #586e75 #93a1a1 #002b36
+    urgent_workspace #d33682 #d33682 #fdf6e3
   }
 }
 
@@ -251,7 +250,10 @@ bindsym $mod+XF86WebCam exec --no-startup-id slip -q
 bindsym $mod+d exec "rofi -combi-modi drun,run -show combi"
 bindsym Ctrl+Mod1+w exec "rofi -show window"
 # --grayscale, --text, --pixelate
-bindsym Ctrl+Mod1+l exec --no-startup-id i3lock-fancy -g -t "Aquila non capit muscas"
+# bindsym Ctrl+Mod1+l exec --no-startup-id i3lock-fancy -g -t "Aquila non capit muscas"
+# bindsym Ctrl+Mod1+l exec --no-startup-id i3lock-fancy -g -t "Aquila non capit muscas"
+# i3lock-fancy-dualmonitors-git
+bindsym Ctrl+Mod1+l exec --no-startup-id i3lock-fancy -g
 #bindsym Mod1+x exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
 bindsym Ctrl+Mod1+t exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
 bindsym Ctrl+Mod1+b exec --no-startup-id i3lock --color=87ceeb --image "$HOME/SatanicBear.png"
@@ -444,3 +446,8 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+client.focused #859900 #859900 #fdf6e3 #6c71c4
+client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+client.unfocused #073642 #073642 #93a1a1 #586e75
+client.urgent #d33682 #d33682 #fdf6e3 #dc322f

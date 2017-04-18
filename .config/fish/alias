@@ -581,3 +581,5 @@ alias playi='sox --info'
 # alias reroot='sudo !!'
 
 alias gdu='ncdu'
+
+alias ya='yaourt'

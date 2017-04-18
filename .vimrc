@@ -880,6 +880,7 @@ set cpoptions+=$
 " set smartindent
 set copyindent
 
+
 " last option
 
 " --- SNOITPO ---
@@ -1647,7 +1648,7 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
-source $HOME/.vim/commons.vim
+" source $HOME/.vim/commons.vim
 
 " Activate Rainbow Parentheses on LISP language family
 " :RainbowParentheses
@@ -1689,6 +1690,8 @@ autocmd BufEnter *.vim :TagbarOpen<CR>
 " autocmd BufEnter,FileType mediawiki :set foldexpr=getline(v:lnum)=~'^\\(=\\+\\)[^=]\\+\\1\\(\\s*\\)\\=\\s*$'?\">\".(len(matchstr(getline(v:lnum),'^=\\+'))-1):\"=\" & fdm=expr
 
 autocmd BufEnter,FileType startify :set modifiable
+
+set pastetoggle=<leader>p
 
 " ---
 " Vim is Beautiful

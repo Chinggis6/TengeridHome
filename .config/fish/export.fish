@@ -224,6 +224,9 @@ set -x lic "$licences"
 set -x lib '/usr/lib/'
 
 set -x fortune "$share/fortune"
+set -x zoneinfo "$share/zoneinfo"
+
+set -x localtime '/etc/localtime'
 
 
 # --- SELIF METSYS ---- #
@@ -480,3 +483,10 @@ set -x dhs '\m/ (   `◉ _◉´)  \m/'
 # to insert in Vim with C-r =$backtick
 set -x backtick '`'
 set -x bt "$backtick"
+
+set -x aria2 "$C/aria2/aria2.conf"
+set -x aria "$aria2"
+set -x aria2d "$C/aria2"
+set -x ariad "$aria2d"
+
+set -x redshift "$C/redshift.conf"
