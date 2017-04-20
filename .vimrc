@@ -304,6 +304,7 @@ Plug 'kchmck/vim-coffee-script'
 
 " Highlight Vimperator config file syntax
 Plug 'vimperator/vimperator.vim'
+autocmd FileType vimperator setlocal commentstring=\"\ %s
 
 " Highlight trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
@@ -528,7 +529,7 @@ colorscheme solarized
 " Spacemacs colorscheme
 
 " if (has("termguicolors"))
-"   set termguicolors
+  " set termguicolors
 " endif
 " set background=dark
 " colorscheme spacemacs-theme
@@ -1017,9 +1018,6 @@ autocmd FileType zathura setlocal commentstring=#\ %s
 
 " Unix (ending in rc)
 autocmd FileType unix setlocal commentstring=#\ %s
-
-" Vimperator
-autocmd FileType unix setlocal commentstring="\ %s
 
 " ---
 

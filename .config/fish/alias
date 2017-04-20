@@ -51,6 +51,7 @@ alias fzf='fzf --reverse -m'
 # Omitting -l for long list
 # Append indicator for entries
 # * executable, / directory, @ link, = socket
+# list all files (including hidden), in list format
 alias ls='ls -h -A --group-directories-first --color=always -F'
 
 # --ignore-case
@@ -133,6 +134,37 @@ alias bc='bc -q'
 # -terse, -exrates
 # quite mode, outputting just the result; update exchange rates for currency conversion
 alias qalc='qalc -t -e'
+
+# --verbose
+# -w --readwrite -o rw
+# --options
+alias mount='sudo mount -v -o umask=0022,gid=1000,uid=1000'
+alias umount='sudo umount -v'
+
+# curl https://site.com/file.jpg > file.jpg
+# --remote-name; --remote-header-name (Content-Disposition), no overwrite
+# -s --silent, -v --verbose
+# -u ftpuser:ftppass
+# Ranges: curl ftp://ftp.uk.debian.org/debian/pool/main/[a-z]/
+# -T {file,file2} upload by ranges
+# -x proxyserver.test.com:3128 http://google.co.uk
+alias curl='curl -# -O -J'
+
+# -p for input (pipe-able)
+# prints in OCTAL FORMAT by defaults (--symbolic)
+# u=rwx,g=rx,o=rx (owner, group, others)
+# set / get file creation mode (chmod of new files)
+# alias umask="umask -S"
+# ^ doesn't work for some reason
+
+# server in ~/.tin/newsrctable
+# alias tin='tin -g'
+
+# --install (after build), --sync (with pacman), --skipinteg (integrity check, checksum & pgp)
+alias makepkg='makepkg -is --skipinteg'
+
+# width
+alias catimg='catimg -w 75'
 
 # --- DEFAULTS END ---
 
@@ -304,7 +336,8 @@ alias inn="yaourt -S --noconfirm --force"
 alias outt="yaourt -R --noconfirm --force"
 # alias i="pacman -Qi"
 # alias inf="yaourt -Qi"
-alias i="yaourt -Qi"
+alias i='pacman -Si'
+alias ii='yaourt -Si'
 # alias on="pacsearch"
 alias on='pacman -Ssq'
 alias onn='yaourt -Ssq'
@@ -598,19 +631,30 @@ alias yao='ya'
 alias yau='ya'
 alias yu='ya'
 
+alias pac='pacman'
+
 alias rtor='rtorrent'
 alias rtr='rtor'
 
 alias tdc='timedatectl'
 alias tdcl='tdc'
 alias tdctl='tdc'
+
+alias rbt='reboot'
+alias rebt='rbt'
+
 # ---
 
 # Enforcement
 
-alias pwd='echo Use Alt-D'
+# alias pwd='echo Use Alt-D'
 
 # ---
 
 # print cd history highlighting the current one (fish_color_history_current env)
 alias dirhist='dirh'
+
+# curl > /dev/null (only progress, no file contents output)
+# curl -s > /dev/null (no output, no progress)
+
+alias la='ls -1a'

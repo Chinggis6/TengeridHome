@@ -1,3 +1,4 @@
+# Defined in /tmp/fish.0w3moW/fish_user_key_bindings.fish @ line 2
 function fish_user_key_bindings
 	# 'default' mode
 	bind \ce forward-char
@@ -52,4 +53,8 @@ function fish_user_key_bindings
 	# Use C-P / C-N to navigate through history
 	bind k true
 	bind j true
+
+	# https://github.com/fish-shell/fish-shell/issues/288
+	bind '!!' 'commandline -i "$history[1]"'
+	bind '!$' 'history-token-search-backward'
 end

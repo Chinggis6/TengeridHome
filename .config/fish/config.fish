@@ -24,3 +24,5 @@ setxkbmap -option caps:swapescape
 
 # Unbind Backspace in terminal
 stty erase undef
+
+source "$HOME/.info"

@@ -8,10 +8,10 @@ inoremap <C-a> <C-Home><C-S-End>
 set toolbars=none
 
 " Auto-complete everything
-set complete=bfhlsSt
+" set complete=bfhlsSt
 
-" Gvim as editor
-set editor='gvim -f'
+" Set vim as external editor
+set editor='vim -f'
 
 " Set DGG as the default search and suggest engine
 set defsearch=duckduckgo
@@ -38,6 +38,9 @@ set! browser.startup.homepage="https:/en.wikipedia.org/wiki/Portal:Current_event
 
 " Use "Firefox" instead of the default "Vimperator" string in window titles.
 " set titlestring="Firefox"
-set titlestring="GNU Icecat"
+set titlestring='Firefox / Vimperator'
 
-colorscheme darkness
+colorscheme solarized_dark
+
+" Semicolon to command
+nnoremap ; :

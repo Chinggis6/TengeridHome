@@ -33,7 +33,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Backspace exec i3-sensible-terminal
-bindsym $mod+Return "exec --no-startup-id urxvt"
+# bindsym $mod+Return "exec --no-startup-id urxvt"
+bindsym $mod+Return "exec --no-startup-id xterm"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -258,7 +259,8 @@ bindsym Ctrl+Mod1+l exec --no-startup-id i3lock-fancy -g
 bindsym Ctrl+Mod1+t exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
 bindsym Ctrl+Mod1+b exec --no-startup-id i3lock --color=87ceeb --image "$HOME/SatanicBear.png"
 
-exec --no-startup-id redshift-gtk
+# exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift
 # exec --no-startup-id dropbox start
 
 # Set GNOME Network Manager applet in the tray
@@ -391,7 +393,7 @@ bindsym $mod+bracketleft workspace prev
 bindsym $mod+F1 exec --no-startup-id  qutebrowser --backend webengine
 
 # Bring up file manager
-bindsym $mod+Shift+Return exec --no-startup-id  urxvt -e ranger
+bindsym $mod+Shift+Return exec --no-startup-id  xterm -e ranger
 
 exec --no-startup-id notify-send "Welcome to the System, My Lord!"
 
@@ -452,4 +454,6 @@ client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #073642 #073642 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 
-exec --no-startup-id xrandr --output HDMI3 --auto --output VGA1 --auto --right-of HDMI3
+exec --no-startup-id "xrandr --output HDMI3 --auto --output VGA1 --auto --right-of HDMI3"
+
+# focus_follows_mouse no

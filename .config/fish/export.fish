@@ -8,7 +8,7 @@
 
 # SYSTEM DEFAULTS
 
-set -x PATH $PATH /usr/local/bin $HOME/bin $HOME/.gem/ruby/2.4.0/bin ~/.bin
+set -x PATH $PATH /usr/local/bin $HOME/.bin
 # ~ .
 
 # set -x EDITOR 'vim -p'
@@ -36,8 +36,9 @@ set -x SHELL '/usr/bin/fish'
 set -x AUR 'https://aur.archlinux.org'
 set -x GIT 'https://github.com'
 
-set -x BOI "$HOME/.md/BOI.md"
-set -x BOT "$HOME/.md/BOT.md"
+set -x BOI "$HOME/BOI.md"
+set -x BOT "$HOME/BOT.md"
+set -x book "$BOT"
 set -x books "$BOT" "$BOI"
 
 # CONFIGURATION FILES
@@ -140,7 +141,12 @@ set -x cheat $DEFAULT_CHEAT_DIR
 # Moving config and data to XDG directories (rather than the main user, in multiple hidden files and directories) as a principle
 
 set -x C "$XDG_CONFIG_HOME"
+
 set -x D "$XDG_DATA_HOME"
+set -x data "$D"
+set -x localshare "$D"
+set -x lshare "$D"
+
 set -x c "$XDG_CACHE_HOME"
 
 # Fish shell
@@ -227,6 +233,9 @@ set -x fortune "$share/fortune"
 set -x zoneinfo "$share/zoneinfo"
 
 set -x localtime '/etc/localtime'
+
+# log directory
+set -x log "/var/log"
 
 
 # --- SELIF METSYS ---- #
@@ -338,8 +347,6 @@ set -x muttd "$HOME/.mutt"
 set -x phpini '/etc/php/php.ini'
 set -x mycnf '/etc/mysql/my.cnf'
 
-set -x book "$HOME/.md/BOT.md"
-
 # GNU Readline
 # Read by bash, mysql etc
 set -x INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
@@ -418,7 +425,9 @@ set -x zath "$zathura"
 set -x FZF_DEFAULT_COMMAND 'rg --hidden -e ""'
 
 set -x vimperator "$HOME/.vimperatorrc"
-set -x vimper "$vimperator"
+set -x vimp "$vimperator"
+set -x vimperatord "$HOME/.vimperator"
+set -x vimpd "$vimperatord"
 
 set -x readme "$HOME/README.md"
 
@@ -507,3 +516,19 @@ set -x fish_color_history_current 'brcyan'
 
 # $status is $? in fish for error code (0 executed successfully, 127 command failed to execute)
 # set -q (--query) ouputs amount of unset variables in the query
+
+# .gpg
+set -x pass "$D/pass"
+
+set -x firefox_plugins '/usr/lib64/mozilla/plugins'
+set -x plugins "$firefox_plugins"
+set -x chrome_plugins '/opt/google/chrome/plugins'
+set -x chromeplug "$chrome_plugins"
+
+# set -x NNTPSERVER 'http://www.eternal-september.org/'
+# set -x NNTPSERVER 'http://news.aioe.org/'
+# set -x NNTPSERVER 'free.xsusenet.com'
+set -x NNTPSERVER 'weathergirl-ipv6.tele2.net'
+set -x NNTPPORT 119
+
+set -x down "$HOME/.down"
