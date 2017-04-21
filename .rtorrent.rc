@@ -7,10 +7,10 @@
 upload_rate = 1
 
 # Download directory
-directory = ~/Downloads/
+directory = ~/.down
 
 # Session directory
-session = ~/.session/
+session = ~/.session
 
 # Watch directory
 schedule = watch_directory,5,5,load_start=~/.watch/*.torrent

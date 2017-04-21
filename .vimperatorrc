@@ -1,3 +1,9 @@
+" NOTE
+" Single quotes '' do not work, use "" double quotes
+
+" ---
+
+
 " Number tabs
 set tabnumbers
 
@@ -38,7 +44,7 @@ set! browser.startup.homepage="https:/en.wikipedia.org/wiki/Portal:Current_event
 
 " Use "Firefox" instead of the default "Vimperator" string in window titles.
 " set titlestring="Firefox"
-set titlestring='Firefox / Vimperator'
+set titlestring="Firefox / Vimperator"
 
 colorscheme solarized_dark
 

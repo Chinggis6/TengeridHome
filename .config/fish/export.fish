@@ -532,3 +532,5 @@ set -x NNTPSERVER 'weathergirl-ipv6.tele2.net'
 set -x NNTPPORT 119
 
 set -x down "$HOME/.down"
+
+set -x freenode 'chat.freenode.net'

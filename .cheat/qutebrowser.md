@@ -9,3 +9,6 @@ spawn --userscript
 ## Binding Ctrl / Alt keys
 
 <ctrl-j>, <alt-d>
+
+## dummy key
+debug-pyeval --quiet 0
