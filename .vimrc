@@ -146,6 +146,14 @@
 " iw - anywhere
 " aw - whitespace
 
+" <C-g> file (name), mod [+], lines (count), scroll (%) (same as 0<C-g>)
+" 1<C-g> full path and the rest
+" 2<C-g> buffer, full path, and so
+
+" Use s instead of xi
+
+" TIPS END
+
 " --- ORTNI ---
 
 " --- PLUGINS ---
