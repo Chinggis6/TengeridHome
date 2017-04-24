@@ -143,7 +143,7 @@ URxvt.foreground      : gray
 ! History
 ! Shift + Page Up/Down to Scroll
 URxvt.saveLines         : 1000000
-URxvt.letterSpace       : -1
+URxvt.letterSpace       : -5
 URxvt.scrollBar         : false
 URxvt.scrollBar_right   : false
 URxvt.secondaryScroll   : false

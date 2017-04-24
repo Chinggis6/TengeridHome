@@ -45,7 +45,7 @@ alias vidir='vidir -v'
 
 # Place input line on top
 # --multi, multi select files with Tab
-alias fzf='fzf --reverse -m'
+alias fzf='fzf --reverse -m --border'
 
 # --human-readable, --almost-all, --classify
 # Omitting -l for long list
@@ -105,7 +105,7 @@ alias df='df -h'
 # --verbose
 
 alias mv='mv -v -i'
-alias cp='cp -v -i'
+alias cp='cp -v -i -R'
 # --preserve-root is default
 # --no-preserve-root to enable / radical deletion
 # --one-file-system, skip directories mounted from other file systems
@@ -166,6 +166,31 @@ alias makepkg='makepkg -is --skipinteg'
 # width
 alias catimg='catimg -w 75'
 
+alias chmod='chmod -v'
+alias chgrp='chgrp -v'
+
+# --all (in PATH)
+alias which='which -a --show-tilde --show-dot'
+
+# Power Management (Battery)
+alias acpi='acpi -V' #--everything
+
+# LVM
+
+alias vgdisplay='vgdisplay -v'
+alias lvdisplay='lvdisplay -v'
+alias vdisplay='pvdisplay -v'
+
+# Facebook Path Picker
+# https://github.com/facebook/PathPicker
+# fpp-git (AUR)
+alias fpp='fpp'
+
+# --human-readable, --all
+alias dh='dh -ha'
+alias du='du -ha'
+
+
 # --- DEFAULTS END ---
 
 # ---
@@ -196,6 +221,7 @@ alias xx='exit;exit'
 alias news='newsbeuter -r'
 # --symbolic, --relative, --force, --verbose
 # ln --relative cannot be done, for hardlinks
+alias ln='ln -srfv'
 alias lns='ln -srfv'
 alias untar='tar -xf'
 # pastebin, pass with | p
@@ -221,6 +247,12 @@ alias urxvt='urxvtc'
 
 # RADICALISM
 # Command substitution
+
+alias calc='qalc'
+alias bc='qalc'
+alias hwinfo='lshw'
+# pyinfo (AUR); colorized clone of df
+alias pydf='df'
 
 # systemd
 # eg: timedatectl set-time 2017-04-19 21:17:42
@@ -340,7 +372,10 @@ alias i='pacman -Si'
 alias ii='yaourt -Si'
 # alias on="pacsearch"
 alias on='pacman -Ssq'
+alias on+='pacman -Ss'
 alias onn='yaourt -Ssq'
+alias onn+='yaourt -Ss'
+alias onnn='onn+'
 alias out="pacman -R"
 alias owner="pacman -Qo"
 alias o='owner'
@@ -658,3 +693,11 @@ alias dirhist='dirh'
 # curl -s > /dev/null (no output, no progress)
 
 alias la='ls -1a'
+
+
+# Virtual Box
+# pacman -S virtualbox (community)
+# http://stackoverflow.com/questions/23740932/warning-vboxdrv-kernel-module-is-not-loaded#34017857
+# vboxmanage --version (check)
+# sudo /sbin/rcvboxdrv setup (fix)
+# sudo modprobe vboxdrv (update)

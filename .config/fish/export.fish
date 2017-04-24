@@ -8,7 +8,7 @@
 
 # SYSTEM DEFAULTS
 
-set -x PATH $PATH /usr/local/bin $HOME/.bin
+set -x PATH $PATH /usr/local/bin $HOME/.bin $HOME/.scripts
 # ~ .
 
 # set -x EDITOR 'vim -p'
@@ -44,9 +44,6 @@ set -x books "$BOT" "$BOI"
 # CONFIGURATION FILES
 
 set -x C "$HOME/.config"
-
-# For desktop environment (X)
-set -x autostart "$C/autostart"
 
 # i3 window manager
 
@@ -140,7 +137,8 @@ set -x cheat $DEFAULT_CHEAT_DIR
 
 # Moving config and data to XDG directories (rather than the main user, in multiple hidden files and directories) as a principle
 
-set -x C "$XDG_CONFIG_HOME"
+set -x CH "$XDG_CONFIG_HOME"
+set -x C "$CH"
 
 set -x D "$XDG_DATA_HOME"
 set -x data "$D"
@@ -534,3 +532,31 @@ set -x NNTPPORT 119
 set -x down "$HOME/.down"
 
 set -x freenode 'chat.freenode.net'
+
+set -x i "$HOME/.info"
+set -x eth 'Broadcom NetXtreme BCM5761'
+
+
+set -x xserver "$HOME/.xserverrc"
+set -x xinit "$HOME/.xinitrc"
+
+# ---
+# X server and client configuration
+# ----
+set -x x11 '/etc/X11'
+set -x X11 "$x11"
+set -x xinit "$x11/xinit"
+set -x gxinit "$xinit/xinitrc"
+set -x gxserver "$xinit/xserverrc"
+# ---
+
+# Gnome Session
+set -x autostart "$CH/autostart"
+
+set -x home '/home/chinggis'
+set -x chinggis "$home"
+
+set -x scripts "$HOME/.scripts"
+
+set -x music 'programming music dark minds'
+set -x music2 'chillout mix 2018'

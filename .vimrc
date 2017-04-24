@@ -143,6 +143,9 @@
 " verbose map KEY
 " verbose is a separate command to put before other commands for verbosity, getting more information
 
+" iw - anywhere
+" aw - whitespace
+
 " --- ORTNI ---
 
 " --- PLUGINS ---
