@@ -27,7 +27,33 @@ Git and GitHub
 > -u is --set-upstream
 
 	git push -u origin master
+(prompt)
 
 > After this command the input username and password will be saved (inside root folder) without further prompting
 
 	git config credential.helper store
+
+## Pulling
+
+	git init
+	git pull https://github.com/USER/REPO
+
+(before pushing)
+
+	git config --global user.email "user@email.com'
+	git config --global user.name "username"
+
+## .gitignore
+*
+*/
+!.gitignore (exception)
+
+## DOS 2 UNIX
+
+	git config --global core.autocrlf false
+
+### Check file
+
+	git config --global --edit
+
+Settings are saved in ~/.gitconfig as [core] autocrlf=false

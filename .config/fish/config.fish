@@ -17,7 +17,7 @@ cursor
 numlockx off
 
 # Swap Escape key with Caps Lock
-setxkbmap -option caps:swapescape
+# setxkbmap -option caps:swapescape
 # ^ USE CTRL-[ (Control Left Bracket (US))
 
 # Unbind Backspace in terminal

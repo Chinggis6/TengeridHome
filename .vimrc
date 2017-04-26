@@ -1216,10 +1216,10 @@ nnoremap <localleader>d <C-w>c
 
 " Command mode
 " Colon, Semi-colon
-nnoremap ; :
-vnoremap ; :
-nnoremap : Q
-vnoremap : Q
+" nnoremap ; :
+" vnoremap ; :
+" nnoremap : Q
+" vnoremap : Q
 
 " first-born is a word
 
@@ -1539,12 +1539,12 @@ noremap { {zzzv
 " word definition
 
 " Words don't contain underscores
-set iskeyword-=_
+" set iskeyword-=_
 
 " First-born is a word
-set iskeyword+=-
+" set iskeyword+=-
 " don't is a word
-set iskeyword+='
+" set iskeyword+='
 
 " ---
 

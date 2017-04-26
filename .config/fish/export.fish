@@ -57,8 +57,11 @@ set -x i3 "$i3d/config"
 set -x tmux "$HOME/.tmux.conf"
 set -x T "$tmux"
 
-set -x tmuxinator "$HOME/.tmuxinator/TS.yml"
+set -x tmuxinatord "$HOME/.tmuxinator/"
+set -x tmuxinator "$tmuxinatord/project.yml"
 set -x mux "$tmuxinator"
+set -x muxd "$tmuxinatord"
+set -x project "$mux"
 
 set -x dic '/usr/share/stardict/dic'
 
@@ -560,3 +563,16 @@ set -x scripts "$HOME/.scripts"
 
 set -x music 'programming music dark minds'
 set -x music2 'chillout mix 2018'
+
+# https://wiki.archlinux.org/index.php/Xprofile
+# Execute commands before the window manager is started
+set -x xprofile "$HOME/.xprofile"
+
+# NAutoVTs=8, suspend, hibernate, lid
+set -x logind '/etc/systemd/logind.conf'
+
+set -x cache '/var/cache'
+set -x pkg "$cache/pacman/pkg"
+
+set -x hosts '/etc/hosts'
+set -x host "$hosts"

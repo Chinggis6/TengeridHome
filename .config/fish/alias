@@ -161,7 +161,8 @@ alias curl='curl -# -O -J'
 # alias tin='tin -g'
 
 # --install (after build), --sync (with pacman), --skipinteg (integrity check, checksum & pgp)
-alias makepkg='makepkg -is --skipinteg'
+# --skippgpcheck
+alias makepkg='makepkg -i --skipinteg --force'
 
 # width
 alias catimg='catimg -w 75'
@@ -190,6 +191,11 @@ alias fpp='fpp'
 alias dh='dh -ha'
 alias du='du -ha'
 
+# requires cower
+# install directly with makepkg if PGP problems
+# yaourt -G cower
+# makepkg -i --skipinteg --force
+alias aarchup='aarchup --aur'
 
 # --- DEFAULTS END ---
 
@@ -213,7 +219,8 @@ alias lspart="lsblk"
 alias mkext="mkfs.ext4"
 alias lstime="timedatectl status"
 alias res="xrandr --mode VGA-1 --output 1024x768"
-alias k="sudo pkill -9"
+# --echo (name, pid), --count (at the end of the output), --ignore-case
+alias k="sudo pkill -9 -eci"
 alias tpoff="xinput --disable 'ETPS/2 Elantech Touchpad'"
 alias tpon="xinput --enable 'ETPS/2 Elantech Touchpad'"
 alias x='exit'
@@ -242,7 +249,7 @@ alias sman='tldr'
 alias emacs='emacsclient -nw'
 
 # urxvtd
-alias urxvt='urxvtc'
+# alias urxvt='urxvtc'
 
 
 # RADICALISM
@@ -391,27 +398,7 @@ alias build="makepkg -si --noconfirm"
 alias oppdep="pacdep -oppp"
 
 # Systemd service manager
-
-alias sctl='sudo -E systemctl'
-
-alias sls='sctl list-unit-files --type=service'
-
-alias sstt='sctl start'
-alias sstp='sctl stop'
-alias sres='sctl restart'
-
-alias sen='sctl enable'
-alias sdis='sctl disable'
-
-alias start='sstt'
-alias stop='sstp'
-alias restart='sres'
-
-alias enable='sen'
-alias disable='sdis'
-
 # Journald event manager
-
 # --reverse (recent events on top)
 alias journalctl='journalctl -r'
 alias j='journalctl'
@@ -701,3 +688,24 @@ alias la='ls -1a'
 # vboxmanage --version (check)
 # sudo /sbin/rcvboxdrv setup (fix)
 # sudo modprobe vboxdrv (update)
+
+# Backward Compability
+
+# start, stop, restart, reload
+alias service='systemctl'
+# enable, disable
+alias chkconfig='systemctl'
+
+source /etc/aliases
+
+# Virtual Box
+
+# list usbhost, vms, runningvms, extpacks, hostinfo, hdds
+alias vbm='VBoxManage'
+alias vb='vbm'
+
+alias startvm='VBoxManage startvm'
+alias vmstart='startvm'
+alias vstart='vmstart'
+alias lsvm='vbm list vms'
+alias lsvms='lsvm'

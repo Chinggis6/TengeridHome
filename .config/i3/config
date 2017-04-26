@@ -109,11 +109,11 @@ bindsym $mod+a focus parent
 # Font Awesome
 # http://fontawesome.io/cheatsheet/
 
-set $ws1 "tmux ☯"
+set $ws1 "GUI"
 bindsym $mod+1 workspace $ws1
 bindsym $mod+Shift+1 move container to workspace $ws1
 
-set $ws2 "qt ⚓"
+set $ws2 "CLI"
 bindsym $mod+2 workspace $ws2
 bindsym $mod+Shift+2 move container to workspace $ws2
 
@@ -259,8 +259,7 @@ bindsym Ctrl+Mod1+l exec --no-startup-id i3lock-fancy -g
 bindsym Ctrl+Mod1+t exec --no-startup-id i3lock --color=87ceeb --image "$HOME/Tengerid Lockscreen.png"
 bindsym Ctrl+Mod1+b exec --no-startup-id i3lock --color=87ceeb --image "$HOME/SatanicBear.png"
 
-# exec --no-startup-id redshift-gtk
-exec --no-startup-id redshift
+# exec --no-startup-id redshift
 # exec --no-startup-id dropbox start
 
 # Set GNOME Network Manager applet in the tray
@@ -449,11 +448,24 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-client.focused #859900 #859900 #fdf6e3 #6c71c4
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused #073642 #073642 #93a1a1 #586e75
-client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+# exec --no-startup-id "xrandr --output HDMI3 --auto --output VGA1 --auto --right-of HDMI3"
+exec --no-startup-id mon
 
-exec --no-startup-id "xrandr --output HDMI3 --auto --output VGA1 --auto --right-of HDMI3"
+# compton, transparency
+# exec --no-startup-id compton -bcf -i 0.7
 
-# focus_follows_mouse no
+assign [class="(?i)qutebrowser"] $ws1
+# exec --no-startup-id qutebrowser --backend webengine
+# exec --no-startup-id "sh -c 'sleep 2; exec urxvt -letsp -5 -e tmuxinator start project'"
+
+# References
+# https://github.com/andreatta/config/blob/master/i3/config
+# for_window [instance="TeamViewer.exe"] floating enable
+
+# exec --no-startup-id VBoxManage startvm MSWIN10
+
+exec --no-startup-id redshift-qt
+
+# aarchup (AUR) (uses dunst)
+# --aur (requires cower)
+exec --no-startup-id aarchup
